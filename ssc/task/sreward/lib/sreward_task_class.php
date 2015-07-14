@@ -1261,7 +1261,7 @@ class sreward_task_class extends keke_task_class {
 		$button = array ();
 		$button ['view'] = array (
 				'href' => $site . 'index.php?do=taskhandle&op=workinfo&taskId=' . $t_id . '&workId=' . $w_id,
-				'desc' => '查看稿件',
+				'desc' => '查看',
 				'ico' => 'book'
 		);
 		switch ($status) {
@@ -1281,7 +1281,7 @@ class sreward_task_class extends keke_task_class {
 			case 9 :
 				$button['del'] = array(
 						'click'=>"confirmOp('确定删除？','$site$url&action=delWork&objId=$w_id',true)",
-						'desc'=>$_lang ['delete'].'稿件',
+						'desc'=>$_lang ['delete'],
 						'href'=>'javascript:void(0);'
 				);
 				break;

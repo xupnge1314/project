@@ -43,8 +43,8 @@
           <tr>
             <th>编号</th>
             <th>名称</th>
-            <th>售价（元）</th>
-          	<th>销售量</th>
+            <!-- <th>售价（元）</th>
+                        <th>销售量</th> -->
             <th>发布时间</th>
             <th>状态</th>
             <th>操作</th>
@@ -56,14 +56,14 @@
           <tr>
             <td>{$v['service_id']}</td>
             <td title="{$v['title']}"><a href="index.php?do=goods&id={$v['service_id']}"><!--{eval echo kekezu::cutstr($v['title'],16)}--></a></td>
-            <td>
+            <!-- <td>
               <span class="money">
-              	<sub>￥</sub>{$v['price']}
+                <sub>￥</sub>{$v['price']}
               </span>
             </td>
             <td>
-            	{$v['sale_num']}
-            </td>
+              {$v['sale_num']}
+            </td> -->
             <td><!--{eval echo date('Y-m-d',$v['on_time'])}--></td>
             <td> {if $v['edit_info']['status'] =='1'}更新待审 {else}{$arrStatus[$v['service_status']]}{/if}</td>
             <td>

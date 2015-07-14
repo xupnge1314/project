@@ -47,26 +47,26 @@
 		          <!-- table-responsive end -->
 		        </div>
              {/if}
-     <div class="statistics-all">
-         <p class="{if $do == 'pubgoods'}hidden{/if}">
-           <strong class="statistics-title">任务费用合计：</strong>
-           <span class="money"><sub>￥</sub> <span id="task-costs"><!--{eval echo floatval($arrPubInfo['txt_task_cash'])}--></span> <sub>元</sub></span>
-         </p>
-		 {if TOOL === true}
-         <p>
-           <strong class="statistics-title">增值费用合计：</strong>
-           <span class="money"><sub>￥</sub> <span id="payitem-costs">0</span> <sub>元</sub></span>
-         </p>
-		 {/if}
-         <p>
-           <strong class="statistics-title">费用总计：</strong>
-           <input type="hidden" name="hdn_total_costs" id="hdn-total-costs" value="0">
-           <span class="money"><sub>￥</sub> <span id="total-costs"><!--{eval echo floatval($arrPubInfo['txt_task_cash'])}--></span> <sub>元</sub></span>
-         </p>
-         <p>
-           <strong class="statistics-title">账户余额：</strong>
-           <span class="money"><sub>￥</sub> <!--{eval echo floatval($gUserInfo['balance'])}--> <sub>元</sub></span>
-         </p>
-       </div>
+    <!--  <div class="statistics-all">
+        <p class="{if $do == 'pubgoods'}hidden{/if}">
+          <strong class="statistics-title">任务费用合计：</strong>
+          <span class="money"><sub>￥</sub> <span id="task-costs">{eval echo floatval($arrPubInfo['txt_task_cash'])}</span> <sub>元</sub></span>
+        </p>
+    		 {if TOOL === true}
+        <p>
+          <strong class="statistics-title">增值费用合计：</strong>
+          <span class="money"><sub>￥</sub> <span id="payitem-costs">0</span> <sub>元</sub></span>
+        </p>
+    		 {/if}
+        <p>
+          <strong class="statistics-title">费用总计：</strong>
+          <input type="hidden" name="hdn_total_costs" id="hdn-total-costs" value="0">
+          <span class="money"><sub>￥</sub> <span id="total-costs">{eval echo floatval($arrPubInfo['txt_task_cash'])}</span> <sub>元</sub></span>
+        </p>
+        <p>
+          <strong class="statistics-title">账户余额：</strong>
+          <span class="money"><sub>￥</sub> {eval echo floatval($gUserInfo['balance'])} <sub>元</sub></span>
+        </p>
+      </div> -->
 
 <script type="text/javascript" src="static/js/model/payitem/itempub.js"></script>

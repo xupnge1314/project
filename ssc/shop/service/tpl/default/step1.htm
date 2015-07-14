@@ -74,22 +74,7 @@
 
           </div>
           <!-- 标题名称 end -->
- <div class="form-group">
-            <label for="txt_price" class="col-sm-3 control-label">服务售价 <span class="text-danger">*</span></label>
-            <div class="col-sm-3">
-              <div class="input-group">
-                <span class="input-group-addon">￥</span>
-                <input type="text" class="form-control" id="txt_price" name="txt_price" placeholder="服务售价" value="{$arrPubInfo['txt_price']}" onkeyup="clearstr(this);">
-              </div>
-		        </div>
-            <div class="col-sm-3">
-				<select name="unite_price" id="unite_price" class="form-control">
-                    {loop $arrPriceUnit $v}<option value="{$v}" {if $arrPubInfo['unite_price']==$v}selected{/if}>/{$v} </option>
-                    {/loop}
-                </select>
-            </div>
-
-       </div>
+ 
 
 	   <div class="form-group">
             <label for="service_time" class="col-sm-3 control-label">完成工作周期 <span class="text-danger">*</span></label>
@@ -212,7 +197,7 @@
           </div>
           <!-- form-group end -->
 
-          <div class="form-group">
+          <!-- <div class="form-group">
             <div class="col-sm-offset-3 col-sm-6">
               <div class="checkbox">
               <label>
@@ -220,14 +205,14 @@
               </label>
             </div>
             </div>
-          </div>
+          </div> -->
           <!-- form-group end -->
 
         </form>
-        <div class="release-agreement hidden">
+        <!-- <div class="release-agreement hidden">
           <div class="agreement-header">
             <h2 class="agreement-title">《服务出售协议》</h2>
           </div>
-          <p>   <!--{tag 服务出售协议}--> </p>
-        </div>
+          <p>   {tag 服务出售协议} </p>
+        </div> -->
       </div>
