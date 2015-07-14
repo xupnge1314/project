@@ -1,0 +1,1 @@
+<?php keke_tpl_class::checkrefresh('', '1436586368' );?><?php if(is_array($datalist)) { foreach($datalist as $k => $v) { ?><div data-img="<?php echo $v['ad_file'];?>"><a href="<?php echo $v['ad_url'];?>" data-video="false" target="_blank" title="<?php echo $v['ad_name'];?>"></a></div><?php } } ?><?php keke_tpl_class::ob_out();?>

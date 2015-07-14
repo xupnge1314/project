@@ -1,0 +1,147 @@
+<!--
+<div class="home-footer">
+  <div class="container">
+    <dl class="item">
+      <dt>关于我们</dt>
+      <dd>
+      <a href="">公司简介</a>
+        <a href="">发展历程</a>
+        <a href="">平台公告</a>
+        <a href="">联系方式</a>
+      </dd>
+    </dl>
+    <dl class="item">
+      <dt>诚信保障</dt>
+      <dd>
+        <a href="">实名认证</a>
+        <a href="">银行认证</a>
+        <a href="">身份认证</a>
+        <a href="">邮箱认证</a>
+      </dd>
+    </dl>
+    <dl class="item">
+      <dt>交易保障</dt>
+      <dd>
+        <a href="">支付方式</a>
+        <a href="">担保交易</a>
+        <a href="">交易维权</a>
+        <a href="">违规处理</a>
+      </dd>
+    </dl>
+    <dl class="item">
+      <dt>关注我们</dt>
+      <dd>
+        <a href="#">新浪微博</a>
+        <a href="#">腾讯微博</a>
+        <a href="#">投诉建议</a>
+      </dd>
+    </dl>
+    <dl class="item">
+      <dt>微信二维码</dt>
+      <dd>
+        <a href="" target="_blank">
+          <img src="" width="85" height="85"></a>
+        </dd>
+      </dl>
+
+      <div class="item">
+        <p><strong class="phone-num">0755-400000</strong></p>
+        <div class="line"></div>
+        <p class="ontime">周一至周日9:00 - 23:00</p>
+
+        <p><button class="btn">
+          <i class="fa fa-headphones"> </i>
+          <a target="_blank" href=""> 联系在线客服</a></button>
+        </p>
+      </div>
+      
+      <ul class="friend-link">
+        <li><strong>友情链接</strong></li>
+        {loop $arrFlink $k $v}
+            <li><a href="{$v['link_url']}" target="_blank">{$v['link_name']}</a></li>
+        {/loop}
+      </ul>
+
+      <!-- 只在首页显示 friend-link end  -->
+      <!--
+  </div>
+</div>-->
+
+<div class="footer">
+  <div class="container">
+      <ul class="footer-link">
+      {loop $_footerAbouts $k $v}
+        <li><a href="{if $v['art_source']}{$v['art_source']}{else}index.php?do=single&id={$v['art_id']}{/if}" target="_blank">{$v['art_title']}</a></li>
+        {/loop}
+		<li><a href="index.php?do=map" target="_blank">网站地图</a></li>
+		<li><a href="index.php?do=rss" target="_blank">RSS订阅</a></li>
+      </ul>
+      <!-- footer-link end -->
+      <div class="footer-copyright">
+        <p>{if $basic_config['company']} {$basic_config['company']}{/if} {if $basic_config['address']}地址:{$basic_config['address']}{/if} {if $basic_config['phone']}电话:{$basic_config['phone']}{/if}</p>
+        <p>{if $basic_config['copyright']}Powered by 时时测 {$basic_config['copyright']}{/if} {if $basic_config['filing']} <a href="http://icp.valu.cn/" target="_blank">{$basic_config['filing']}</a>{/if}</p>
+        <p>{if $basic_config['stats_code']}<!--{eval echo stripslashes(stripslashes($basic_config['stats_code']));}-->{/if}</p>
+      </div>
+      <!-- footer-copyright end -->
+  </div><!-- container end -->
+</div><!-- footer end -->
+
+
+<div id="fix-box" style="display:none;">
+  <a id="top" href="javascript:void(0);"><i class="fa fa-angle-up"></i></a>
+</div>
+<!-- #fix-box end -->
+
+
+
+
+
+{if $uid}
+   
+    
+	<!--{eval kekezu::update_oltime($uid,$username)}-->
+	
+	
+{/if}
+
+
+
+<script type="text/javascript">
+$(function(){
+  $('.color-selected .nav-sub-list a').click(function() {
+    var css = $(this).attr('data-css');
+    var color = $(this).attr('data-rel');
+    $('.nav-item-link span.style-color').removeClass().addClass('style-color '+ color);
+    $('#active-style').attr('href', 'tpl/default/'+ css +'/style.css');
+    $('#active-style-user').attr('href', 'tpl/default/'+ css +'/user.css');
+    $('#active-style-store').attr('href', 'tpl/default/'+ css +'/store.css');
+    $('#active-style-home').attr('href', 'tpl/default/'+ css +'/home.css');
+  });
+})
+  
+</script>
+
+
+<script type="text/javascript">
+var uid='{$uid}';
+var UseIm= false;
+var actionDo = '{$do}';
+var username='{$username}';
+var auid = '{$oauth_user_info[account]}';
+var atype ='{$wb_type}';
+var sessionId = "<!--{eval echo session_id();}-->";
+
+$(function(){
+    $("img.lazy").lazyload({
+        effect: "fadeIn"
+    });
+});
+
+{if $exec_time_traver}
+$(function(){
+   $.get('js.php?op=time&r='+Math.random());
+})
+{/if}
+</script>
+</body>
+</html>

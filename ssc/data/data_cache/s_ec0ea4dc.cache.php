@@ -1,0 +1,1 @@
+<?php 'a:3:{s:19:\"__mp_cache_contents\";a:2:{i:1;a:2:{s:7:\"shop_id\";s:1:\"1\";s:3:\"uid\";s:1:\"1\";}i:2;a:2:{s:7:\"shop_id\";s:1:\"2\";s:3:\"uid\";s:1:\"2\";}}s:18:\"__mp_cache_created\";i:1436589929;s:23:\"__mp_cache_dependencies\";N;}';

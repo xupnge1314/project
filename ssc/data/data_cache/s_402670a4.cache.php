@@ -1,0 +1,1 @@
+<?php 'a:3:{s:19:\"__mp_cache_contents\";a:6:{s:3:\"uid\";s:2:\"42\";s:8:\"username\";s:6:\"xufang\";s:8:\"password\";s:32:\"e10adc3949ba59abbe56e057f20f883e\";s:9:\"rand_code\";s:6:\"xb06kb\";s:5:\"email\";s:13:\"sfsfds@dc.com\";s:9:\"user_type\";s:1:\"1\";}s:18:\"__mp_cache_created\";i:1436599758;s:23:\"__mp_cache_dependencies\";N;}';

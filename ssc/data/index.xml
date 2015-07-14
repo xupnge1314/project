@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="www.kppw.com" -->
+<rss version="2.0">
+    <channel>
+        <title>KPPW系统RSS标题</title>
+        <description>gsdfgsfdgsdfgfd</description>
+        <link>http://localhost/ssc</link>
+        <lastBuildDate>2015-06-05 21:23:08</lastBuildDate>
+        <generator>www.kppw.com</generator>
+        <item>
+            <title>[任务]鼠标测试</title>
+            <link>http://localhost/ssc/index.php?do=task&amp;id=5</link>
+            <description>发送到发送到佛挡杀佛...</description>
+        </item>
+        <item>
+            <title>[任务]rrrrrr</title>
+            <link>http://localhost/ssc/index.php?do=task&amp;id=4</link>
+            <description>dddddddddddddddd...</description>
+        </item>
+        <item>
+            <title>[任务]测试鼠标</title>
+            <link>http://localhost/ssc/index.php?do=task&amp;id=2</link>
+            <description>测试鼠标测试鼠标测试鼠标测试鼠标测试鼠标测试鼠标测试鼠标测试鼠标测试鼠标测试鼠标测试鼠标测试鼠标测试...</description>
+        </item>
+        <item>
+            <title>[任务]测试玩具</title>
+            <link>http://localhost/ssc/index.php?do=task&amp;id=1</link>
+            <description>测试玩具测试玩具测试玩具...</description>
+        </item>
+        <item>
+            <title>[资讯]任务易圈子：归还威客的话语权</title>
+            <link>http://localhost/ssc/index.php?do=article&amp;id=350</link>
+            <description>　　2015，任务易全新改版，重磅推出威客行业垂直搜索服务。不仅如此，新版任务易借助客客团队多年的项目经验和行...</description>
+        </item>
+        <item>
+            <title>[资讯]任务易：实现威客、雇主、平台的三方共赢</title>
+            <link>http://localhost/ssc/index.php?do=article&amp;id=349</link>
+            <description>　　目前，国内共有近百家的威客网站，威客人数超过3000万人，并呈现逐年递增的趋势。在市场快速增长的同时，越来越...</description>
+        </item>
+        <item>
+            <title>[资讯]用亮剑精神 直面高价任务</title>
+            <link>http://localhost/ssc/index.php?do=article&amp;id=348</link>
+            <description>　　忘了是从什么时候开始接触威客，自然而然的存在总是不容易让人察觉。就像每天呼吸的空气，上班下班都会见到...</description>
+        </item>
+        <item>
+            <title>[资讯]触电A5 任务易不得不说的事</title>
+            <link>http://localhost/ssc/index.php?do=article&amp;id=347</link>
+            <description>　　近期，A5站长网上一篇名为《任务易：实现威客、雇主、平台的三方共赢》的文章引起了很多业内人士的关注，作为...</description>
+        </item>
+        <item>
+            <title>[资讯]KPPW2.6来啦 刷新你的建站体验</title>
+            <link>http://localhost/ssc/index.php?do=article&amp;id=346</link>
+            <description>　　相信很多站长对于KPPW都不会陌生，KPPW是客客团队主打的开源威客系统，同类开源建站产品的领跑者!近期，全新K...</description>
+        </item>
+        <item>
+            <title>[资讯]中国威客理论创始人——刘锋</title>
+            <link>http://localhost/ssc/index.php?do=article&amp;id=345</link>
+            <description>　　刘锋：中国科学院虚拟经济与数据科学研究中心客座研究员，威客理论和互联网进化论创始人，著有《互联网进化论...</description>
+        </item>
+    </channel>
+</rss>
