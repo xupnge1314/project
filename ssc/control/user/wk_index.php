@@ -32,7 +32,7 @@ foreach ($arrMyFeeds as $key => $v){
 				$a="你向任务<a href='".$arrDt['event']['url']."'>".$arrDt['event']['content']."</a>投递了稿件";
 				break;
 			case 'task_baoming' :
-				$a="你报名了任务<a href='".$arrDt['event']['url']."'>".$arrDt['event']['content']."</a>";
+				$a="你报价了需求<a href='".$arrDt['event']['url']."'>".$arrDt['event']['content']."</a>";
 				break;
 			case 'work_accept' :
 				$a="你在任务<a href='".$arrDt['event']['url']."'>".$arrDt['event']['content']."</a>中标了";
@@ -47,7 +47,8 @@ foreach ($arrMyFeeds as $key => $v){
 				$a="你".$arrDt['action']['content']."<a href='".$arrDt['event']['url']."'>".$arrDt['event']['content']."</a>";
 				break;
 			case 'gy_bei' :
-				$a="<a href='".$arrDt['feed_username']['url']."'>".$arrDt['feed_username']['content']."</a>向你发来雇佣申请";
+				$a="<a href='".$arrDt['feed_username']['url']."'>".$arrDt['feed_username']['content']."</a>向你发来了报价请求
+";
 				break;
 		}
 		$arr[$key]['dongtai']=$a;
