@@ -6,19 +6,20 @@ if($gUid != $id){
 	$arrOrderProgress = array(
 			1=>array(
 					'step'=>'step1',
-					'state'=>'填写需求'
+					'state'=>'测试需求'
 			),
 			2=>array(
 					'step'=>'step2',
-					'state'=>'等待对方确认'
+					'state'=>'等待机构确认'
 			),
 			3=>array(
 					'step'=>'step3',
-					'state'=>'托管赏金'
+					'state'=>'托管费用'
 			),
 			4=>array(
 					'step'=>'step4',
-					'state'=>'等待对方完成'
+					'state'=>'等待对方完成
+'
 			),
 			5=>array(
 					'step'=>'step5',
@@ -26,7 +27,7 @@ if($gUid != $id){
 			),
 			6=>array(
 					'step'=>'step6',
-					'state'=>'双方互评'
+					'state'=>'互评'
 			)
 	);
 }
