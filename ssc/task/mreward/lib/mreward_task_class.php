@@ -1150,7 +1150,7 @@ public function getProjectProgressDesc() {
 			case 9 :
 				$button['del'] = array(
 						'click'=>"confirmOp('确定删除？','$site$url&action=delWork&objId=$w_id',true)",
-						'desc'=>$_lang ['delete'].'稿件',
+						'desc'=>$_lang ['delete'],
 						'href'=>'javascript:void(0);'
 				);
 				break;

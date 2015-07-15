@@ -1106,7 +1106,7 @@ class dtender_task_class extends keke_task_class {
 			case 9 :
 				$button ['del'] = array (
 						'click' => "confirmOp('确定删除？','$site$url&action=delWork&worktype=bid&objId=$w_id',true)",
-						'desc' => $_lang ['delete'] . '稿件',
+						'desc' => $_lang ['delete'],
 						'href' => 'javascript:void(0);' 
 				);
 				break;

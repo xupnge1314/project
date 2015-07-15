@@ -186,7 +186,7 @@ $lang = array(
 	'task_tag'=>'任务标签',
 	'task_hall'=>'任务大厅',
 	'task_delay'=>'任务延期',
-	'view_work'=>'查看稿件',
+	'view_work'=>'查看',
 	'delay_makeup'=>'延期加价',
 	'confirm_work'=>'确认工作',
 	/*任务模型名字*/

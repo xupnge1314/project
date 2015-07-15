@@ -22,38 +22,38 @@ $strServiceIds and $strServiceComp = $arrGoodsWait = db_factory::query("SELECT  
 $arrCashCoves = TaskClass::getTaskCashCove();
 $strArr="'task_tur_bei','task_baoming_bei','buy_goods','buy_service','pub_task','gy'";
 $strsqls="select * from ".TABLEPRE."witkey_feed where uid=".$gUid." and  feedtype in (".$strArr.")  order by feed_time desc limit 0,3";
-$arrMyFeeds =db_factory::query($strsqls);
+$arrMyFeeds =db_factory::query($strsqls);//var_dump($arrMyFeeds);
 if($arrMyFeeds){
-foreach ($arrMyFeeds as $key => $v){
-	$arrDt = unserialize ( $v ['title'] );
-	if (is_array ( $arrDt )) {
-		foreach ( $arrDt as $k1 => $v1 ) {
-			$arrDt [$k1] = $v1;
+	foreach ($arrMyFeeds as $key => $v){
+		$arrDt = unserialize ( $v ['title'] );//var_dump($arrDt);
+		if (is_array ( $arrDt )) {
+			foreach ( $arrDt as $k1 => $v1 ) {
+				$arrDt [$k1] = $v1;//var_dump($arrDt [$k1]);
+			}
 		}
+			switch ($v['feedtype']) {
+				case 'task_tur_bei' :
+					$a="<a href='".$arrDt['feed_username']['url']."'>".$arrDt['feed_username']['content']."</a>向你的任务<a href='".$arrDt['event']['url']."'>".$arrDt['event']['content']."</a>投递了稿件";
+					break;
+				case 'task_baoming_bei' :
+					$a="<a href='".$arrDt['feed_username']['url']."'>".$arrDt['feed_username']['content']."</a>报名了你的任务<a href='".$arrDt['event']['url']."'>".$arrDt['event']['content']."</a>";
+					break;
+				case 'buy_goods' :
+					$a="你购买了<a href='".$arrDt['feed_username']['url']."'>".$arrDt['feed_username']['content']."</a>的文件<a href='".$arrDt['event']['url']."'>".$arrDt['event']['content']."</a>";
+					break;
+				case 'buy_service' :
+					$a="你购买了<a href='".$arrDt['feed_username']['url']."'>".$arrDt['feed_username']['content']."</a>的服务<a href='".$arrDt['event']['url']."'>".$arrDt['event']['content']."</a>";
+					break;
+				case 'pub_task' :
+					$a="你发布了任务<a href='".$arrDt['event']['url']."'>".$arrDt['event']['content']."</a>";
+					break;
+				case 'gy' :
+					$a="你向<a href='".$arrDt['feed_username']['url']."'>".$arrDt['feed_username']['content']."</a>发起了雇佣";
+					break;
+			}
+			$arr[$key]['dongtai']=$a;
+		$arr[$key]['time']=$v['feed_time'];
 	}
-		switch ($v['feedtype']) {
-			case 'task_tur_bei' :
-				$a="<a href='".$arrDt['feed_username']['url']."'>".$arrDt['feed_username']['content']."</a>向你的任务<a href='".$arrDt['event']['url']."'>".$arrDt['event']['content']."</a>投递了稿件";
-				break;
-			case 'task_baoming_bei' :
-				$a="<a href='".$arrDt['feed_username']['url']."'>".$arrDt['feed_username']['content']."</a>报名了你的任务<a href='".$arrDt['event']['url']."'>".$arrDt['event']['content']."</a>";
-				break;
-			case 'buy_goods' :
-				$a="你购买了<a href='".$arrDt['feed_username']['url']."'>".$arrDt['feed_username']['content']."</a>的文件<a href='".$arrDt['event']['url']."'>".$arrDt['event']['content']."</a>";
-				break;
-			case 'buy_service' :
-				$a="你购买了<a href='".$arrDt['feed_username']['url']."'>".$arrDt['feed_username']['content']."</a>的服务<a href='".$arrDt['event']['url']."'>".$arrDt['event']['content']."</a>";
-				break;
-			case 'pub_task' :
-				$a="你发布了任务<a href='".$arrDt['event']['url']."'>".$arrDt['event']['content']."</a>";
-				break;
-			case 'gy' :
-				$a="你向<a href='".$arrDt['feed_username']['url']."'>".$arrDt['feed_username']['content']."</a>发起了雇佣";
-				break;
-		}
-		$arr[$key]['dongtai']=$a;
-	$arr[$key]['time']=$v['feed_time'];
-}
 }
 if($strFriends[0]['fuids']){
 	$arrFeeds = kekezu::get_feed(" uid in (".$strFriends[0]['fuids'].") and (feedtype='pub_task' or feedtype='pub_service')",'feed_time desc','5');
