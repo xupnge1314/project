@@ -77,9 +77,9 @@
             {/if}
             
             
-			{if $v['service_status']==2&&TOOL=='TRUE'}
-		    <a  href="javascript:payitem('goods','{$v[service_id]}','{$uid}');void(0);">增值工具</a>
-			{/if}
+			<!-- {if $v['service_status']==2&&TOOL=='TRUE'}
+              <a  href="javascript:payitem('goods','{$v[service_id]}','{$uid}');void(0);">增值工具</a>
+      {/if} -->
             <a href="javascript:opSingle('{$strUrl}&objId={$v['service_id']}&action=delSingle&intPage={$intPage}');void(0);">删除</a>
             </td>
           </tr>
