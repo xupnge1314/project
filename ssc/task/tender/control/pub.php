@@ -37,10 +37,10 @@ switch ($step) {
 					kekezu::show_msg($tips,NULL,NULL,NULL,'error');
 				}
 			}
-			if (($intEndDate < $intMinDay)||($intEndDate > $intMaxDay)) {
+			/*if (($intEndDate < $intMinDay)||($intEndDate > $intMaxDay)) {
 				$tips['errors']['txt_task_day'] = '当前预算允许最小天数为:'.intval($arrConfig['zb_min_time']).'天,最大截止时间：'.$strMaxDay;
 				kekezu::show_msg($tips,NULL,NULL,NULL,'error');
-			}
+			}*/
 			$arrPubInfo and $_POST = array_merge ( $arrPubInfo, $_POST );
 			$objRelease->save_task_obj ( $_POST, $stdCacheName ); 
 			kekezu::show_msg($tips,$strUrl.'&step=step2',NULL,NULL,'ok');

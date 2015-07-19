@@ -28,7 +28,7 @@
 
   <div class="manuscript-detail">
     <h2 class="manuscript-title">
-      稿件详细
+      报告详细
     </h2>
     <div class="manuscript-body">
       <div class="manuscript-status">
@@ -66,14 +66,14 @@
     </div>
     <div class="manuscript-item-footer">
           <ul class="manuscript-meta">
-            <li class="manuscript-meta-item">投稿人：<a href="index.php?do=seller&id=$arrWorkInfo['uid']">$arrWorkInfo['username']</a> </li>
+            <li class="manuscript-meta-item">投标人：<a href="index.php?do=seller&id=$arrWorkInfo['uid']">$arrWorkInfo['username']</a> </li>
             <li class="manuscript-meta-item">编号 #{$arrWorkInfo['work_id']} </li>
-            <li class="manuscript-meta-item">投稿时间：<!--{eval echo date('Y-m-d H:i:s',$arrWorkInfo['work_time'])}--></li>
+            <li class="manuscript-meta-item">投标时间：<!--{eval echo date('Y-m-d H:i:s',$arrWorkInfo['work_time'])}--></li>
             <li class="manuscript-meta-item"><span class="marked marked-see">
             	{if $arrWorkInfo['is_view']||$gUid==$arrTaskInfo['uid']}
-					雇主已浏览
+					需方已浏览
 				{else}
-					雇主未浏览
+					需方未浏览
 				{/if}</span></li>
             {if  $arrProcess_can['work_report']&&$gUid!=$arrWorkInfo['uid']}
 		            <li class="manuscript-meta-item">

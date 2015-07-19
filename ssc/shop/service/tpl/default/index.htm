@@ -74,17 +74,15 @@
                 <a href="javascript:sendMessage({$arrServiceInfo['uid']});void(0);" class="btn btn-default btn-sm btn-block">联系我</a>
               {/if}
                 </div>
-                {if $gUid != $arrServiceInfo['uid']}
+                <!-- {if $gUid != $arrServiceInfo['uid']}
                 <div class="col-sm-6">
                 	{if $intFollow}
 				  				  <a href="javascript:cancelCollect({$arrServiceInfo[uid]});void(0);"  class="btn btn-success btn-sm" id="follow{$arrServiceInfo[uid]}">取消收藏</a>
 							  {else}
 				              <a href="javascript:addCollect({$arrServiceInfo[uid]});void(0);" class="btn btn-default btn-sm btn-block" id="follow{$arrServiceInfo[uid]}"><i class="fa fa-plus"></i> 收藏店铺</a>
 							  {/if}
-							  <!--
-                  <a href="index.php?do=seller&id={$arrServiceInfo['uid']}" class="btn btn-default btn-sm btn-block">收藏店铺</a>-->
                 </div>
-				{/if}
+				{/if} -->
               </div>
 
             </div>
@@ -279,7 +277,7 @@
 
 				              <a href="index.php?do=seller&id={$arrServiceInfo['uid']}" class="btn btn-primary btn-sm">进入店铺</a>
 
-				              <div id="sc" class="btn-group">
+				              <!-- <div id="sc" class="btn-group">
 				             {if $gUid!=$arrServiceInfo['uid']}
 				                {if $intFavorite&&$gUid}
 				                 <a title='取消收藏' class='btn btn-primary btn-sm' onclick="test();" >取消收藏</a>
@@ -287,7 +285,7 @@
 				                 <a  title="收藏" onclick="collect();"  class="btn btn-primary btn-sm">我要收藏</a>
 				                {/if}
 				              {/if}
-				              </div>
+				              </div> -->
 				             
 				        </div>
 				        {if $gUid&&$gUid!=$arrOwnerInfo['uid']}
@@ -373,7 +371,7 @@
 <script src="static/js/sco.confirm.js"></script>
 <script type="text/javascript" src="shop/service/tpl/default/service.js"></script>
 <script type="text/javascript">
-function collect(){
+/*function collect(){
 	if(checkLogin()){
 		$.ajax({
 			   type: "GET",
@@ -392,7 +390,7 @@ function test(){
 	$("#sc").empty();
 	$("#sc").append("<a href='javascript:void(0);'  onclick='collect();' title='我要收藏'  class='btn btn-primary btn-sm btn-sm'>我要收藏</a>");
 }
-}
+}*/
 function sc(url){
 	formSubmit(url, 'url');
 }

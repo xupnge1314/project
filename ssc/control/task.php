@@ -61,14 +61,14 @@ if ($intId) {
 	}
 	$arrCashCoves = TaskClass::getTaskCashCove();
 	$arrBreadcrumbs = array(
-		1=>array('url'=>'index.php?do=tasklist','name'=>'任务大厅'),
+		1=>array('url'=>'index.php?do=tasklist','name'=>'需求大厅'),
 		2=>array('url'=>'index.php?do=tasklist&pd='.$arrTaskInfo['indus_pid'],'name'=>$indus_p_arr[$arrTaskInfo['indus_pid']]['indus_name']),
 		3=>array('url'=>'index.php?do=tasklist&pd='.$arrTaskInfo['indus_pid'].'&i='.$arrTaskInfo['indus_id'],'name'=>$indus_arr[$arrTaskInfo['indus_id']]['indus_name']),
 	);
 	$arrWorkFlag = array(
-			1=>array('id'=>2,'style'=>'fa-trophy','name'=>'一等奖'),
+			/*1=>array('id'=>2,'style'=>'fa-trophy','name'=>'一等奖'),
 			2=>array('id'=>2,'style'=>'fa-trophy','name'=>'二等奖'),
-			3=>array('id'=>2,'style'=>'fa-trophy','name'=>'三等奖'),
+			3=>array('id'=>2,'style'=>'fa-trophy','name'=>'三等奖'),*/
 			4=>array('id'=>4,'style'=>'fa-check-circle','name'=>'中标'),
 			5=>array('id'=>5,'style'=>'fa-dot-circle-o','name'=>'入围'),
 			6=>array('id'=>6,'style'=>'fa-check-circle','name'=>'合格'),
@@ -108,8 +108,8 @@ if ($intId) {
 		$arrSearchStatus['1']  = '好评';
 		$arrSearchStatus['2']  = '中评';
 		$arrSearchStatus['3']  = '差评';
-		$arrSearchStatus['101'] = '来自雇主';
-		$arrSearchStatus['102'] = '来自威客';
+		$arrSearchStatus['101'] = '来自需方';
+		$arrSearchStatus['102'] = '来自服务商';
 	}
 if($arrModelInfo['open_custom'] =='1'){
 	$c_open = 1;

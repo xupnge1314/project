@@ -219,7 +219,9 @@
               </label>
               <label class="radio-inline">
                 <input type="radio" name="task_ext_6" id="task_ext_6" value="专票"> 专票
-              </label><br/><font color="red">*注：如开‘专票’，请准备好开票资料和税务登记副本及组织机构代码证</font>
+              </label><br/>
+              <font color="red" FONT-SIZE='12px'>*注：如开“普票”请准备好税务登记证副本和组织机构代码证 </font><br/>
+              <font color="red" FONT-SIZE='12px'>如开“专票”请准备好开票资料和一般纳税人证明 </font>
             </div>
             <div class="col-sm-3">
               <p class="form-control-static"> </p>
@@ -305,13 +307,13 @@
             <label for="txt_mobile" class="col-sm-3 control-label">联系人 <span class="text-danger">*</span></label>
             <div class="col-sm-6">
               <input type="text" class="form-control" id="txt_username" name="txt_username" value="" placeholder="联系人">
-            </div>
+            </div></div>
 
           <div class="form-group">
             <label for="txt_mobile" class="col-sm-3 control-label">联系电话 <span class="text-danger">*</span></label>
             <div class="col-sm-6">
               <input type="text" class="form-control" id="txt_mobile" name="txt_mobile" value="{if $arrPubInfo['txt_mobile']}{$arrPubInfo['txt_mobile']}{else}{$user_info['mobile']}{/if}" placeholder="手机号码">
-            </div>
+            </div></div>
 
             <div class="form-group">
             <label for="txt_mobile" class="col-sm-3 control-label">电子邮箱 <span class="text-danger">*</span></label>
@@ -362,13 +364,115 @@
           
 
           <div class="form-group">
-            <label for="tar_content" class="col-sm-3 control-label">备注 <br/>（其他要求或者特殊要求请备注
-） <span class="text-danger"></span></label>
+            <label for="tar_content" class="col-sm-3 control-label">备注 <br/> <span class="text-danger"></span></label>
             <div class="col-sm-6">
               <textarea id="tar_content" name="tar_content"  placeholder="备注">{$arrPubInfo['tar_content']}</textarea>
             </div>
             <div class="col-sm-3">
               <p class="form-control-static">内容不的少于20字</p>
+              <p class="form-control-static">案例：</p>
+              <DIV id='newsearchtop' >
+              <UL>
+                <LI><DIV class='newsearchinsider' id='v1' onMouseOver="javascript:doClick(this)"><A href="/">测试</A></DIV></LI>
+                <LI><DIV class='newsearchinsidew' id='v2' onMouseOver="javascript:doClick(this)"><A href="#">认证</A></DIV></LI>  
+              </UL>
+              </DIV>
+
+             <DIV id='newsearchbottom'>
+                <DIV id='e1'><DIV id='left'><DIV id='searchleft1'>
+
+                  <p class="form-control-static">1、 样品尺寸（长，宽，高）：</p>
+                  <p class="form-control-static">2、 样品重量：</p>
+                  <p class="form-control-static">3、 测试位置：</p>
+                  <p class="form-control-static">4、 测试条件：</p>
+                  <p class="form-control-static">5、 样品功耗：</p>
+                  <p class="form-control-static">6、 机构资质要求（如要求有CNAS）：</p>
+                  <p class="form-control-static">7、 其他特殊要求：</p>
+
+                </DIV></DIV></DIV>
+                <DIV id='e2'><DIV id='left'><DIV id='searchleft1'>
+
+                  <p class="form-control-static">1、 BOM表（材料清单）</p>
+                  <p class="form-control-static">2、 产品使用的用途和场合如：<br/>
+                  工业用，船舶用，民用消费电子等。</p>
+                  <p class="form-control-static">3、 原理图（线路图）、电性能<br/>表、PCB结构图或爆炸图、配料表等</p>
+                  <p class="form-control-static">4、 产品的照片、使用说明书、安<br/>全说明或安装说明等。</p>
+
+                </DIV></DIV></DIV>
+              </DIV>
+
+
+              <STYLE type=text/css>
+
+ #search {
+  CLEAR: both; WIDTH: 540px; HEIGHT: 50px
+}
+ #search #left {
+  FLOAT: left
+}
+ #search #searchleft {
+  PADDING-LEFT: 30px; FLOAT: left; PADDING-TOP: 12px; HEIGHT: 35px; TEXT-ALIGN: left
+}
+ #search #searchleft1 {
+  PADDING-LEFT: 30px; PADDING-TOP: 12px; HEIGHT: 35px; TEXT-ALIGN: left
+}
+FORM {
+  PADDING-RIGHT: 0px; DISPLAY: block; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+ #newsearch {
+  WIDTH: 540px; HEIGHT: 30px
+}
+ #newsearchtop {
+  WIDTH: 540px; HEIGHT: 25px; TEXT-ALIGN: right
+}
+ #newsearchtop LI {
+  FONT-SIZE: 12px; FLOAT: left
+}
+.newsearchinsidew {
+ margin-left: 15px; CURSOR: hand; LINE-HEIGHT: 21px;  TEXT-ALIGN: center; }
+
+ .newsearchinsider {
+ margin-left: 15px; CURSOR: hand; LINE-HEIGHT: 21px;  TEXT-ALIGN: center; }
+
+#newsearchbottom {
+  POSITION: relative; HEIGHT: 50px;
+}
+#newsearchbottom #e1 {Z-INDEX: 0; LEFT: 0px;FONT-SIZE: 12px;  VISIBILITY: visible; WIDTH: 538px; POSITION: absolute; TOP: 0px; HEIGHT: 30px}
+#newsearchbottom #e2 {Z-INDEX: 0; LEFT: 0px;FONT-SIZE: 12px;  VISIBILITY: hidden; WIDTH: 538px; POSITION: absolute; TOP: 0px; HEIGHT: 30px}
+UL {PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none}
+</STYLE>
+<SCRIPT>
+function doClick(o){
+   o.className="newsearchinsider";
+   var j;
+   var id;
+   var e;
+   for(var i=1;i<=7;i++){
+     id ="v"+i;
+     j = document.getElementById(id);
+     e = document.getElementById("e"+i);
+     if(id != o.id){
+       j.className="newsearchinsidew";
+       e.style.visibility = "hidden";
+     }else{
+      e.style.visibility = "visible";
+     }
+   }
+  var id = o.id+""; 
+  var dd=id.substring(1,2);
+  var curForm = document.getElementById("FormSearch"+dd);
+  var inputv ;
+  for(var i=1;i<=7;i++){
+  var otherForm = document.getElementById("FormSearch"+i);
+  }
+  
+}
+function doOut(o){
+ 
+}
+</SCRIPT>
+
+              
             </div>
          <script type="text/javascript" src="{$_K['siteurl']}/static/js/ueditor/ueditor.config.js"></script>
           <!-- 编辑器源码文件 -->

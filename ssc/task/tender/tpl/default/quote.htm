@@ -83,16 +83,16 @@
 		  
 		  {if $arrConfig['work_hidden']}
 			<div class="form-group">
-            <label for="work_hidden">是否隐藏我的稿件</label>
+            <label for="work_hidden">是否隐藏我的报价</label>
 			<label for="work_hidden_2"><input type="radio" name="work_hidden" id="work_hidden_2" value="1">是</label>
             <label for="work_hidden_1"><input type="radio" checked="checked" name="work_hidden" id="work_hidden_1" value="0">否</label>
-			<span>隐藏稿件后您的报名信息只有您和雇主可见</span>
+			<span>隐藏报价后您的报名信息只有您和雇主可见</span>
           </div>
 		  {/if}
 
           <div class="text-center">
             <a href="javascript:history.back();">返回</a>
-            <button type="submit" class="btn btn-default">交稿</button>
+            <button type="submit" class="btn btn-default">报价</button>
           </div>
         </form>
       </div>
@@ -122,7 +122,7 @@ $(function(){
 				decimal:'请输入有效的工作周期'
 			},
 	    	tar_content: {
-				not_empty: "请输入稿件描述",
+				not_empty: "请输入报价描述",
 				min_length: "最少输入10字符",
 				max_length: "最多可以输入:1000个字）"
 			}

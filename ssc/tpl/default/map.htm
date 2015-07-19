@@ -29,12 +29,12 @@
   	<div class="row">
   		<div class="map_left">
   			<p class="left-body-i"><i class="fa fa-tasks"></i></p>
-	  		<p class="left-body-tilte">任务大厅</p>
+	  		<p class="left-body-tilte">需求大厅</p>
 	  	</div>
   		<div class="map_right">
   			<ul>
   				<li>
-  					<b>任务模式</b>
+  					<b>需求模式</b>
   					<span>
   						{loop $arrTaskNavs $k $v}
   							<a href="{$strUrlTask}&m={$v['model_id']}">{$v['model_name']}</a>
@@ -50,7 +50,7 @@
   					</span>
   				</li> -->
 				<li>
-  					<b>任务状态</b>
+  					<b>需求状态</b>
   					<span>
   						{loop $arrTaskStatus $k $v}
   							<a href="{$strUrlTask}&s=$k">$v</a>

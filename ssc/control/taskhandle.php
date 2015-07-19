@@ -50,9 +50,9 @@ $arrTaskInfo= $objTask->_task_info;
 $arrProcess_can = $objTask->process_can ();
 $arrConfig = $objTask->_task_config;
 $arrWorkFlag = array(
-		1=>array('id'=>2,'style'=>'fa-trophy','name'=>'一等奖'),
+		/*1=>array('id'=>2,'style'=>'fa-trophy','name'=>'一等奖'),
 		2=>array('id'=>2,'style'=>'fa-trophy','name'=>'二等奖'),
-		3=>array('id'=>2,'style'=>'fa-trophy','name'=>'三等奖'),
+		3=>array('id'=>2,'style'=>'fa-trophy','name'=>'三等奖'),*/
 		4=>array('id'=>4,'style'=>'fa-check-circle','name'=>'中标'),
 		5=>array('id'=>2,'style'=>'fa-dot-circle-o','name'=>'入围'),
 		6=>array('id'=>3,'style'=>'fa-check-circle','name'=>'合格'),
@@ -77,8 +77,8 @@ switch ($op) {
 				$tips['errors']['strTarComment'] = $_lang['sensitive_word'];
 				kekezu::show_msg ( $tips, NULL, NULL, NULL, 'error' );
 			}
-			$strContent=$arrTaskInfo['username'].'点评了您在<a href=index.php?do=task&id='.$taskId.'>'.$arrTaskInfo[task_title].'</a>中投递的稿件，<a href=index.php?do=task&id='.$taskId.'>快去看看吧</a>';
-			MsgClass::SendFeedMsg($wkuid, "您有新的稿件点评", $strContent);
+			$strContent=$arrTaskInfo['username'].'点评了您在<a href=index.php?do=task&id='.$taskId.'>'.$arrTaskInfo[task_title].'</a>中投递的报价，<a href=index.php?do=task&id='.$taskId.'>快去看看吧</a>';
+			MsgClass::SendFeedMsg($wkuid, "您有新的报价点评", $strContent);
 			if($objTask->set_work_comment ( 'work', $intWorkId, $strTarComment )){
 				$date = date('Y-m-d',time());
 				$time = date('H:i:s',time());
@@ -117,7 +117,7 @@ switch ($op) {
 			}
 			$resText = $objTask->work_hand ( $tar_content, $file_ids,$workhide,$work_hidden);
 			if($resText === true){
-				kekezu::show_msg ( '恭喜您，交稿成功', 'index.php?do=task&id='.$taskId, 3, NULL, 'ok' );
+				kekezu::show_msg ( '恭喜您，报价成功', 'index.php?do=task&id='.$taskId, 3, NULL, 'ok' );
 			}else{
 				kekezu::show_msg ( $resText, 'index.php?do=task&id='.$taskId, 3, NULL, 'fail' );
 			}

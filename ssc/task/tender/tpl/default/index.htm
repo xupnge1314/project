@@ -26,13 +26,13 @@
 					{/if}
 					<div class="btn-group">
 						<!--{eval $task_bid2=getTaskBid($arrTaskInfo['task_id'],$uid);}-->
-						{if $arrProcess_can['work_hand']&&!$task_bid2} <a href="index.php?do=taskhandle&op=quote&taskId={$arrTaskInfo['task_id']}" class="btn btn-primary btn-lg a-check-login">我要报价</a> {/if} {if $arrProcess_can['delay']&&$gUid} <a href="index.php?do=taskhandle&op=delay&taskId={$arrTaskInfo['task_id']}" class="btn btn-primary btn-lg">我要延期</a> {/if}
+						{if $arrProcess_can['work_hand']&&!$task_bid2} <a href="index.php?do=taskhandle&op=quote&taskId={$arrTaskInfo['task_id']}" class="btn btn-primary btn-lg a-check-login">我要报价</a> {/if} <!-- {if $arrProcess_can['delay']&&$gUid} <a href="index.php?do=taskhandle&op=delay&taskId={$arrTaskInfo['task_id']}" class="btn btn-primary btn-lg">我要延期</a> {/if} -->
 					</div>
-					<div class="btn-group visible-xs">
+					<!-- <div class="btn-group visible-xs">
 						{if $arrTaskInfo['favorite']} <a id="favorite_mobile_{$arrTaskInfo['task_id']}" href="javascript:cancelMobileFavorite('task',{$arrTaskInfo['task_id']});" title="取消收藏" class="action-collect on btn btn-default btn-lg"> <i class="fa fa-star"></i>
 						</a> {else} <a id="favorite_mobile_{$arrTaskInfo['task_id']}" href="javascript:addMobileFavorite('task',{$arrTaskInfo['task_id']});" title="收藏" class="action-collect btn btn-default btn-lg"> <i class="fa fa-star"></i>
 						</a> {/if}
-					</div>
+					</div> -->
 					<div class="btn-group visible-xs">
 						<a href="javascript:report(2,'task','{$arrTaskInfo['uid']}','{$arrTaskInfo['task_id']}','{$arrTaskInfo['task_id']}');void(0);" title="举报" class="action-report btn btn-default btn-lg"> <i class="fa fa-bell"></i>
 						</a>
@@ -62,7 +62,7 @@
 						
 						{if $gUid&&$gUid !=$arrTaskInfo['uid']}
 						<a href="javascript:sendMessage({$arrTaskInfo['uid']});void(0);" class="btn btn-default btn-xs">联系我</a>
-						{if $intFollow}
+						<!-- {if $intFollow}
 						<span class="btn-group">
 							<a href="javascript:void(0);" class="btn btn-success btn-xs disabled" role="button">
 								<i class="fa fa-check"></i>
@@ -75,7 +75,8 @@
 							<i class="fa fa-plus"></i>
 							加关注
 						</a>
-						{/if} {/if}
+						{/if} -->
+						 {/if}
 					</div>
 				</div>
 				<!-- detail-header-body end -->
@@ -189,11 +190,11 @@
 										+ ~(-new Date() / 36e5)];
 						</script>
 					</li>
-					 {if $gUid&&$gUid!=$arrTaskInfo['uid']}
+					 <!-- {if $gUid&&$gUid!=$arrTaskInfo['uid']}
 					<li class="for-user-item">{if $arrTaskInfo['favorite']} <a id="favorite{$arrTaskInfo['task_id']}" href="javascript:cancelFavorite('task',{$arrTaskInfo['task_id']});" title="取消收藏" class="action-collect on"> <i class="fa fa-star"></i>
 					</a> {else} <a id="favorite{$arrTaskInfo['task_id']}" href="javascript:addFavorite('task',{$arrTaskInfo['task_id']});" title="收藏" class="action-collect"> <i class="fa fa-star"></i>
 					</a> {/if}
-					</li> {/if}
+					</li> {/if} -->
 				</ul>
 			</div>
 			<!-- detail-footer end -->

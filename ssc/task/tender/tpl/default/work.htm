@@ -28,7 +28,7 @@
 			<div class="manuscript-item-content">
 				<div class="manuscript-item-body">
 					<h2 class="manuscript-item-title">
-						<i class="fa fa-user"></i> 投稿人: <a href="index.php?do=seller&id=$v['uid']" title="$v['username']">$v['username']</a>
+						<i class="fa fa-user"></i> 投标人: <a href="index.php?do=seller&id=$v['uid']" title="$v['username']">$v['username']</a>
 						<!--{eval $arrUserLeve=unserialize($v[seller_level])}-->
 						{$arrUserLeve['pic']}
 					</h2>
@@ -89,7 +89,7 @@
 					<div class="manuscript-comment">
 						<div id="div_comment{$v['bid_id']}">
 							{if $gUid == $arrTaskInfo['uid']||$v['comment']}
-							<h2 class="manuscript-item-title">稿件点评</h2>
+							<h2 class="manuscript-item-title">报价点评</h2>
 							{/if} {loop $v['comment'] $v1}
 							<dl class="manuscript-comment-item">
 								<dt class="manuscript-comment-item-title">
@@ -111,7 +111,7 @@
 							</div>
 							<div class="form-group">
 								<button type="button" onclick="workComment('{$v[task_id]}','{$v[bid_id]}',{$v[uid]});" class="btn btn-default btn-sm">
-									<i class="fa fa-comment"></i> 点评稿件
+									<i class="fa fa-comment"></i> 点评报价
 								</button>
 								<span class="text-success" id="tipsUser"></span>
 							</div>
@@ -124,9 +124,9 @@
 				<div class="manuscript-item-footer">
 					<ul class="manuscript-meta">
 						<li class="manuscript-meta-item">编号 #{$v[bid_id]}</li>
-						<li class="manuscript-meta-item">投稿时间： <!--{date('Y-m-d H:i:s',$v[bid_time])}-->
+						<li class="manuscript-meta-item">投标时间： <!--{date('Y-m-d H:i:s',$v[bid_time])}-->
 						</li>
-						<li class="manuscript-meta-item"><span class="marked marked-see"> {if $v['is_view']||$uid==$task_info['uid']} 雇主已浏览 {else} 雇主未浏览 {/if} </span></li> {if $arrProcess_can['work_report']&&$gUid!=$v['uid']&&$v['bid_status']!=7&&$gUid}
+						<li class="manuscript-meta-item"><span class="marked marked-see"> {if $v['is_view']||$uid==$task_info['uid']} 需方已浏览 {else} 需方未浏览 {/if} </span></li> {if $arrProcess_can['work_report']&&$gUid!=$v['uid']&&$v['bid_status']!=7&&$gUid}
 						<li class="manuscript-meta-item"><a href="javascript:report(2,'work','{$v[uid]}','{$arrTaskInfo[task_id]}','{$v[bid_id]}');void(0);" class="action-report"> <i class="fa fa-bell"></i> 举报
 						</a></li> {/if}
 					</ul>
@@ -141,7 +141,7 @@
 		<!-- manuscripts end -->
 
 		<div class="list-page">
-			<div class="page-tips pull-left">显示 {$strPages['st']}~{$strPages['en']} 项 共 {$arrWorkArrs['count']} 个投稿</div>
+			<div class="page-tips pull-left">显示 {$strPages['st']}~{$strPages['en']} 项 共 {$arrWorkArrs['count']} 个报价</div>
 			<ul class="pagination pagination-sm pull-right">{$strPages[page]}
 			</ul>
 		</div>
