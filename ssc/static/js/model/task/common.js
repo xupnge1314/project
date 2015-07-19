@@ -13,7 +13,7 @@ var COMM = 0;
 function workComment(taskId,workId,wkuid) {
 	if (checkLogin()) {
 		if(uid!=uid){
-			tipsOp('<div class="alert alert-warning"><i class="fa fa-exclamation-triangle"></i> 雇主才能对稿件评论</div>');return false;
+			tipsOp('<div class="alert alert-warning"><i class="fa fa-exclamation-triangle"></i> 需方才能对报价评论</div>');return false;
 		}else if(COMM==1){
 			tipsOp('<div class="alert alert-danger"><i class="fa fa-ban"></i> 不能重复操作</div>');return false;
 		}else{
@@ -127,7 +127,7 @@ function d_time(end_time){
  */
 function chooseWork(id,status){
 	var page = $("#worklist-curpage").val();
-	confirmOp('<div class="alert alert-warning"><i class="fa fa-exclamation-triangle"></i> 确定设置此稿件为'+jsonWorkStatus[status]+'?'+'</div>','index.php?do=taskhandle&op=workchoose&taskId='+taskId+'&workId='+id+'&status='+status+'&page='+page,true);
+	confirmOp('<div class="alert alert-warning"><i class="fa fa-exclamation-triangle"></i> 确定设置此报价为'+jsonWorkStatus[status]+'?'+'</div>','index.php?do=taskhandle&op=workchoose&taskId='+taskId+'&workId='+id+'&status='+status+'&page='+page,true);
 }
 /***
  * 投票操作

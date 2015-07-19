@@ -28,14 +28,14 @@ $regionCfg =  keke_glob_class::getRegionConfig();
 		$floatPrice = floatval($txt_price);
 		if (isset($formhash)&&kekezu::submitcheck($formhash)) {
 			if (!htmlspecialchars($_POST['tar_content'])) {
-				$tips['errors']['tar_content'] = '请输入作品描述';
+				$tips['errors']['tar_content'] = '请输入服务描述';
 				kekezu::show_msg($tips,NULL,NULL,NULL,'error');
 			}
-			$floatMinCash = floatval($arrConfig['min_cash']);
+			/*$floatMinCash = floatval($arrConfig['min_cash']);
 			if ($floatPrice < $floatMinCash) {
-				$tips['errors']['txt_price'] = '你的商品价格不能少于￥'.$floatMinCash.'元';
+				$tips['errors']['txt_price'] = '你的测试项目价格不能少于￥'.$floatMinCash.'元';
 				kekezu::show_msg($tips,NULL,NULL,NULL,'error');
-			}
+			}*/
 			if($submit_method=='inside'){
 				if (!$file_path_2) {
 					$tips['errors']['file_path_2'] = '请上传源文件';

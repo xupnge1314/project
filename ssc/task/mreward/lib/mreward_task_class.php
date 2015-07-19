@@ -113,16 +113,16 @@ public function getProjectProgressDesc() {
 				),
 				'2'=>array(
 						'status'   	=> 2,
-						'desc'     	=> '威客交稿',
+						'desc'     	=> '投标报价',
 						'time'     	=> $arrTaskInfo['sub_time'],
-						'timedesc' 	=> '距离投稿结束时间剩余',
+						'timedesc' 	=> '距离投标结束时间剩余',
 						'timeing'  	=> $arrTaskInfo['sub_time']
 				),
 				'3'=>array(
 						'status'	=> 3,
-						'desc'  	=> '雇主选稿',
+						'desc'  	=> '需方选标',
 						'time'  	=> $arrTaskInfo['end_time'],
-						'timedesc' 	=> '距离选稿结束时间剩余',
+						'timedesc' 	=> '距离选标结束时间剩余',
 						'timeing'  	=> $arrTaskInfo['end_time']
 				),
 				'4'=>array(
@@ -224,7 +224,7 @@ public function getProjectProgressDesc() {
 									"url" => "index.php?do=seller&id={$this->_uid}"
 							),
 							"action" => array (
-									"content" => '投稿',
+									"content" => '投标报价',
 									"url" => ""
 							),
 							"event" => array (
@@ -239,7 +239,7 @@ public function getProjectProgressDesc() {
 									"url" => "index.php?do=seller&id={$this->_uid}"
 							),
 							"action" => array (
-									"content" => '被投稿',
+									"content" => '报价中',
 									"url" => ""
 							),
 							"event" => array (
@@ -511,6 +511,7 @@ public function getProjectProgressDesc() {
 			$this->set_task_status ( 9 );
 		}
 	}
+	/*  自动选稿  待定  */
 	public function auto_task_return() {
 		global $kekezu;
 			$arrPrizeWork = db_factory::query ( sprintf ( "select * from %switkey_task_work where task_id='%d' and work_status in(1,2,3) ", TABLEPRE, $this->_task_id ) );
@@ -962,6 +963,8 @@ public function getProjectProgressDesc() {
 		$all_prize_data ['cash'] = $cash;
 		return $all_prize_data;
 	}
+
+	/*  待定  */
 	public function getPrizeDesc() {
 		$arrPrize = $this->get_prize_date();
 		$arrCount = $arrPrize['count'];
@@ -1057,7 +1060,7 @@ public function getProjectProgressDesc() {
 					$status_arr = self::get_task_status(); 
 					$url = '<a href="' . $_K ['siteurl'] . '/index.php?do=task&id=' . $task_info['task_id'] . '"  target="_blank">' . $task_info['task_title'] . '</a>';
 					$v = array ('model_name'=>$this->_model_name,'task_id' => $task_info['task_id'], $_lang['task_title'] =>$task_info['task_title'] ,$_lang['task_id']=>$task_info['task_id'], $_lang ['task_link'] => $url, $_lang ['task_status'] => $status_arr [2], '开始时间' => date ( 'Y-m-d H:i:s', $task_info['start_time'] ), '投稿结束时间' => date ( 'Y-m-d H:i:s', $task_info['sub_time'] ), '选稿结束时间' => date ( 'Y-m-d H:i:s', $task_info['end_time'] ) );
-					$this->notify_user("task_pub", '任务发布通知', $v, $notify_type = 1, $task_info ['uid']);
+					$this->notify_user("task_pub", '需求发布通知', $v, $notify_type = 1, $task_info ['uid']);
 					return pay_return_fac_class::struct_response ( $_lang ['operate_notice'], $_lang ['task_pay_success_and_task_pub_success'], $url, 'success' );
 				}
 			} else {
@@ -1091,34 +1094,34 @@ public function getProjectProgressDesc() {
 				);
 				break;
 			case 2 :
-				if(TOOL === TRUE){
+				/*if(TOOL === TRUE){
 				$button ['tool'] = array (
 						'href'=>"javascript:payitem('task','{$t_id}','{$uid}');void(0);",
 						'desc' => '增值工具'
 								);
-				}
+				}*/
 				$button ['addprice'] = array (
 						'desc' => $_lang ['delay_makeup'],
 						'href' => 'index.php?do=taskhandle&op=delay&taskId='.$t_id
 				);
 				break;
 			case 3 :
-				if(TOOL === TRUE){
+				/*if(TOOL === TRUE){
 				$button ['tool'] = array (
 						'href'=>"javascript:payitem('task','{$t_id}','{$uid}');void(0);",
 						'desc' => '增值工具'
 								);
-				}
+				}*/
 				$button ['view'] ['desc'] = $_lang ['choose_work'];
 				$button ['view'] ['href'] = $site . 'index.php?do=task&id=' . $t_id . '&view=work';
 				break;
 			case 4 :
-				if(TOOL === TRUE){
+				/*if(TOOL === TRUE){
 				$button ['tool'] = array (
 						'href'=>"javascript:payitem('task','{$t_id}','{$uid}');void(0);",
 						'desc' => '增值工具'
 								);
-				}
+				}*/
 				$button ['view'] ['desc'] = $_lang ['vote'];
 				$button ['view'] ['href'] = $site . 'index.php?do=task&id=' . $t_id . '&view=work';
 				break;

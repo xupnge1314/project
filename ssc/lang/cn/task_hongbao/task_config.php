@@ -13,7 +13,7 @@ $lang = array(
 	'edit_rights_config_successfully'=>'权限配置修改成功',
 	'edit_single_reward_task'=>'修改了单人悬赏任务的',
 /*task_control.htm*/
-'task_rule_and_money_set'=>'任务规则设置和异常任务资金分配',
+/*'task_rule_and_money_set'=>'任务规则设置和异常任务资金分配',
 	'task_conmission_tactic'=>'任务佣金策略',
 	'task_auditing_cash_set'=>'任务审核金额设定',
 	'txt_task_auditing_cash_msg'=>'填写正确任务审核金额',
@@ -103,7 +103,7 @@ $lang = array(
 	'set_task_comment'=>'任务评论设置',
 	'if_public'=>'是否公开',
 	'if_public_checkbox'=>'(勾选则评论在任务进行中隐藏，任务结束公开)',
-	'save_config'=>'保存设置',
+	'save_config'=>'保存设置',*/
 /*task_priv.htm*/
 	'project_name'=>'项目名称',
 	'user_status'=>'用户身份',
@@ -114,7 +114,7 @@ $lang = array(
 	'model_status_notice'=>'(私有模型不会出现在发布任务的选择列表上)',
 	'bind_industry'=>'指定行业',
 	'choose_industry'=>'选择行业',
-	'choose_industry_nitice'=>'(如果指定行业后,则任务的行业类型将是这里指定行业类型；如果不指定行业，则任务类型将是系统指定的所有行业类型.)',
+	'choose_industry_nitice'=>'(如果指定行业后,则任务的行业类型将是这里指定行业类型；如果不指定行业，则需求类型将是系统指定的所有行业类型.)',
 	'model_synopsis'=>'模型简介',
 	'model_synopsis_notice'=>'(限50字节)',
 	'model_description'=>'模型描述',

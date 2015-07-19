@@ -15,15 +15,15 @@ $lang = array(
 	'op_fail'=>'操作失败',
 	'modified_fail'=>'修改失败',
 	'whether_private_model'=>'是否为私有模型',
-	'private_models_not_task_list'=>'私有模型不会出现在发布任务的选择列表上',
+	'private_models_not_task_list'=>'私有模型不会出现在发布需求的选择列表上',
 	'industry_binding'=>'行业绑定',
 	'choose_industry'=>'选择行业',
-	'industry_binding_notice'=>'行业绑定后的任务模型只能在选择该行业时候使用,可以多选',
+	'industry_binding_notice'=>'行业绑定后的需求模型只能在选择该行业时候使用,可以多选',
 	'model_about'=>'模型简介',
 	'limit_50_bytes'=>'限50字节',
 	'model_description'=>'模型描述',
 	'last_modify'=>'上次修改时间',
-	'task_min_money_error'=>'任务最小金额不正确，长度2-5',
+	'task_min_money_error'=>'需求最小金额不正确，长度2-5',
 	'yuan_over'=>'元以上',
 	'continue'=>'持续',
 	'day_not_null'=>'天数不能为空! 天数的长度1-2',
@@ -35,7 +35,7 @@ $lang = array(
 	'update_success'=>'修改成功',
 	'update_fail'=>'修改失败',
 	'permissions_config_update_success'=>'权限配置修改成功',
-	'revised_match_task'=>'修改了速配任务的',
+	'revised_match_task'=>'修改了速配需求的',
 //task_priv_htm
 
 	'item_name'=>'项目名称',
@@ -44,7 +44,7 @@ $lang = array(
 
 //task_control_htm
 
-	'task_commission_strategy'=>'任务佣金策略设定',
+	/*'task_commission_strategy'=>'任务佣金策略设定',
 	'task_audit_money_set'=>'任务审核金额',
 	'fill_in_right_audit_money'=>'填写正确任务审核金额',
 	'task_audit_money_allow_decimal'=>'任务审核金额允许小数',
@@ -129,5 +129,5 @@ $lang = array(
 	'min_day_is_2_day'=>'最少为2天',
 	'task_cutdown'=>'投标倒计时',
 	'task_cutdown_0_60'=>'用户抢标倒计时，0-30分钟',
-	'minute_0_can_bid'=>'分钟(为0则用户进入页面即可抢标抢标。)',
+	'minute_0_can_bid'=>'分钟(为0则用户进入页面即可抢标抢标。)',*/
 );

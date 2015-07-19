@@ -10,7 +10,6 @@
       <a href="index.php?do=user&view=transaction&op=undertake" class="selected">我承接的订单</a>
     </div>
     <div class="tab_detail">
-
       <ul class="nav nav-pills second-nav">
       	<li {if !$intModelId} class="active" {/if}>
       		<a href="index.php?do=user&view=transaction&op=undertake">全部</a>
@@ -21,8 +20,6 @@
             </li>
         {/loop}
       </ul>
-
-
     <div class="action-bar">
     <form action="{$strUrl}" method="post" name="searchUndertakeForm" id="searchUndertakeForm">
         <div class="action-item">

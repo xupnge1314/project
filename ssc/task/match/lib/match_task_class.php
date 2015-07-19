@@ -127,7 +127,7 @@ class match_task_class extends keke_task_class {
 				),
 				'2'=>array(
 						'status'   	=> 2,
-						'desc'     	=> '威客抢标',
+						'desc'     	=> '抢标',
 						'time'     	=> $arrTaskInfo['sub_time'],
 						'timedesc' 	=> '距离抢标结束时间剩余',
 						'timeing'  	=> $arrTaskInfo['sub_time']
@@ -763,21 +763,21 @@ class match_task_class extends keke_task_class {
 						'desc' => $_lang ['payment'],
 				);
 				break;
-			case 2 :
+			/*case 2 :
 				 if(TOOL === TRUE){
 				$button ['tool'] = array (
 						'href'=>"javascript:payitem('task','{$t_id}','{$uid}');void(0);",
 						'desc' => '增值工具'
 								);
 				}
-				break;
+				break;*/
 			case 3 :
-				if(TOOL === TRUE){
+				/*if(TOOL === TRUE){
 					$button ['tool'] = array (
 							'href'=>"javascript:payitem('task','{$t_id}','{$uid}');void(0);",
 							'desc' => '增值工具'
 									);
-				}
+				}*/
 				$button ['host'] = array (
 						'href'=> "javascript:taskHost('{$t_id}');void(0);",
 						'desc' => '托管赏金'

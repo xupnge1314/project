@@ -27,7 +27,7 @@
 
     <div class="release-body">
     {if $step == 'step1'}
-	      <nav class="release-nav">
+	      <!-- <nav class="release-nav">
 	        <ul>
 		        {loop $arrModelLists $k $v}
 		            <li {if $id == $v['model_id']}class="selected"{/if}>
@@ -38,21 +38,12 @@
 		            </li>
 				{/loop}
 	        </ul>
-	      </nav>
+	      </nav> -->
 	      <!-- release-nav end-->
 
 
 
-	      <div class="release-help">
-	        <h3 class="release-help-title">什么是{$arrModelInfo['model_name']}？</h3>
-	        <div class="hidden" id="DivTaskDesc">
-	     		<!--{eval echo htmlspecialchars_decode($arrModelInfo['model_desc'])}-->
-	      	</div>
-
-	      </div>
-	      <div class="release-help-ctrl">
-	      	<a href="javascript:void(0);" id="toggleTaskDesc">{$arrModelInfo['model_name']}说明 <i class="fa fa-caret-down"></i></a>
-	      </div>
+	      
 
       {/if}
       <!-- release-help end  -->

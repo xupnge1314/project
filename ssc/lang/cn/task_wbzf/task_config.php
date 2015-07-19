@@ -11,10 +11,10 @@ $lang = array(
 	'edit_successfully'=>'修改成功!',
 	'edit_fail'=>'修改失败',
 	'edit_rights_config_successfully'=>'权限配置修改成功',
-	'edit_single_reward_task'=>'修改了单人悬赏任务的',
+	'edit_single_reward_task'=>'修改了单人悬赏需求的',
 /*task_control.htm*/
 
-	'task_conmission_tactic'=>'任务佣金策略',
+	/*'task_conmission_tactic'=>'任务佣金策略',
 	'task_auditing_cash_set'=>'任务审核金额设定',
 	'txt_task_auditing_cash_msg'=>'填写正确任务审核金额',
 	'txt_task_auditing_cash_title'=>'任务审核金额允许小数',
@@ -88,7 +88,7 @@ $lang = array(
 	'save_config'=>'保存设置',
 	'task_choose_days'=>'任务选稿天数:',
 	'affect_extent_price'=>'影响力价格:',
-	'affect_extent_rule'=>'影响力区间规则:',
+	'affect_extent_rule'=>'影响力区间规则:',*/
 /*task_priv.htm*/
 	'project_name'=>'项目名称',
 	'user_status'=>'用户身份',
@@ -96,10 +96,10 @@ $lang = array(
 
 /*task_config.htm*/
 	'if_change_model_status'=>'是否为私有模型',
-	'model_status_notice'=>'(私有模型不会出现在发布任务的选择列表上)',
+	'model_status_notice'=>'(私有模型不会出现在发布需求的选择列表上)',
 	'bind_industry'=>'指定行业',
 	'choose_industry'=>'选择行业',
-	'choose_industry_nitice'=>'(如果指定行业后,则任务的行业类型将是这里指定行业类型；如果不指定行业，则任务类型将是系统指定的所有行业类型.)',
+	'choose_industry_nitice'=>'(如果指定行业后,则需求的行业类型将是这里指定行业类型；如果不指定行业，则需求类型将是系统指定的所有行业类型.)',
 	'model_synopsis'=>'模型简介',
 	'model_synopsis_notice'=>'(限50字节)',
 	'model_description'=>'模型描述',
@@ -107,7 +107,7 @@ $lang = array(
 	'no_delete_the_first_rule'=>'第一条规则不能被删除!',
 	'add_cash_rul_day_msg'=>'天数不能为空! 天数的长度1-2',
 	' persist '=>'持续',
-	'task_min_cash_show'=>'任务最小金额不正确，长度2-5',
+	'task_min_cash_show'=>'需求最小金额不正确，长度2-5',
 	'add_adjourn_rul_msg'=>'百分比不能为空',
 
 );

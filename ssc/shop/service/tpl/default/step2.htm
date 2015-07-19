@@ -12,10 +12,11 @@
                 </ul>
                 <div class="release-detail">
                   <div>
+                      <strong>服务名称：</strong>{$arrPubInfo['txt_title']}<br/>
                       <strong>完成工作周期：</strong>{$arrPubInfo['service_time']}{$arrPubInfo['unit_time']}<br/>
-                      <strong>设备品牌参数：</strong>{$arrPubInfo['service_ext_7']}<br/>
-                      <strong>样品要求：</strong>{$arrPubInfo['service_ext_8']}<br/>
-                      <strong>设备品牌参数：</strong>{$arrPubInfo['service_ext_7']}<br/>
+                      <strong>设备品牌参数：</strong>{$arrPubInfo['service_ext_1']}<br/>
+                      <strong>样品要求：</strong>{$arrPubInfo['service_ext_2']}<br/>
+                      <!-- <strong>设备品牌参数：</strong>{$arrPubInfo['service_ext_7']}<br/> -->
                   </div>
                 	<div id="partContent" {if !$strPartComment} class="hidden"{/if} >
                 		{$strPartComment}

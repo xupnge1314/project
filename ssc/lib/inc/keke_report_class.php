@@ -307,7 +307,7 @@ abstract class keke_report_class {
 					$result = array (
 							'用户名' => $task_info ['username'],
 							'模型名称' => $model_info['model_name'],
-							'类型' => '任务',
+							'类型' => '需求',
 							'标题'=>'<a href="index.php?do=task&id='.$task_info['task_id'].'">'.$task_info['task_title'].'</a>',
 							$_lang['website_name'] => $kekezu->_sys_config['website_name']
 					);
@@ -318,7 +318,7 @@ abstract class keke_report_class {
 					$result = array (
 							'用户名' => $task_info ['username'],
 							'模型名称' => $model_info['model_name'],
-							'类型' => '商品（服务）',
+							'类型' => '项目（服务）',
 							'标题'=>'<a href="index.php?do=task&id='.$service_info['task_id'].'">'.$service_info['task_title'].'</a>',
 							$_lang['website_name'] => $kekezu->_sys_config['website_name']
 					);
@@ -500,29 +500,29 @@ abstract class keke_report_class {
 		}
 	}
 	public static function get_report_task_reason(){
-		return  array('lfgg'=>'滥发广告','wgxx'=>'违规信息','xjpg'=>'虚假骗稿','wgxg'=>'违规选稿','qt'=>'其他');
+		return  array('lfgg'=>'滥发广告','wgxx'=>'违规信息','xjpg'=>'虚假需求','wgxg'=>'违规选表','qt'=>'其他');
 	}
 	public static function get_report_work_reason(){
-		return  array('lfgg'=>'滥发广告','wgxx'=>'违规信息','xjjg'=>'虚假交稿','sxcx'=>'涉嫌抄袭','cfjg'=>'重复交稿','qt'=>'其他');
+		return  array('lfgg'=>'滥发广告','wgxx'=>'违规信息','xjjg'=>'虚假报价','sxcx'=>'乱报错报','cfjg'=>'重复报价','qt'=>'其他');
 	}
 	public static function get_report_product_reason(){
-		return  array('lfgg'=>'滥发广告','wgxx'=>'违规信息','xjsp'=>'虚假商品','sxqz'=>'涉嫌欺诈','qt'=>'其他');
+		return  array('lfgg'=>'滥发广告','wgxx'=>'违规信息','xjsp'=>'虚假服务','sxqz'=>'涉嫌欺诈','qt'=>'其他');
 	}
 	public static function get_report_employee_reason(){
 		return  array(
-				'sxcx'		=>	'威客（卖家）涉嫌抄袭',
-				'waswcgz'	=>	'威客（卖家）未按时完成工作',
-				'jjxgzp'	=>	'威客（卖家）拒绝修改作品',
-				'yqzjsj'	=>	'威客（卖家）要求追加赏金',
-				'wnlwcyq'	=>	'威客（卖家）无能力完成要求',
-				'qt'		=>	'威客（卖家）其它');
+				'sxcx'		=>	'服务商涉嫌抄袭',
+				'waswcgz'	=>	'服务商未按时完成工作',
+				'jjxgzp'	=>	'服务商拒绝修改报告',
+				'yqzjsj'	=>	'服务商要求追加费用',
+				'wnlwcyq'	=>	'服务商无能力完成要求',
+				'qt'		=>	'服务商其它');
 	}
 	public static function get_report_witkey_reason(){
 		return  array(
-				'sxzb'		=>	'雇主（买家）涉嫌作弊',
-				'shyqbhl'	=>	'雇主（买家）审核要求不合理',
-				'jfsj'		=>	'雇主（买家）拒付赏金',
-				'qt'		=>	'雇主（买家）其它');
+				'sxzb'		=>	'需方涉嫌作弊',
+				'shyqbhl'	=>	'需方审核要求不合理',
+				'jfsj'		=>	'需方拒付费用',
+				'qt'		=>	'需方其它');
 	}
 	public static function get_transrights_type() {
 		global $_lang;

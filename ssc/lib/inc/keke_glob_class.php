@@ -5,7 +5,7 @@ class keke_glob_class {
 		global $_lang;
 		return array (
 				"buy_service" => $_lang ['buy_service'],
-				"buy_gy" => '雇佣服务',
+				//"buy_gy" => '雇佣服务',
 				"pub_task" => $_lang ['pub_task'],
 				"hosted_reward" => $_lang ['hosted_reward'],
 				"withdraw" => $_lang ['withdraw'],
@@ -16,7 +16,7 @@ class keke_glob_class {
 				"task_fail" => $_lang ['task_fail'],
 				"task_prom_fail" => $_lang ['task_prom_fail'],
 				"sale_service" => $_lang ['sale_service'],
-				"sale_gy" => '出售雇佣服务',
+				//"sale_gy" => '出售雇佣服务',
 				"admin_recharge" => $_lang ['admin_recharge'],
 				"withdraw_fail" => $_lang ['withdraw_fail'],
 				"report" => $_lang ['report_processs'],

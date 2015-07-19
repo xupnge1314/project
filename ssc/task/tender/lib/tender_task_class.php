@@ -83,7 +83,7 @@ class tender_task_class extends keke_task_class {
 							"url" => "index.php?do=seller&id={$this->_uid}"
 					),
 					"action" => array (
-							"content" => '报名',
+							"content" => '响应',
 							"url" => ""
 					),
 					"event" => array (
@@ -98,7 +98,7 @@ class tender_task_class extends keke_task_class {
 							"url" => "index.php?do=seller&id={$this->_uid}"
 					),
 					"action" => array (
-							"content" => '被报名',
+							"content" => '被响应',
 							"url" => ""
 					),
 					"event" => array (
@@ -535,7 +535,7 @@ class tender_task_class extends keke_task_class {
 						'desc' => $_lang ['payment'],
 				);
 				break;
-			case 2 :
+			/*case 2 :
 				if(TOOL === TRUE){
 				$button ['tool'] = array (
 						'href'=>"javascript:payitem('task','{$t_id}','{$uid}');void(0);",
@@ -552,14 +552,14 @@ class tender_task_class extends keke_task_class {
 				}
 				$button['view']['desc'] = $_lang ['choose_work'];
 				$button['view']['href'] = $site.'index.php?do=task&id='.$t_id.'&view=work';
-				break;
+				break;*/
 			case 5 :
-				if(TOOL === TRUE){
+				/*if(TOOL === TRUE){
 				$button ['tool'] = array (
 						'href'=>"javascript:payitem('task','{$t_id}','{$uid}');void(0);",
 						'desc' => '增值工具'
 								);
-				}
+				}*/
 				$button['confirm_work'] = array(
 						'click'=>"confirmOp('确定验收完工？','index.php?do=taskhandle&op=workOver&taskId=$t_id',true)",
 						'desc'=>'验收工作',

@@ -98,16 +98,16 @@ class preward_task_class extends keke_task_class {
 				),
 				'2'=>array(
 						'status'   	=> 2,
-						'desc'     	=> '威客交稿',
+						'desc'     	=> '投标报价',
 						'time'     	=> $arrTaskInfo['sub_time'],
-						'timedesc' 	=> '距离投稿结束时间剩余',
+						'timedesc' 	=> '距离投标结束时间剩余',
 						'timeing'  	=> $arrTaskInfo['sub_time']
 				),
 				'3'=>array(
 						'status'	=> 3,
-						'desc'  	=> '雇主选稿',
+						'desc'  	=> '需方选标',
 						'time'  	=> $arrTaskInfo['end_time'],
-						'timedesc' 	=> '距离选稿结束时间剩余',
+						'timedesc' 	=> '距离选标结束时间剩余',
 						'timeing'  	=> $arrTaskInfo['end_time']
 				),
 				'4'=>array(
@@ -237,7 +237,7 @@ class preward_task_class extends keke_task_class {
 									"url" => "index.php?do=seller&id={$this->_uid}"
 							),
 							"action" => array (
-									"content" => '投稿',
+									"content" => '投标报价',
 									"url" => ""
 							),
 							"event" => array (
@@ -252,7 +252,7 @@ class preward_task_class extends keke_task_class {
 									"url" => "index.php?do=seller&id={$this->_uid}"
 							),
 							"action" => array (
-									"content" => '被投稿',
+									"content" => '报价中',
 									"url" => ""
 							),
 							"event" => array (
@@ -745,34 +745,34 @@ class preward_task_class extends keke_task_class {
 				);
 				break;
 			case 2 :
-				if(TOOL === TRUE){
+				/*if(TOOL === TRUE){
 				$button ['tool'] = array (
 						'href'=>"javascript:payitem('task','{$t_id}','{$uid}');void(0);",
 						'desc' => '增值工具'
 								);
-				}
+				}*/
 				$button ['addprice'] = array (
 						'desc' => $_lang ['delay_makeup'],
 						'href' => 'index.php?do=taskhandle&op=delay&taskId='.$t_id
 				);
 				break;
 			case 3 :
-				if(TOOL === TRUE){
+				/*if(TOOL === TRUE){
 				$button ['tool'] = array (
 						'href'=>"javascript:payitem('task','{$t_id}','{$uid}');void(0);",
 						'desc' => '增值工具'
 								);
-				}
+				}*/
 				$button ['view'] ['desc'] = $_lang ['choose_work'];
 				$button ['view'] ['href'] = $site . 'index.php?do=task&id=' . $t_id . '&view=work';
 				break;
 			case 4 :
-				if(TOOL === TRUE){
+				/*if(TOOL === TRUE){
 				$button ['tool'] = array (
 						'href'=>"javascript:payitem('task','{$t_id}','{$uid}');void(0);",
 						'desc' => '增值工具'
 								);
-				}
+				}*/
 				$button ['view'] ['desc'] = $_lang ['vote'];
 				$button ['view'] ['href'] = $site . 'index.php?do=task&id=' . $t_id . '&view=work';
 				break;

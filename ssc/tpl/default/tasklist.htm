@@ -150,7 +150,7 @@
   <!-- second-nav end -->
 
   <ul class="list-filter">
-    <li>
+    <!-- <li>
       <label class="col-xs-1">需求模式</label>
       <div class="col-xs-11 condition">
         <a href="{$strUrl}&m=0" {if !$m} class="selected" {/if}>全部</a>
@@ -167,14 +167,14 @@
         <a href="{$strUrl}&r=1" {if 1==$r} class="selected" {/if}>未托管</a>
         <a href="{$strUrl}&r=2" {if 2==$r} class="selected" {/if}>已托管</a>
       </div>
-    </li>
+    </li> -->
     <li>
       <label class="col-xs-1">需求状态</label>
       <div class="col-xs-11 condition">
         <a href="{$strUrl}&s=0" {if !$s} class="selected" {/if}>全部</a>
         <a href="{$strUrl}&s=1" {if 1==$s} class="selected" {/if}>工作中</a>
-        <a href="{$strUrl}&s=2" {if 2==$s} class="selected" {/if}>选稿中</a>
-		<a href="{$strUrl}&s=3" {if 3==$s} class="selected" {/if}>交付中</a>
+        <a href="{$strUrl}&s=2" {if 2==$s} class="selected" {/if}>投标中</a>
+		<a href="{$strUrl}&s=3" {if 3==$s} class="selected" {/if}>工作中</a>
         <a href="{$strUrl}&s=4" {if 4==$s} class="selected" {/if}>已结束</a>
       </div>
     </li>
@@ -200,11 +200,11 @@
 	    	<a href="{$strUrl}&o=3" class="tool-bar-item ">金额</a>
 	    {/if}
 	    {if $o == 5}
-	    	<a href="{$strUrl}&o=6" class="tool-bar-item selected">稿件数  <i class="fa fa-sort-numeric-desc"></i></a>
+	    	<a href="{$strUrl}&o=6" class="tool-bar-item selected">投标数量  <i class="fa fa-sort-numeric-desc"></i></a>
 	    {elseif $o == 6}
-	    	<a href="{$strUrl}&o=5" class="tool-bar-item selected">稿件数 <i class="fa fa-sort-numeric-asc"></i></a>
+	    	<a href="{$strUrl}&o=5" class="tool-bar-item selected">投标数量 <i class="fa fa-sort-numeric-asc"></i></a>
 	    {else}
-	    	<a href="{$strUrl}&o=5" class="tool-bar-item ">稿件数</a>
+	    	<a href="{$strUrl}&o=5" class="tool-bar-item ">投标数量</a>
 	    {/if}
     </div>
 	 {if $regionCfg['region_search_task'] =='1'}
@@ -247,10 +247,10 @@
         <ul>
           <li class="w4">名称</li>
           <li class="w2">金额</li>
-          <li class="w1">模式</li>
-          <li class="w1">查看/投稿</li>
-          <li class="w1d5">状态</li>
-          <li class="wd5"></li>
+          <!-- <li class="w1">模式</li> -->
+          <li class="w1">查看/投标</li>
+          <li class="w1d5" style="text-align:center;width:270px;">状态</li>
+          <!-- <li class="wd5"></li> -->
         </ul>
       </dt>
       {if $arrTaskLists}
@@ -261,11 +261,11 @@
           <li class="w4">
             <a href="index.php?do=task&id={$v['task_id']}" class="list-title"  title="<!--{eval echo kekezu::cutstr($v['task_title'],50)}-->">
             <!-- 增值工具显示区域 start --> <!-- <span class="marked marked-speed">加急</span> -->
-			{if $v['task_status']==2}
+			<!-- {if $v['task_status']==2}
                {if $v['is_delay'] == '1'}<span class="marked marked-map">延期</span>{/if}
                {if $v['urgent'] == '1'}<span class="marked marked-speed">加急</span>{/if}
                {if $v['tasktop'] == '1'}<span class="marked marked-spread">置顶</span>{/if}
-			{/if}
+			{/if} -->
             <!-- 增值工具显示区域 start -->
 
               <!--{eval echo kekezu::cutstr($v['task_title'],50)}-->
@@ -278,9 +278,9 @@
               </span>
           </li>
 		<!-- 赏金 END  -->
-          <li class="w1">{$arrTaskNavs[$v['model_id']]['model_name']}</li>
+          <!-- <li class="w1">{$arrTaskNavs[$v['model_id']]['model_name']}</li> -->
           <li class="w1"><!--{eval echo intval($v['view_num']);}-->/<!--{eval echo intval($v['work_num']);}--></li>
-          <li class="w1d5">
+          <li class="w1d5"  style="width:270px;">
 	          <!-- 2天后投稿截止 -->&nbsp;
 	          <!--{eval   $end_time = $arrTaskTimeDesc[$v[task_status]]['time'];}-->
 	          	<!--{eval echo keke_search_class::task_time_desc($v['task_status'],$v[$end_time])}-->
@@ -288,7 +288,7 @@
           </li>
 
         <!-- 收藏  START-->
-        <li class="wd5" >
+        <!-- <li class="wd5" >
 		{if $v['favorite']}
 
           	<a href="javascript:cancelFavorite('task',{$v['task_id']});" id="favorite{$v['task_id']}" title="取消收藏" class="action-collect on"><i class="fa fa-star"></i></a>
@@ -297,7 +297,7 @@
           	<a href="javascript:addFavorite('task',{$v['task_id']});" id="favorite{$v['task_id']}" title="收藏" class="action-collect"><i class="fa fa-star"></i></a>
 
 		 {/if}
-		  </li>
+		  </li> -->
         <!-- 收藏 END -->
 
         </ul>

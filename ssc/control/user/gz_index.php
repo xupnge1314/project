@@ -33,22 +33,22 @@ if($arrMyFeeds){
 		}
 			switch ($v['feedtype']) {
 				case 'task_tur_bei' :
-					$a="<a href='".$arrDt['feed_username']['url']."'>".$arrDt['feed_username']['content']."</a>向你的任务<a href='".$arrDt['event']['url']."'>".$arrDt['event']['content']."</a>投递了稿件";
+					$a="<a href='".$arrDt['feed_username']['url']."'>".$arrDt['feed_username']['content']."</a>向你的需求<a href='".$arrDt['event']['url']."'>".$arrDt['event']['content']."</a>投递了报价";
 					break;
 				case 'task_baoming_bei' :
-					$a="<a href='".$arrDt['feed_username']['url']."'>".$arrDt['feed_username']['content']."</a>报名了你的任务<a href='".$arrDt['event']['url']."'>".$arrDt['event']['content']."</a>";
+					$a="<a href='".$arrDt['feed_username']['url']."'>".$arrDt['feed_username']['content']."</a>报名了你的需求<a href='".$arrDt['event']['url']."'>".$arrDt['event']['content']."</a>";
 					break;
 				case 'buy_goods' :
-					$a="你购买了<a href='".$arrDt['feed_username']['url']."'>".$arrDt['feed_username']['content']."</a>的文件<a href='".$arrDt['event']['url']."'>".$arrDt['event']['content']."</a>";
+					$a="你选择了<a href='".$arrDt['feed_username']['url']."'>".$arrDt['feed_username']['content']."</a>的服务<a href='".$arrDt['event']['url']."'>".$arrDt['event']['content']."</a>";
 					break;
 				case 'buy_service' :
-					$a="你购买了<a href='".$arrDt['feed_username']['url']."'>".$arrDt['feed_username']['content']."</a>的服务<a href='".$arrDt['event']['url']."'>".$arrDt['event']['content']."</a>";
+					$a="你选择了<a href='".$arrDt['feed_username']['url']."'>".$arrDt['feed_username']['content']."</a>的服务<a href='".$arrDt['event']['url']."'>".$arrDt['event']['content']."</a>";
 					break;
 				case 'pub_task' :
-					$a="你发布了任务<a href='".$arrDt['event']['url']."'>".$arrDt['event']['content']."</a>";
+					$a="你发布了需求<a href='".$arrDt['event']['url']."'>".$arrDt['event']['content']."</a>";
 					break;
 				case 'gy' :
-					$a="你向<a href='".$arrDt['feed_username']['url']."'>".$arrDt['feed_username']['content']."</a>发起了雇佣";
+					$a="你向<a href='".$arrDt['feed_username']['url']."'>".$arrDt['feed_username']['content']."</a>发起了测试请求";
 					break;
 			}
 			$arr[$key]['dongtai']=$a;

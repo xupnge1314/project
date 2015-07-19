@@ -15,41 +15,41 @@ $lang = array(
 	'in_three_end'=>'三天内结束',
 	'in_month_end'=>'一个月结束',
 	'soon_end'=>'快到期',
-	'working'=>'交稿中',
-	'choosing'=>'选稿中',
+	'working'=>'竞标中',
+	'choosing'=>'选标中',
 	'ending'=>'已结束',
-	'arbitrating'=>'仲裁中',
+	/*'arbitrating'=>'仲裁中',
 	'locking'=>'已锁定',
 	'recomend'=>'置顶的',
 	'delay_makeup'=>'延期加价',
 	'hurried_task'=>'加急任务',
 	'reward_up'=>'赏金↑',
-	'reward_down'=>'赏金↓',
-	'task_releaser'=>'任务发布人',
+	'reward_down'=>'赏金↓',*/
+	'task_releaser'=>'需求发布人',
 	'back'=>'后',
     'front_release'=>'前发布',
-	'more_model'=>'多选模式',
+	/*'more_model'=>'多选模式',
 	'work_hide'=>'稿件隐藏',
 	'task_reward'=>'任务赏金',
 	'reward_trust'=>'赏金托管',
-	'other'=>'其他选项',
+	'other'=>'其他选项',*/
 
 	'save_suc'=>'保存成功',
-	'task_reward'=>'悬赏任务',
+	/*'task_reward'=>'悬赏任务',
 	'delay'=>'延期',
-	'hurry_up'=>'加急',
+	'hurry_up'=>'加急',*/
 	'top'=>'置顶',
-	'work_hand'=>'交稿',
+	'work_hand'=>'报价',
 	'search_history'=>'搜索历史',
-	'collect_recently'=>'最近收藏',
+	//'collect_recently'=>'最近收藏',
 	'close'=>'收起',
     'front_release'=>'前发布',
-	'task_map'=>'任务地图 ',
+	'task_map'=>'服务地图 ',
 
 /*task_map_baidu.htm*/
 /*task_map_google.htm*/
     'area_search'=>'地区搜索',
-    'task_num'=>'任务编号',
+    'task_num'=>'需求编号',
 
 
 

@@ -11,15 +11,15 @@ $lang = array(
 //task_config_htm
 
 	'whether_private_model'=>'是否为私有模型',
-	'private_models_not_task_list'=>'私有模型不会出现在发布任务的选择列表上',
+	'private_models_not_task_list'=>'私有模型不会出现在发布需求的选择列表上',
 	'industry_binding'=>'行业绑定',
 	'choose_industry'=>'选择行业',
-	'industry_binding_notice'=>'行业绑定后的任务模型只能在选择该行业时候使用,可以多选',
+	'industry_binding_notice'=>'行业绑定后的需求模型只能在选择该行业时候使用,可以多选',
 	'model_about'=>'模型简介',
 	'limit_50_bytes'=>'限50字节',
 	'model_description'=>'模型说明',
 	'last_modify'=>'上次修改时间',
-	'task_min_money_error'=>'任务最小金额不正确，长度2-5',
+	'task_min_money_error'=>'需求最小金额不正确，长度2-5',
 	'yuan_over'=>'元以上',
 	'continue'=>'持续',
 	'day_not_null'=>'天数不能为空! 天数的长度1-2',
@@ -40,7 +40,7 @@ $lang = array(
 
 //task_control_htm
 
-	'task_commission_strategy'=>'任务佣金策略设定',
+	/*'task_commission_strategy'=>'任务佣金策略设定',
 	'task_audit_money_set'=>'任务审核金额',
 	'fill_in_right_audit_money'=>'填写正确任务审核金额',
 	'task_audit_money_allow_decimal'=>'任务审核金额允许小数',
@@ -110,5 +110,5 @@ $lang = array(
 	'mission_set'=>'任务评论设定',
 	'whether_public'=>'是否公开',
 	'check_comments_hide_end_open'=>'勾选则评论在任务进行中隐藏，任务结束公开',
-	'not_less_total_money_reward'=>'不低于悬赏总金额的',
+	'not_less_total_money_reward'=>'不低于悬赏总金额的',*/
 );

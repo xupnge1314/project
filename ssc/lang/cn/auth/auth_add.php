@@ -78,7 +78,7 @@ $lang = array(
   			'congratulations_pass_email_auth' => '已通过',
   			'use_common_email' => '以常用邮箱进行认证',
 			'on_time_feed'=>'及时了解网站动态',
-			'can_pay_email_notice'=>'。进行（支付/提现/选稿/中标）时，可及时收到邮件提醒。',
+			'can_pay_email_notice'=>'。进行（支付/提现/选服务商/中标）时，可及时收到邮件提醒。',
   			'your_balance_is_insufficient_need_to_pay_online' => '您的余额不足，需要在线支付',
  /* auth_add.php (enterprise)*/
   				'enterprise_auth' => '企业认证',
@@ -120,7 +120,7 @@ $lang = array(
 				'use_cellphone_num_login' => '手机号码登录',
 				'you_can_use_cellphone_to_login' => '可以直接使用"手机号码"登录到',
 				'important_event_tips' => '重要事件提醒',
-				'remind_me' => '进行(支付，提现，选搞，中标)时，及时提醒',
+				'remind_me' => '进行(支付，提现，选服务商，中标)时，及时提醒',
 				'back_account_pwd' => '找回账号密码',
 				'tips_about_back_account_pwd' => '忘记密码时，可以用手机短信找回',
 /* auth_add.php(realname) */

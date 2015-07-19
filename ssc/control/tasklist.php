@@ -119,7 +119,7 @@ if(is_array($arrTaskLists)){
 }
 $strPages = $arrDatas ['page'];
 $arrSJ = array('1'=>'未托管','2'=>'已托管');
-$arrTaskS = array('1'=>'工作中','2'=>'选稿中','3'=>'交付中','4'=>'已结束');
+$arrTaskS = array('1'=>'工作中','2'=>'投标中','3'=>'交付中','4'=>'已结束');
 $data = array(
 	'地区'=>$arrCityone['name'].$arrCitytwo['name'].$arrCitythree['name'],
 	'任务模式'=>$arrTaskNavs[$m]['model_name'],

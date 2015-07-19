@@ -18,7 +18,7 @@ $arrTaskNavs = TaskClass::getEnabledTaskModelList();
 $arrTaskStatus = array(
     '0'=>'全部',
     '1'=>'工作中',
-    '2'=>'选稿中',
+    '2'=>'竞标中',
     '3'=>'交付中',
     '4'=>'已结束'
 );
@@ -53,20 +53,20 @@ $strUrlUser = "index.php?do=user";
 $arrIndex = array();
 $arrTitle = array();
 $arrTransaction = array(
-    'released'=>'我发布的任务',
-    'undertake'=>'我承接的任务',
-    'service'=>'我的商品',
-    'orders'=>'我买入的商品'
+    'released'=>'我发布的需求',
+    'undertake'=>'我承接的订单',
+    'service'=>'服务项目',
+    'orders'=>'我买入的服务'
 );
 $arrIndex['transaction'] = $arrTransaction;
 $arrTitle['transaction'] = '交易管理';
 $arrShop = array(
     'setting'=>'店铺设置',
-    'caselist'=>'案例管理'
+    /*'caselist'=>'案例管理'*/
 );
 $arrIndex['shop'] = $arrShop;
 $arrTitle['shop'] = '店铺管理';
-$arrCollect = array(
+/*$arrCollect = array(
     'task'=>'收藏的任务',
     'work'=>'收藏的稿件',
     'goods'=>'收藏的商品'
@@ -91,7 +91,7 @@ $arrFinnace = array(
     'rechargeonline'=>'账号充值',
     'withdraw'=>'账号提现'
 );
-$arrIndex['finance'] = $arrFinnace;
+$arrIndex['finance'] = $arrFinnace;*/
 $arrTitle['finance'] = '我的财务';
 $arrAccount = array(
     'basic'=>'资料完善',
@@ -108,8 +108,8 @@ $arrMessage = array(
     'send'=>'写消息'
 );
 $arrSeller = array(
-    'goods'=>'商品',
-    'task'=>'任务',
-    'case'=>'案例',
+    'goods'=>'项目',
+    /*'task'=>'任务',
+    'case'=>'案例',*/
     'mark'=>'评价详情'
 );

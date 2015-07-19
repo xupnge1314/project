@@ -10,18 +10,18 @@ $lang = array(
       'update_success'=>'修改成功',
       'update_fail'=>'修改失败',
       'permissions_config_update_success'=>'权限配置修改成功',
-      'has_update_more_reward'=>'修改了多人悬赏任务的',
+      //'has_update_more_reward'=>'修改了多人悬赏任务的',
 
 
 /*task_config.htm*/
       'industry_binding'=>'行业绑定',
       'choose_industry'=>'选择行业',
-      'industry_binding_notice'=>'(行业绑定后的任务模型只能在选择该行业时候使用,可以多选.)',
+      'industry_binding_notice'=>'(行业绑定后的需求模型只能在选择该行业时候使用,可以多选.)',
       'model_about'=>'模型简介',
       'limit_50_bytes'=>'限50字节',
       'model_description'=>'模型说明',
       'last_modify'=>'上次修改时间',
-      'task_min_money_error'=>'任务最小金额不正确，长度2-5',
+      'task_min_money_error'=>'需求最小金额不正确，长度2-5',
       'yuan_over'=>'元以上',
       'continue'=>'持续',
       'day_not_null'=>'天数不能为空! 天数的长度1-2',
@@ -31,7 +31,7 @@ $lang = array(
 
 
 /*task_control.htm*/
-      'task_commission_strategy'=>'任务佣金策略',
+      /*'task_commission_strategy'=>'任务佣金策略',
       'task_audit_money_set'=>'任务审核金额设定',
       'greater_money_not_audit_notice'=>'发布赏金低于该设定金额的任务需要审核，设为0即无限制',
       'task_min_money_set'=>'任务最小金额设定',
@@ -92,7 +92,7 @@ $lang = array(
       'delay_rate_one_to_hundred'=>'任务延期比例为0-100',
       'task_comment_set'=>'任务评论设置',
       'is_public'=>'是否公开',
-      'tick_comment_notice'=>'勾选则评论在任务进行中隐藏，任务结束公开',
+      'tick_comment_notice'=>'勾选则评论在任务进行中隐藏，任务结束公开',*/
 
 /*task_priv.htm*/
       'item_name'=>'项目名称',

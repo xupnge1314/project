@@ -1,7 +1,7 @@
 <?php
 kekezu::check_login();
-$strPageTitle = '发布商品-'.$_K ['html_title'];
-$strPageKeyword = '发布商品,'.$_K ['html_title'];
+$strPageTitle = '发布测试服务-'.$_K ['html_title'];
+$strPageKeyword = '发布测试服务,'.$_K ['html_title'];
 $strPageDescription = $kekezu->_sys_config['index_seo_desc'];
 $id = intval($id);
 $step = strval(trim($step));

@@ -98,7 +98,7 @@
 			{/if}-->
 			{if $process_can['close']}
 			{if $report_info['obj'] == 'task'}
-				<input type="radio" name="op_result[task]" value="1" checked="checked">关闭此任务
+				<input type="radio" name="op_result[task]" value="1" checked="checked">关闭此需求
 			{elseif $report_info['obj'] == 'work'}
 				<input type="radio" name="op_result[task]" value="5">取消中标
 			{/if}
@@ -204,16 +204,16 @@
 				var content='';
 				switch($('input:radio:checked').val()){
 						case '1':
-						content+="关闭此任务";
+						content+="关闭此需求";
 						break;
 						case '2':
-						content+="系统选稿";
+						//content+="系统选稿";
 						break;
 						case '3':
 						content+="举报无效";
 						break;
 						case '4':
-						content+="屏蔽稿件";
+						content+="屏蔽报价";
 						break;
 						case '5':
 						content+="取消中标";

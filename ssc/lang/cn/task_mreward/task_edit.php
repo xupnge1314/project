@@ -8,14 +8,14 @@
 $lang = array(
 /*task_edit.php*/
 
-      'edit_task'=>'编辑任务',
-      'edit_your_task'=>'编辑了您的任务',
-      'task_operate_success'=>'任务操作成功',
+      /*'edit_task'=>'编辑需求',
+      'edit_your_task'=>'编辑了您的需求',
+      'task_operate_success'=>'任务操作成功',*/
 
 
 /*task_edit_htm*/
 
-		'task_attchment'=>'任务附件',
+	/*	'task_attchment'=>'任务附件',
       'title_is_not_null'=>'标题不得为空,5-50字',
       'is_recommend_task'=>'是否推荐此任务',
       'time_show'=>'时间显示',
@@ -26,6 +26,6 @@ $lang = array(
       'task_attachment'=>'任务附件',
       'no_attachment'=>'暂无附件',
       'update_money_notice'=>'修改金额不得小于任务原金额',
-      'task_description'=>'任务描述',
+      'task_description'=>'任务描述',*/
 
 );

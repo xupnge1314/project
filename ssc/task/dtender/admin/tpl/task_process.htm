@@ -87,7 +87,7 @@
 				{if in_array($obj_info['obj_status'],array(1,2,3,4,6))}
 				<input type="radio" name="op_result[task]" value="5">取消中标
 				{else}
-				<input type="radio" name="op_result[task]" value="4" checked="checked">屏蔽稿件
+				<input type="radio" name="op_result[task]" value="4" checked="checked">屏蔽报价
                 {/if}
 			{/if}
 				<input type="radio" name="op_result[task]" value="3">举报无效
@@ -168,16 +168,16 @@
 				}
 				switch($('input:radio:checked').val()){
 						case '1':
-						content+="关闭此任务";
+						content+="关闭此需求";
 						break;
 						case '2':
-						content+="系统选稿";
+						//content+="系统选标";
 						break;
 						case '3':
 						content+="举报无效";
 						break;
 						case '4':
-						content+="屏蔽稿件";
+						content+="屏蔽报价";
 						break;
 						case '5':
 						content+="取消中标";

@@ -66,9 +66,9 @@ class dtender_task_class extends keke_task_class {
 				$time_desc ['ext_desc'] = $_lang ['wait_patient_to_audit'];
 				break;
 			case "2" :
-				$time_desc ['time_desc'] = '距投选稿截止';
+				$time_desc ['time_desc'] = '距需求投选标截止';
 				$time_desc ['time'] = $task_info ['sub_time'];
-				$time_desc ['ext_desc'] = '任务投选稿中，踊跃投标哦';
+				$time_desc ['ext_desc'] = '需求投选标中，踊跃投标哦';
 				$time_desc ['g_action'] = $_lang ['now_employer_can_choose_work'];
 				break;
 			case "3" :
@@ -112,14 +112,14 @@ class dtender_task_class extends keke_task_class {
 				),
 				'2' => array (
 						'status' => 2,
-						'desc' => '威客报价、雇主选稿',
+						'desc' => '机构报价、需方选标',
 						'time' => $arrTaskInfo ['sub_time'],
-						'timedesc' => '距离报价，选稿结束时间剩余',
+						'timedesc' => '距离报价，选标结束时间剩余',
 						'timeing' => $arrTaskInfo ['sub_time'] 
 				),
 				'3' => array (
 						'status' => 4,
-						'desc' => '托管赏金',
+						'desc' => '托管费用',
 						'time' => $arrTaskInfo ['sp_end_time'],
 						'timedesc' => '距离托管期结束时间剩余',
 						'timeing' => $arrTaskInfo ['sp_end_time'] 
@@ -187,7 +187,7 @@ class dtender_task_class extends keke_task_class {
 									"url" => "index.php?do=seller&id={$this->_uid}" 
 							),
 							"action" => array (
-									"content" => '报名',
+									"content" => '响应',
 									"url" => "" 
 							),
 							"event" => array (
@@ -202,7 +202,7 @@ class dtender_task_class extends keke_task_class {
 									"url" => "index.php?do=seller&id={$this->_uid}" 
 							),
 							"action" => array (
-									"content" => '被报名',
+									"content" => '被响应',
 									"url" => "" 
 							),
 							"event" => array (
@@ -226,7 +226,7 @@ class dtender_task_class extends keke_task_class {
 		if (intval ( $count ) == 0) {
 			return true;
 		} else {
-			return '你已经交过搞了，请勿重复交稿';
+			return '你已经报价，请勿重复报价';
 		}
 	}
 	public function bid_edit($bid_id, $quote, $cycle, $area, $work_desc, $plan_amount, $start_time, $end_time, $plan_title) {
@@ -999,10 +999,10 @@ class dtender_task_class extends keke_task_class {
 									$_lang ['task_link'] => $url,
 									$_lang ['task_status'] => $status_arr [2],
 									'开始时间' => date ( 'Y-m-d H:i:s', $task_info ['start_time'] ),
-									'投稿结束时间' => date ( 'Y-m-d H:i:s', $task_info ['sub_time'] ),
-									'选稿结束时间' => date ( 'Y-m-d H:i:s', $task_info ['end_time'] ) 
+									'投标结束时间' => date ( 'Y-m-d H:i:s', $task_info ['sub_time'] ),
+									'选标结束时间' => date ( 'Y-m-d H:i:s', $task_info ['end_time'] ) 
 							);
-							$this->notify_user ( "task_pub", '任务发布通知', $v, $notify_type = 1, $task_info ['uid'] );
+							$this->notify_user ( "task_pub", '需求发布通知', $v, $notify_type = 1, $task_info ['uid'] );
 						}
 						db_factory::execute ( sprintf ( " update %switkey_task set cash_cost='%s' where task_id='%d'", TABLEPRE, $task_info ['task_cash'], $this->_task_id ) );
 					}
@@ -1045,30 +1045,30 @@ class dtender_task_class extends keke_task_class {
 				);
 				break;
 			case 2 :
-				if (TOOL === TRUE) {
+				/*if (TOOL === TRUE) {
 					$button ['tool'] = array (
 							'href' => "javascript:payitem('task','{$t_id}','{$uid}');void(0);",
 							'desc' => '增值工具' 
 					);
-				}
+				}*/
 				break;
 			case 3 :
-				if (TOOL === TRUE) {
+				/*if (TOOL === TRUE) {
 					$button ['tool'] = array (
 							'href' => "javascript:payitem('task','{$t_id}','{$uid}');void(0);",
 							'desc' => '增值工具' 
 					);
-				}
+				}*/
 				$button ['view'] ['desc'] = $_lang ['choose_work'];
 				$button ['view'] ['href'] = $site . 'index.php?do=task&id=' . $t_id . '&view=work';
 				break;
 			case 4 :
-				if (TOOL === TRUE) {
+				/*if (TOOL === TRUE) {
 					$button ['tool'] = array (
 							'href' => "javascript:payitem('task','{$t_id}','{$uid}');void(0);",
 							'desc' => '增值工具' 
 					);
-				}
+				}*/
 				$button ['tg_cash'] = array (
 						'desc' => $_lang ['reward_trust'],
 						'ico' => 'book',

@@ -312,7 +312,7 @@
 	  					<img alt="{$v['case_title']} " class="lazy" src="tpl/default/img/grey.gif"  data-original="{if file_exists($v['case_img'])}<!--{eval echo keke_shop_class::output_pics($v['case_img'],210,1);}-->{else}tpl/default/img/shop/shop_default_big.jpg{/if}">
 	  					<div class="home-min-list-detail">
 							<span class="home-min-list-title">{$v['case_title']} </span>
-		  					<span class="home-min-list-meta">{if $v['obj_type']=='task'}投稿：{$v['work_num']}{else}售出：{$v['sale_num']}{/if}个</span>
+		  					<span class="home-min-list-meta">{if $v['obj_type']=='task'}投标：{$v['work_num']}{else}售出：{$v['sale_num']}{/if}个</span>
 		  					<span class="home-min-list-meta"><span class="money"><sub>￥</sub>$v['case_price']</span></span>
 	  					</div>
 	  				</a>

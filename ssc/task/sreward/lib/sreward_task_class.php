@@ -114,25 +114,25 @@ class sreward_task_class extends keke_task_class {
 				),
 				'2'=>array(
 						'status'   	=> 2,
-						'desc'     	=> '威客交稿',
+						'desc'     	=> '投标报价',
 						'time'     	=> $arrTaskInfo['sub_time'],
-						'timedesc' 	=> '距离投稿结束时间剩余',
+						'timedesc' 	=> '距离投标结束时间剩余',
 						'timeing'  	=> $arrTaskInfo['sub_time']
 				),
 				'3'=>array(
 						'status'	=> 3,
-						'desc'  	=> '雇主选稿',
+						'desc'  	=> '需方选标',
 						'time'  	=> $arrTaskInfo['end_time'],
-						'timedesc' 	=> '距离选稿结束时间剩余',
+						'timedesc' 	=> '距离选标结束时间剩余',
 						'timeing'  	=> $arrTaskInfo['end_time']
 				),
-				'4'=>array(
+				/*'4'=>array(
 						'status'	=> 4,
 						'desc'  	=> '投票期',
 						'time'  	=> $arrTaskInfo['sp_end_time'],
 						'timedesc' 	=> '距离投票期结束时间剩余',
 						'timeing'  	=> $arrTaskInfo['sp_end_time']
-				),
+				),*/
 				'5'=>array(
 						'status'	=> 5,
 						'desc'  	=> '公示期',
@@ -143,7 +143,7 @@ class sreward_task_class extends keke_task_class {
 				'6'=>array(
 						'status'	=> 6,
 						'task_status'	=> 13,
-						'desc'  	=> '稿件交付中'
+						'desc'  	=> '工作中'
 				),
 				'7'=>array(
 						'status'	=> 8,
@@ -268,7 +268,7 @@ class sreward_task_class extends keke_task_class {
 								"url" => "index.php?do=seller&id={$this->_uid}"
 						),
 						"action" => array (
-								"content" => '投稿',
+								"content" => '投标报价',
 								"url" => ""
 						),
 						"event" => array (
@@ -283,7 +283,7 @@ class sreward_task_class extends keke_task_class {
 								"url" => "index.php?do=seller&id={$this->_uid}"
 						),
 						"action" => array (
-								"content" => '被投稿',
+								"content" => '报价中',
 								"url" => ""
 						),
 						"event" => array (
@@ -295,7 +295,7 @@ class sreward_task_class extends keke_task_class {
 				kekezu::save_feed ( $feed_arr, $arrTaskInfo['uid'], $arrTaskInfo['username'], 'task_tur_bei', $this->_task_id );
 				return true;
 			}
-			return '很遗憾，交稿失败';
+			return '很遗憾，报价失败';
 		}else{
 			return  $resText;
 		}
@@ -851,7 +851,7 @@ class sreward_task_class extends keke_task_class {
 				$_lang ['agreement_link'] => $a_url,
 				$_lang ['agreement_status'] => $notice
 		);
-		$this->notify_user ( "agreement", '任务进入交付阶段', $s_arr, 1, $work_info ['uid'] );
+		$this->notify_user ( "agreement", '服务进入交付阶段', $s_arr, 1, $work_info ['uid'] );
 		$this->notify_user ( "agreement", $_lang ['task_in_jf_stage'], $b_arr, 2, $this->_guid );
 		return $agree_id;
 	}
@@ -1184,7 +1184,7 @@ class sreward_task_class extends keke_task_class {
 						'desc' => $_lang ['payment'],
 				);
 				break;
-			case 2 :
+			/*case 2 :
 				if(TOOL === TRUE){
 				$button ['tool'] = array (
 						'href'=>"javascript:payitem('task','{$t_id}','{$uid}');void(0);",
@@ -1219,28 +1219,28 @@ class sreward_task_class extends keke_task_class {
 						'desc' => '增值工具'
 								);
 				}
-				break;
+				break;*/
 			case 6 :
 				$agree_id = db_factory::get_count ( sprintf ( ' select agree_id from %switkey_agreement where task_id=%d and buyer_uid=%d', TABLEPRE, $t_id, $uid ) );
 				$button ['agree'] = array (
 						'href' => $site . 'index.php?do=agreement&taskId='.$t_id.'&agreeId=' . $agree_id,
 						'desc' => $_lang ['view_delive'],
 				);
-				if(TOOL === TRUE){
+				/*if(TOOL === TRUE){
 					$button ['tool'] = array (
 							'href'=>"javascript:payitem('task','{$t_id}','{$uid}');void(0);",
 							'desc' => '增值工具'
 									);
-				}
+				}*/
 				break;
-			case 13 :
+			/*case 13 :
 				if(TOOL === TRUE){
 				$button ['tool'] = array (
 						'href'=>"javascript:payitem('task','{$t_id}','{$uid}');void(0);",
 						'desc' => '增值工具'
 								);
 				}
-				break;
+				break;*/
 		}
 		if (! in_array ( $status, array (
 				0,

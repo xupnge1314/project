@@ -33,7 +33,7 @@ $regionCfg =  keke_glob_class::getRegionConfig();
 			$strExistDate = strval(trim($txt_exist_day));
 			$intExistDate = strtotime($strExistDate);
 			$intMinDate = time();
-			if ($floatPrice < $floatMinCash) {
+			/*if ($floatPrice < $floatMinCash) {
 				$tips['errors']['txt_price'] = '你的服务价格不能少于￥'.$floatMinCash.'元';
 				kekezu::show_msg($tips,NULL,NULL,NULL,'error');
 			}
@@ -42,7 +42,7 @@ $regionCfg =  keke_glob_class::getRegionConfig();
 					$tips['errors']['txt_exist_day'] = '有效期不能小于当前日期';
 					kekezu::show_msg($tips,NULL,NULL,NULL,'error');
 				}
-			}
+			}*/
 			$content=kekezu::escape($tar_content);
 			if(empty($content)){
 				$tips['errors']['tar_content'] = '内容不能为空！';
