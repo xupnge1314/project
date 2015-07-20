@@ -40,9 +40,12 @@ $(function(){
 	    	txt_mobile:	['not_empty',{min_length:11},{max_length:11},'digit' ],
 	    	task_ext_16: ['not_empty'],
 	    	task_ext_1:['not_empty'],
-	    	task_ext_6:['not_empty'],
+	    	task_ext_3:['not_empty'],
 	    	task_ext_10:['not_empty'],
 	    	task_ext_15:['not_empty'],
+	    	task_ext_17:['not_empty'],
+	    	task_ext_18:['not_empty'],
+	    	task_ext_20:['not_empty'],
 	    	province:['not_empty']
 
 		},
@@ -72,10 +75,16 @@ $(function(){
 			task_ext_16:{
 				not_empty : "请输入预计开始时间"
 			},
+			task_ext_17:{
+				not_empty : "请输入联系人"
+			},
+			task_ext_18:{
+				not_empty : "请输入电子邮箱"
+			},
 			task_ext_1:{
 				not_empty : ""
 			},
-			task_ext_6:{
+			task_ext_3:{
 				not_empty : ""
 			},
 			task_ext_10:{
@@ -83,6 +92,9 @@ $(function(){
 			},
 			task_ext_15:{
 				not_empty : "请输入样品"
+			},
+			task_ext_20:{
+				not_empty : "请输入样品数量"
 			},
 			province:{
 				not_empty : "请选择地区分类"

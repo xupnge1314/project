@@ -25,6 +25,7 @@ $arrDistribution = array(
 );
 $arrTopIndustrys = $kekezu->_indus_task_arr;
 $arrModelLists = kekezu::get_table_data ( '*', 'witkey_model', " model_type = 'task' and model_status='1'", 'listorder asc ', '', '', 'model_id', 3600 );
+$arrModelLists1 = kekezu::get_table_data ( '*', 'witkey_task_bid', " task_id = '%d' ", 'listorder asc ', '', '', 'model_id', 3600 );
 if(0 === $id){
 	$arrModelIds = array_keys($arrModelLists);
 	$id = $arrModelIds['0'];
