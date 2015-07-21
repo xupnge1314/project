@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset={DT_CHARSET}"/>
+<title>{if $seo_title}{$seo_title}{else}{if $head_title}{$head_title}{$DT[seo_delimiter]}{/if}{if $city_sitename}{$city_sitename}{else}{$DT[sitename]}{/if}{/if}</title>
+{if $head_keywords}
+<meta name="keywords" content="{$head_keywords}"/>
+{/if}
+{if $head_description}
+<meta name="description" content="{$head_description}"/>
+{/if}
+{if $head_mobile}
+<meta http-equiv="mobile-agent" content="format=xhtml; url={$head_mobile}"> 
+<meta http-equiv="mobile-agent" content="format=html5; url={$head_mobile}">
+{/if}
+<meta name="generator" content="DESTOON B2B - www.destoon.com"/>
+<link rel="shortcut icon" type="image/x-icon" href="{DT_STATIC}favicon.ico"/>
+<link rel="bookmark" type="image/x-icon" href="{DT_STATIC}favicon.ico"/>
+{if $head_canonical}
+<link rel="canonical" href="{$head_canonical}"/>
+{/if}
+{if $EXT[archiver_enable]}
+<link rel="archives" title="{$DT[sitename]}" href="{$EXT[archiver_url]}"/>
+{/if}
+<link rel="stylesheet" type="text/css" href="{DT_SKIN}style.css"/>
+{if $moduleid>4}<link rel="stylesheet" type="text/css" href="{DT_SKIN}{$module}.css"/>{/if}
+{if $CSS}
+{loop $CSS $css}
+<link rel="stylesheet" type="text/css" href="{DT_SKIN}{$css}.css"/>
+{/loop}
+{/if}
+<link type="text/css" href="{DT_SKIN}/w5/top_top.css" rel="stylesheet" />
+<link type="text/css" href="{DT_SKIN}/w5/w5base.css" rel="stylesheet" />
+<link type="text/css" href="{DT_SKIN}/w5/Wholesale.css" rel="stylesheet" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" type="text/css" href="{DT_SKIN}ie6.css"/>
+<![endif]-->
+{if !DT_DEBUG}<script type="text/javascript">window.onerror=function(){return true;}</script>{/if}
+<script type="text/javascript" src="{DT_STATIC}lang/{DT_LANG}/lang.js"></script>
+<script type="text/javascript" src="{DT_STATIC}file/script/config.js"></script>
+<script type="text/javascript" src="{DT_STATIC}file/script/jquery.js"></script>
+<script type="text/javascript" src="{DT_STATIC}file/script/common.js"></script>
+<script type="text/javascript" src="{DT_STATIC}file/script/page.js"></script>
+<script type="text/javascript" src="{DT_STATIC}file/script/w5/search.js"></script>
+<script type="text/javascript" src="{DT_STATIC}file/script/w5/jquery.min.js"></script>
+<script type="text/javascript" src="{DT_STATIC}file/script/w5/zzsc.js"></script>
+<script type="text/javascript" src="{DT_STATIC}file/script/w5/script.js"></script>
+<script type="text/javascript" src="{DT_STATIC}file/script/w5/top_top.js"></script>
+{if $lazy}<script type="text/javascript" src="{DT_STATIC}file/script/jquery.lazyload.js"></script>{/if}
+
+<script type="text/javascript">
+function scrollDoor(){
+           }
+scrollDoor.prototype = {
+         sd : function(menus,divs,openClass,closeClass){
+                      var _this = this;
+                      if(menus.length != divs.length){
+                            alert("菜单层数量和内容层数量不一样!");
+                            return false;
+											  }
+         for(var i = 0 ; i < menus.length ; i++){
+					  _this.$(menus[i]).value = i;
+					  _this.$(menus[i]).onmouseover = function(){
+                   for(var j = 0 ; j < menus.length ; j++){
+                            _this.$(menus[j]).className = closeClass;
+                            _this.$(divs[j]).style.display = "none";
+                       }
+                     _this.$(menus[this.value]).className = openClass;
+                     _this.$(divs[this.value]).style.display = "block";
+            }
+          }
+       },
+                  $ : function(oid){
+                  if(typeof(oid) == "string")
+                       return document.getElementById(oid);
+                       return oid;
+             }
+      }
+      window.onload = function(){
+			var SDmodel = new scrollDoor();
+			SDmodel.sd(["m01","m02","m03","m04","m05"],["c01","c02","c03","c04","c05"],"hovertab","normaltab");
+			SDmodel.sd(["m06","m07","m08","m09","m10"],["c06","c07","c08","c09","c10"],"hovertab","normaltab");
+			SDmodel.sd(["m11","m12","m13","m14","m15"],["c11","c12","c13","c14","c15"],"hovertab","normaltab");
+			SDmodel.sd(["m16","m17","m18","m19","m20"],["c16","c17","c18","c19","c20"],"hovertab","normaltab");
+			SDmodel.sd(["m21","m22","m23","m24","m25"],["c21","c22","c23","c24","c25"],"hovertab","normaltab");
+			SDmodel.sd(["m26","m27","m28","m29","m30"],["c26","c27","c28","c29","c30"],"hovertab","normaltab");
+			SDmodel.sd(["m31","m32","m33","m34","m35"],["c31","c32","c33","c34","c35"],"hovertab","normaltab");
+			SDmodel.sd(["m36","m37","m38","m39","m40"],["c36","c37","c38","c39","c40"],"hovertab","normaltab");
+			SDmodel.sd(["m41","m42","m43","m44","m45"],["c41","c42","c43","c44","c45"],"hovertab","normaltab");
+			SDmodel.sd(["m46","m47","m48","m49","m50"],["c46","c47","c48","c49","c50"],"hovertab","normaltab");
+			SDmodel.sd(["m51","m52","m53","m54","m55"],["c51","c52","c53","c54","c55"],"hovertab","normaltab");
+			SDmodel.sd(["m56","m57","m58","m59","m60"],["c56","c57","c58","c59","c60"],"hovertab","normaltab");
+			SDmodel.sd(["m61","m62","m63","m64","m65"],["c61","c62","c63","c64","c65"],"hovertab","normaltab");
+			SDmodel.sd(["m66","m67","m68","m69","m70"],["c66","c67","c68","c69","c70"],"hovertab","normaltab");
+
+     }
+</script>
+{if $JS}
+{loop $JS $js}
+<script type="text/javascript" src="{DT_STATIC}file/script/{$js}.js"></script>
+{/loop}
+{/if}
+{php $searchid = ($moduleid > 3 && $MODULE[$moduleid]['ismenu'] && !$MODULE[$moduleid]['islink']) ? $moduleid : 5;}
+<script type="text/javascript">
+{if $head_mobile && $EXT[wap_goto]}
+GoMobile('{$head_mobile}');
+{/if}
+var searchid = {$searchid};
+{if $itemid && $DT[anticopy]}
+document.oncontextmenu=function(e){return false;};
+document.onselectstart=function(e){return false;};
+{/if}
+</script>
+<!--[以上为系统关键代码，除非您明确其含义，否则请勿修改或删除，否则会导致系统错误]-->
+<!--[模板中所有带id的元素，请勿修改或删除，否则会导致部分JS代码无法运行]-->
+<!--[以上类似的注释，在编译模板时，系统会自动移除，不会显示在实际的页面中]-->
+</head>
+<body>
+
+<!-- 20150311 top_top -->
+<div id="top_top">
+    <div class="logBox" style="position:fixed;_position:ablolute">
+        <div class="login">
+           {if $EXT[wap_enable]}&nbsp;<span class="top_nav_mobilebj"><a href="{$EXT[wap_url]}mobile.php">手机版</a></span> {/if}
+		   &nbsp;<a href="{$MODULE[2][linkurl]}{$DT[file_login]}" target="_blank">用户登录</a> &nbsp;  <a href="{$MODULE[2][linkurl]}{$DT[file_register]}" target="_blank">免费注册</a>&nbsp;  <a href="{$MODULE[16][linkurl]}" target="_blank">商城首页</a>
+          <div class="siderNav">
+
+            <ul class="topmenu" clearfix="" id="jq_topmenu">
+              <!--<li class="weibo"> <strong> 微博 </strong>
+                <div class="jq_hidebox">
+                  <iframe width="250" height="80" class="share_self" frameborder="0" scrolling="no" src="###"></iframe></div>
+              </li>-->
+              <li class="weixin"> <strong> 微信 </strong>
+                <div class="jq_hidebox" style="display: none; ">
+                  <div class="wxht"> <b> 环球礼品网 </b> <span> 微信号:hqlpw555555 </span> </div>
+                </div>
+              </li>
+              <li class="webnav"> <strong class="icon_arr"> 商务中心 </strong>
+                <div class="jq_hidebox" style="display: none; ">
+                  <a href="javascript:;" onclick="SetHome(window.location)" class="red" target="_self"> 设为首页 </a> <a class="red" target="_self" onclick="addCookie()" href="javascript:;"> 添加收藏 </a>
+                  <dl class="aSty01">
+                    <dt> 快捷入口：  <a href="{$MODULE[2][linkurl]}home.php"> 管理旺铺 </a> <br /></dt>
+                        <dd>
+                        <!--   <a href="/"> 发布供应产品 </a> | <a href="/"> 管理供应产品 </a> <br />
+                           <a href="/"> 发布询价单 </a> | <a href="/"> 管理询价单 </a>    -->
+                        </dd>
+                  </dl>
+                </div>
+              </li>
+              <li class="webnav" ><strong class="icon_arr"> VIP服务 </strong>
+                <div class="jq_hidebox" style="display: none; " block;="">
+                   <a href="#" target="_blank"> 在线办理续费 </a> | <a href="#" target="_blank"> 产品竞拍排名 </a> <br> <a href="{DT_PATH}about/contact.html" target="_blank"> 联系我们 </a> |  
+                   <a href="/" target="_blank"> 在线留言 </a> 
+                </div>
+              </li>
+              <li class="webnav"> <strong> 服务中心 </strong></li>
+			  {if $MODULE[16]}<li class="webnav"><a href="{$MODULE[16][linkurl]}cart.php" rel="nofollow"><strong> 购物车 </strong></a>(<span class="head_t" id="destoon_cart">0</span>)</li>{/if}
+              <li class="webnav" style="background:none"> <strong class="icon_arr"> 网站导航 </strong>
+                  <div class="jq_hidebox" style="display: none; ">
+                  <a href="javascript:;" onclick="SetHome(window.location)" class="red" target="_self"> 设为首页 </a> <a class="red" target="_self" onclick="addCookie()" href="javascript:;"> 添加收藏 </a>
+                  <dl class="aSty01">
+                    <dt> <a href="{$MODULE[6][linkurl]}"> 求购 </a></dt>
+                        <dd>
+                        <!--<!--   <a href="/"> 发布供应产品 </a> | <a href="/"> 管理供应产品 </a> <br />
+                           <a href="/"> 发布询价单 </a> | <a href="/"> 管理询价单 </a>        -->
+                        </dd>
+                    <dt> <a href="{$MODULE[5][linkurl]}"> 供应 </a></dt>
+                        <dd>
+                        <!--   <a href="/"> 发布供应产品 </a> | <a href="/"> 管理供应产品 </a> <br />
+                           <a href="/"> 发布询价单 </a> | <a href="/"> 管理询价单 </a>      -->
+                        </dd>
+                  </dl>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </div>
+</div>
+
+<div class="header_search">
+   <div class="logo">
+      <a href="{$MODULE[1][linkurl]}"><img src="{if $MODULE[$moduleid][logo]}{DT_SKIN}image/logo_{$moduleid}.gif{elseif $DT[logo]}{$DT[logo]}{else}{DT_SKIN}image/logo.gif{/if}" alt="环球礼品网 批发商城 首页"/></a>
+   </div>
+  <div class="search_input">
+      <form method="get" name="" action="" target="_blank" style="width:551px;height:34px;margin:0px auto 0 auto;">
+	  <div id="searchTxt" class="searchTxt" onMouseOver="this.className='searchTxt searchTxtHover';" onMouseOut="this.className='searchTxt';">
+		<div class="radius" style="top:-2px;"></div>
+		<div class="radius" style="top:31px;"></div>
+		
+		<div class="searchMenu">
+			
+			<div class="searchSelected" id="searchSelected">供应</div>
+			
+			<div style="display:none;" class="searchTab" id="searchTab">
+				<div class="radius" style="top:259px;"></div>
+				<div class="radius" style="top:259px;left:59px;"></div>
+				<ul>
+					<li class="">供应</li>
+					<li>求购</li>
+					<li>商品</li>
+					<li>资讯</li>
+					<li>展会</li>
+				</ul>
+			</div>
+		</div>
+		
+		<input name="w" type="text" />
+		<a href="#" target="_blank"><img id="sogouLogo" alt="搜索" class="sosoLogo" src="{DT_SKIN}w5/image/gnlogo.png"></a>
+	</div>
+	<div class="searchBtn">
+		<button id="searchBtn" type="submit">搜索</button>
+	</div>
+    </form>
+       <ul>
+         <!--{tag("moduleid=$searchid&table=keyword&condition=moduleid=$searchid and status=3&pagesize=10&order=total_search desc&template=list-search_kw")}-->		 
+       </ul>
+   </div>
+    <div class="search_right_weixin">
+    </div>
+</div>
+
+<div class="whoslesale_main_nav">
+ <div class="whoslesale_main_nav_innel">
+   <tt><a href="{DT_PATH}mall/">批发商城</a></tt>
+   <ul>
+      <li{if $moduleid<4}{/if} class="whoslesale_nav_danqian"><a href="{$MODULE[1][linkurl]}"><span>首页</span></a></li>
+		{loop $MODULE $m}
+			{if $m[ismenu]}
+			<li{if $m[moduleid]==$moduleid} {/if}>
+				<a href="{$m[linkurl]}">
+					{$m[name]}
+				</a>
+			</li>
+			{/if}
+		{/loop}
+   </ul>
+   </div>
+</div>
+<div class="whoslesale_nav_bottom_1px"></div>

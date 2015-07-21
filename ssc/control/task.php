@@ -7,6 +7,8 @@ if ($intId) {
 	$strTaskSql = 'select * from '.TABLEPRE.'witkey_task where task_id = '.$intId;
 	$arrTaskInfo = db_factory::get_one($strTaskSql);
 	$arrTaskInfo or kekezu::show_msg(kekezu::lang("operate_notice"),"index.php?do=tasklist",2,"对不起，您访问的页面没找到！","warning");
+	$strTaskSql1 = 'select * from '.TABLEPRE.'witkey_task_bid where task_id = '.$intId;
+	$arrTaskInfo1 = db_factory::get_one($strTaskSql1);
 	$arrTaskInfo['ext_time'] = intval($arrTaskInfo['ext_time']);
 	$arrModelInfo = $model_list [$arrTaskInfo ['model_id']];
 	if($arrTaskInfo['uid']){
@@ -111,7 +113,7 @@ if ($intId) {
 		$arrSearchStatus['101'] = '来自需方';
 		$arrSearchStatus['102'] = '来自服务商';
 	}
-if($arrModelInfo['open_custom'] =='1'){
+if($arrTaskInfo1['bid_status'] =='4' && $_SESSION['username']==$arrTaskInfo1['username'] || $_SESSION['username']==$arrTaskInfo['username'] ){
 	$c_open = 1;
 	$arrShowCustoms = CustomClass::getExtData($arrTaskInfo['task_id'],$arrModelInfo['model_id']); 
 	foreach ($arrShowCustoms as $k=>$v){
