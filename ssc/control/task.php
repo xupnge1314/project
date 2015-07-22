@@ -113,7 +113,7 @@ if ($intId) {
 		$arrSearchStatus['101'] = '来自需方';
 		$arrSearchStatus['102'] = '来自服务商';
 	}
-if($arrTaskInfo1['bid_status'] =='4' && $_SESSION['username']==$arrTaskInfo1['username'] || $_SESSION['username']==$arrTaskInfo['username'] ){
+if($arrModelInfo['open_custom'] =='1'){
 	$c_open = 1;
 	$arrShowCustoms = CustomClass::getExtData($arrTaskInfo['task_id'],$arrModelInfo['model_id']); 
 	foreach ($arrShowCustoms as $k=>$v){
@@ -126,3 +126,4 @@ if($arrTaskInfo1['bid_status'] =='4' && $_SESSION['username']==$arrTaskInfo1['us
 	$_SESSION['spread'] = 'index.php?do=task&id='.intval($id);
 	require keke_tpl_class::template ( "task/" . $arrModelInfo ['model_code'] . "/tpl/" . $_K ['template'] . "/index");die;
 }
+///$arrTaskInfo1['bid_status'] =='4' && $_SESSION['username']==$arrTaskInfo1['username'] || $_SESSION['username']==$arrTaskInfo['username'] 

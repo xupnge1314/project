@@ -45,7 +45,7 @@ $(function(){
 	    	task_ext_15:['not_empty'],
 	    	task_ext_17:['not_empty'],
 	    	task_ext_18:['not_empty'],
-	    	/*task_ext_20:['not_empty'],*/
+	    	task_ext_19:['not_empty'],
 	    	province:['not_empty']
 
 		},
@@ -93,7 +93,7 @@ $(function(){
 			task_ext_15:{
 				not_empty : "请输入样品"
 			},
-			task_ext_20:{
+			task_ext_19:{
 				not_empty : "请输入样品数量"
 			},
 			province:{
