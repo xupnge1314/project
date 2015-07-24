@@ -15,11 +15,9 @@
 						{else}
 							{if $arrTaskInfo1['bid_status'] =='4' && $_SESSION['username']==$arrTaskInfo1['username']}
 								<p>{$vv['fieldname']}：{$vv['content']}</p>
-							{else}
-								{if $vv['fieldname']=='报告文档' || $vv['fieldname']=='出报告方式' || $vv['fieldname']=='是否接受分包' || $vv['fieldname']=='发票类型' || $vv['fieldname']=='报告语言' || $vv['fieldname']=='预计开始时间' || $vv['fieldname']=='样品数量' || $vv['fieldname']=='测试标准' || $vv['fieldname']=='样品'  }
-									
-									<p>{$vv['fieldname']}：{$vv['content']}</p>
+							{elseif $vv['fieldname']=='报告文档' || $vv['fieldname']=='出报告方式' || $vv['fieldname']=='是否接受分包' || $vv['fieldname']=='发票类型' || $vv['fieldname']=='报告语言' || $vv['fieldname']=='预计开始时间' || $vv['fieldname']=='样品数量' || $vv['fieldname']=='测试标准' || $vv['fieldname']=='样品'}
 								
+									<p>{$vv['fieldname']}：{$vv['content']}</p>
 								
 							{/if}
 						{/if}

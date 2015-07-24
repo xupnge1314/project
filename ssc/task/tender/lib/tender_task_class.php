@@ -49,6 +49,9 @@ class tender_task_class extends keke_task_class {
 	}
 	public function work_hand($work_desc, $hdn_att_file, $hidework = '2', $url = '', $output = 'normal') {
 	}
+	public function set_task_bid_file(){
+		
+	}
 	public function tender_work_hand($work_info) {
 		global $kekezu, $_K;
 		global $_lang;

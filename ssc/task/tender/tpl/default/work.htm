@@ -81,7 +81,44 @@
 					<div class="manuscript-ctrl">
 						{if $arrProcess_can['work_choose']} {if !in_array($v['bid_status'],array('4','7','8'))} <a href="javascript:chooseWork('{$v[bid_id]}',4);void(0);" class="btn btn-success btn-sm"> <i class="fa fa-check-circle"></i> 设为中标
 						</a> {/if} {if !in_array($v['bid_status'],array('4','7','8'))} <a href="javascript:chooseWork('{$v[bid_id]}',7);void(0);" class="btn btn-default btn-sm"> <i class="fa fa-times-circle"></i> 设为淘汰
-						</a> {/if} {/if} {if $arrProcess_can['pub_agreement']&&$v['bid_status'] == '4'} <a href="javascript:PubAgreement('{$v[task_id]}');void(0);" class="btn btn-success btn-sm"> <i class="fa fa-check-circle"></i> 发起完工
+						</a> {/if} {/if} 
+						{if $arrProcess_can['pub_agreement']&&$v['bid_status'] == '4'} 
+
+						<div class="form-group">
+					            <label for="upload" class="col-sm-3 control-label" style="clear:both;">上传报价单(<font color='red'>最多5个附件，每个附件不得超过{$basic_config['max_size']}M。</font>)</label>
+					            <div class="col-sm-6"  style="clear:both;">
+					              <p class="form-control-static">
+					                <input type="file" id="upload" name="upload">
+					                <input type="hidden"  name="file_ids" id="fileid"  class="form-control" value="{$arrPubInfo['file_ids']}">
+					              </p>
+					            </div>
+					            <script src="static/js/uploadify/jquery.uploadify.min.js?r={RANDOM_PARA}" type="text/javascript"></script>
+					            <link href="static/js/uploadify/uploadify.css" rel="stylesheet">
+					            <script type="text/javascript">
+					                               $(function(){
+					                                 setTimeout(function(){
+					                                    uploadify({
+					                                      text:'上传附件',
+					                                      auto:true,
+					                                      hide:false,
+					                                      exts:'{$strExtTypes}',
+					                                      size:"{$basic_config['max_size']}MB",
+					                                      limit:5
+					                                      },{
+					                    objType:'quotation',
+					                    sessionId:sessionId
+					                                      },uploadResponse);
+					                                },500);
+					                                });
+					                function uploadResponse(json){
+					                }
+					            </script>
+					          </div>
+						<br/><br/><br/><br/><br/><br/>
+						<a href="javascript:PubAgreement('{$v[task_id]}');void(0);" class="btn btn-success btn-sm"> <i class="fa fa-check-circle"></i>
+
+						发起完工
+
 						</a> {/if} {if $arrProcess_can['work_over']&&$v['bid_status'] == '4'} <a href="javascript:WorkOver('{$v[task_id]}');void(0);" class="btn btn-success btn-sm"> <i class="fa fa-check-circle"></i> 确认完工
 						</a> {/if}
 					</div>

@@ -123,21 +123,12 @@
       </div>
     </div>
 
+
+
+
     <div class="form-group">
       <label class="col-sm-2 control-label" for="filepath">资质证书图片 <span style="color: #a94442">：</label>
       <div class="col-sm-8">
-          {if $intAuthStatus}
-              已通过认证，无法修改！
-              {if $arrEnterPriseInfo['licen_pic']!=""}
-                <a href="index.php?do=user&view=account&op=auth&code=enterprise">查看审核状态</a>
-              {/if} <br/>
-          {else}
-              通过企业认证，必须提交营业执照！
-              <input type="file" class="file" name="upload" id="upload">
-          {/if}
-          <input type="hidden" name="fileid" id="fileid"  class="form-control">
-          <input type="hidden"  name="filepath" id="filepath"  class="form-control" value="{$arrEnterPriseInfo['licen_pic']}">
-          <img id="license_img" src="{$arrEnterPriseInfo['licen_pic']}" {if !$arrEnterPriseInfo['licen_pic']}class="hidden"{/if} width="100px">
 
           <script src="static/js/model/common/base.js" type="text/javascript"></script>
           <script src="static/js/uploadify/jquery.uploadify.min.js?r={RANDOM_PARA}" type="text/javascript"></script>
@@ -145,7 +136,6 @@
 
           <script type="text/javascript">
             $(function(){
-
               setTimeout(
                 function() {
                   uploadify(
@@ -153,7 +143,7 @@
                     debug : false,
                     text : '上传图片',
                     auto : true,
-                    limit : 1,
+                    limit : 5,
                     hide : false,
                     size : "{$basic_config['max_size']}MB",
                     exts : '*.jpg;*.jpeg;*.gif;*.png;*.bmp'
@@ -161,7 +151,7 @@
                   {
                     sessionId : sessionId,
                     fileType:'sys',
-                    objType:'auth'
+                    objType:'Qua'
                   },
                   uploadResponse);
                 },
