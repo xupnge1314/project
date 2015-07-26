@@ -17,6 +17,8 @@ if($action=='delete'){
 	$fileFormat = explode('|',$kekezu->_sys_config['file_type']);
 	$maxSize = intval($kekezu->_sys_config['max_size'])*1024*1024;
 	$pathDir = setUploadPath($fileType, $objType);
+	//$bidId = $_POST['bid_id'];
+	//$bidId = $_POST['bid_id'];//$someVar = $_POST['someKey'];
 	$upload = new keke_upload_class(S_ROOT.$pathDir ,$fileFormat,$maxSize);
 	$savename = $upload->run( $filename , 1);
 	if (is_array ( $savename )) {
@@ -38,6 +40,7 @@ if($action=='delete'){
 				'username'	=>$gUsername,
 				'obj_type'	=>$objType,
 				'task_id'	=>$taskId,
+				'bid_id'	=>$objType,
 				'work_id'	=>$workId,
 				'on_time'   =>time()
 		);
@@ -58,6 +61,8 @@ function setUploadPath($fileType,$objType){
 	}elseif($fileType =='sys'&&$objType =='mark'){	
 		$pathDir .= $fileType.'/'.$objType.'/';
 	}elseif($fileType =='sys'&&$objType =='tools'){	
+		$pathDir .= $fileType.'/'.$objType.'/';
+	}elseif($fileType =='sys'&&$objType =='quotation'){	
 		$pathDir .= $fileType.'/'.$objType.'/';
 	}elseif($fileType =='space'){					
 		$pathDir .= $fileType.'/';

@@ -11,6 +11,20 @@ $arrTaskInfo = db_factory::get_one($strTaskSql);
 if(!$arrTaskInfo){
 	jumpUrl($taskId);
 }
+
+//添加 2015-07-25
+/*$stdCacheName = 'task_cache_'.$id.'_' . substr ( md5 ( $gUid ), 0, 6 );
+$objRelease = tender_release_class::get_instance ($id,$pub_mode);
+$objRelease->get_task_obj ( $stdCacheName );
+$objRelease->pub_mode_init( $stdCacheName,$init_info);
+$arrPubInfo = $objRelease->_std_obj->_release_info;
+$arrPubInfo['indus_pid'] and $arrAllIndustrys = CommonClass::getIndustryByPid($arrPubInfo['indus_pid'],'indus_id,indus_pid,indus_name');
+$arrCashCove = $objRelease->_cash_cove;
+$arrPubInfo and $_POST = array_merge ( $arrPubInfo, $_POST );*/
+
+
+
+
 $arrModelInfo = $model_list [$arrTaskInfo ['model_id']];
 $arrProvinces = CommonClass::getDistrictByPid('0','id,upid,name');
 if($gUserInfo['city']){
@@ -87,6 +101,14 @@ switch ($op) {
 			kekezu::show_msg ( '提交失败', NULL, NULL, NULL, 'fail' );
 		}
 		break;
+	//205-07-25   添加
+	/*case "taskBidFile":
+		if (strtoupper ( CHARSET ) == 'GBK') {
+				$_POST = kekezu::utftogbk($_POST );
+		}
+		$arrBidInfo = $objTask->get_bid_info ();
+		$resText = $objTask->set_task_bid_file ( $_POST, $arrBidInfo['bid_id'] );
+		break;*/
 	case "pubAgreement":
 		$objTask->set_task_status(5);
 		$arrBidInfo = $objTask->get_bid_info ();
@@ -97,15 +119,42 @@ switch ($op) {
 			kekezu::show_msg ( $resText, 'index.php?do=task&id='.$taskId, 3, NULL, 'fail' );
 		}
 		break;
+	/*case "pubAgreement":
+		$objTask->set_task_status(5);
+		$arrBidInfo = $objTask->get_bid_info ();
+		$resData = $objTask->set_task_bid_file ( $arrBidInfo['bid_id'] );
+		$resText = $objTask->set_agreement_status ( $arrBidInfo['bid_id'], 1 );
+		if($resText===true){
+			kekezu::show_msg ( '操作成功', $strUrl, 3, NULL, 'ok' );
+		}else{
+			kekezu::show_msg ( $resText, 'index.php?do=task&id='.$taskId, 3, NULL, 'fail' );
+		}
+		break;*/
 	case "workOver":
-		$objTask->set_task_status ( 8 );
+		//$objTask->set_task_status ( 8 );
+		$strUrl1 = 'index.php?do=taskhandle&op=workOver1&taskId='.$taskId;
 		$arrBidInfo = $objTask->get_bid_info ();
 		$res = $objTask->set_agreement_status ( $arrBidInfo['bid_id'], 2 );
 		if($res===true){
-		   kekezu::show_msg ( '操作成功', $strUrl, 3, NULL, 'ok' );
+		   kekezu::show_msg ( '操作成功', $strUrl1, 3, NULL, 'ok' );
 		}else{
 		  kekezu::show_msg ( $resText, 'index.php?do=task&id='.$taskId, 3, NULL, 'fail' );
 		}
+		break;
+	/*case "workOver1":
+	    $objTask->set_task_status ( 8 );
+	    $arrBidInfo = $objTask->get_bid_info ();
+	    require keke_tpl_class::template ( 'task/'.$arrModelInfo['model_code'].'/tpl/default/pay' );
+	    die();
+	    //kekezu::show_msg ( '操作成功', 'index.php?do=task&id=37', 3, NULL, 'ok' );
+	    //require keke_tpl_class::template ( 'task/'.$arrModelInfo['model_code'].'/tpl/default/pay' );
+	    break;*/
+	case "workOver1":
+		$objTask->set_task_status ( 8 );
+		$arrBidInfo = $objTask->get_bid_info ();
+		$date = date("Y-m-d H:i:s",time()+1);
+		require keke_tpl_class::template ( 'task/'.$arrModelInfo['model_code'].'/tpl/default/pay' );
+	    die();
 		break;
 	case "turnaround" : 
 		if(0 === $gUid){

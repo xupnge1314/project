@@ -14,6 +14,12 @@ $jsonWorkStatus = json_encode($arrWorkStatus);
 if($arrTaskInfo['task_pic']){
 	$arrTaskPics = explode(',',$arrTaskInfo['task_pic']);
 }
+//2015-07-26
+
+//$arrTaskBidInfo = db_factory::get_one("select bid_id from ".TABLEPRE."witkey_task_bid as a where bid_status=4 and task_id=".intval($id));
+$arrTaskBidInfo=db_factory::get_one("select * from ".TABLEPRE."witkey_task_bid where bid_status=4 and task_id = ".$arrTaskInfo['task_id']);
+$arrBidFiles = $objTask->get_bid_file ($arrTaskBidInfo['bid_id']);
+
 $arrTaskWorkInfo=db_factory::get_one("select * from ".TABLEPRE."witkey_task_bid as a left join ".TABLEPRE."witkey_space as b on a.uid=b.uid where bid_status=4 and task_id=".intval($id));
 if($arrTaskWorkInfo){
 $intDeals=TaskClass::getWikiDealbyUid($arrTaskWorkInfo['uid']);
@@ -23,6 +29,7 @@ $arrCoverCash = kekezu::get_cash_cove ( '', true );
 $objTenderTime = new tender_time_class();
 $objTenderTime->validtaskstatus();
 $Exitworker=db_factory::get_one("select * from ".TABLEPRE."witkey_task_bid where task_id = ".$arrTaskInfo['task_id']." and uid=".$gUid);
+//$arrBidFiles = $objTask->get_bid_file ($Exitworker['bid_id']);
 switch ($view){
 	case "work":
 		$s === null and $s = 1 or $s = intval($s);

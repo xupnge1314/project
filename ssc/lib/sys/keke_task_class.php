@@ -89,6 +89,11 @@ abstract class keke_task_class {
 		$search_condit = kekezu::get_table_data ( " count($fields_arr[pk]) count,$fields_arr[st]", $fields_arr ['tab'], " task_id='" . $this->_task_id . "' ", "", $fields_arr ['st'], "", $fields_arr ['st'] );
 		return $search_condit;
 	}
+	// 2015-07-26   添加
+	public function get_bid_file($id) {
+		return kekezu::get_table_data ( "*", "witkey_file", " bid_id = '" . $id. "'", "", "", "", "file_id", 3600 );
+	}
+	
 	public function get_task_file() {
 		return kekezu::get_table_data ( "*", "witkey_file", " obj_type = 'task' and work_id='0' and task_id = '" . $this->_task_id . "'", "", "", "", "file_id", 3600 );
 	}

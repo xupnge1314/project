@@ -141,13 +141,13 @@ function voteWork(id){
  * 普通招标-威客发起完工协议
  */
 function PubAgreement(taskId){
-	confirmOp('<div class="alert alert-warning"><i class="fa fa-exclamation-triangle"></i> 确定完工？</div>','index.php?do=taskhandle&op=pubAgreement&taskId='+taskId,true);
+	confirmOp('<div class="alert alert-warning"><i class="fa fa-exclamation-triangle"></i> 确定报价？</div>','index.php?do=taskhandle&op=pubAgreement&taskId='+taskId,true);
 }
 /**
  * 普通招标-雇主确认完工协议
  */
 function WorkOver(taskId){
-	confirmOp('<div class="alert alert-warning"><i class="fa fa-exclamation-triangle"></i> 确定验收完工？</div>','index.php?do=taskhandle&op=workOver&taskId='+taskId,true);
+	confirmOp('<div class="alert alert-warning"><i class="fa fa-exclamation-triangle"></i> 确定支付款项？</div>','index.php?do=taskhandle&op=workOver&taskId='+taskId,true);
 }
 
 

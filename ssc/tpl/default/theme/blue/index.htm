@@ -144,8 +144,8 @@
 		        <li class="category-item">
 		          <div class="category-top">
 		          	{loop $value $k1 $v1}
-		            {if $k1<2}
-		            <a href="index.php?do=goodslist&i=$v1['indus_id']"  {if $v1['is_recommend']==1}class="hot"{/if}  tabindex="-1">$v1['indus_name']</a>、
+		            {if $k1<1}
+		            <a href="index.php?do=goodslist&i=$v1['indus_id']"  {if $v1['is_recommend']==1}class="hot"{/if}  tabindex="-1">$arrIndusPs[$key]['indus_name']</a>
 					{/if}
 			        {/loop}
 		            <i class="fa fa-angle-right"></i>
@@ -230,8 +230,8 @@
 		        <li class="category-item">
 		          <div class="category-top">
 		          	{loop $value $k1 $v1}
-		            {if $k1<2}
-		            <a href="index.php?do=tasklist&i=$v1['indus_id']"  {if $v1['is_recommend']==1}class="hot"{/if}  tabindex="-1">$v1['indus_name']</a>、
+		            {if $k1<1}
+		            <a href="index.php?do=tasklist&i=$v1['indus_id']"  {if $v1['is_recommend']==1}class="hot"{/if}  tabindex="-1">$arrIndusPt[$key]['indus_name']</a>
 					{/if}
 			        {/loop}
 		            <i class="fa fa-angle-right"></i>
@@ -302,11 +302,8 @@
 		<h5>推荐服务商</h5>
 		<ul>
 			<li>
-				<img src="http://www.sgsgroup.com.cn/images/homepage/logo.png">
 			</li>
-			<li>
-				<img src="http://www.tuv.com/media/system/img/logo/tuv-rheinland-print.png">
-			</li>
+			
 		</ul>
 	</div>
 

@@ -7,6 +7,7 @@ class tender_task_class extends keke_task_class {
 	public $_cove_obj;
 	public $_cash_cove_obj;
 	public $_task_bid_obj;
+	public $_file_obj;
 	public $_cash_arr;
 	protected $_inited = false;
 	public static function get_instance($task_info) {
@@ -28,6 +29,7 @@ class tender_task_class extends keke_task_class {
 		}
 		$this->_inited = true;
 		$this->_task_bid_obj = new Keke_witkey_task_bid_class ();
+		$this->_file_obj = new Keke_witkey_file_class ();
 		$this->_cash_cove_obj = new Keke_witkey_task_cash_cove_class ();
 		$this->_cash_arr = $this->_cash_cove_obj->query_keke_witkey_task_cash_cove ();
 	}
@@ -49,9 +51,7 @@ class tender_task_class extends keke_task_class {
 	}
 	public function work_hand($work_desc, $hdn_att_file, $hidework = '2', $url = '', $output = 'normal') {
 	}
-	public function set_task_bid_file(){
-		
-	}
+	
 	public function tender_work_hand($work_info) {
 		global $kekezu, $_K;
 		global $_lang;
@@ -434,6 +434,29 @@ class tender_task_class extends keke_task_class {
 		$bid_info = $bid_info ['0'];
 		if ($bid_info) {
 			return $bid_info;
+		} else {
+			return false;
+		}
+	}
+	//2015-07-25
+	function set_task_bid_file($bid_id){
+		$this->_file_obj->setWhere ( " bid_id = $bid_id" );
+		$dataFileId = $this->_file_obj->query_keke_witkey_task_bid ();
+		$data = array() ;$i = 0;
+		foreach ($dataFileId as $key => $value) {
+			$data[$i] = $value[0];
+			$i++;
+		}
+		if ($dataFileId) {
+			return $dataFileId;
+		} else {
+			return false;
+		}
+		$this->_task_bid_obj->setWhere ( " bid_id = $bid_id" );
+		$this->_task_bid_obj->setBid_file ( $dataFileId );
+		$res = $this->_task_bid_obj->edit_keke_witkey_task_bid ();
+		if ($res) {
+			return $res;
 		} else {
 			return false;
 		}

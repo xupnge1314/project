@@ -14,7 +14,6 @@
 			          </div>
 			        {else}
 						<p class="lead text-success text-center mt_20 "><i class="fa fa-check-circle"></i> 恭喜，您已完成付款 <sub>￥</sub>{$floatPayCash} <sub>元</sub>！{if $arrTaskInfo['task_status']=='1'}请等待后台审核{/if}</p>
-			
 						<div class="text-center mb_20">
 							<a href="index.php?do=task&id={$taskId}" class="btn btn-primary">确定</a>
 							<a href="index.php?do=user&view=transaction&op=released&intModelId={$id}" class="btn btn-default">到用户中心查看详细</a>

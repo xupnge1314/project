@@ -12,8 +12,8 @@
         <li class="category-item">
           <div class="category-top">
             {loop $value $k1 $v1}
-				{if $k1<2}
-				<a href="{$strUrl}&pd={$arrIndusP[$key]['indus_id']}&i=$v1['indus_id']"  {if $v1['is_recommend']==1}class="hot"{/if} tabindex="-1">$v1['indus_name']</a>、
+				{if $k1<1}
+				<a href="{$strUrl}&pd={$arrIndusP[$key]['indus_id']}&i=$v1['indus_id']"  {if $v1['is_recommend']==1}class="hot"{/if} tabindex="-1">$arrIndusP[$key]['indus_name']</a>
 				{/if}
 			{/loop}
             <i class="fa fa-angle-right"></i>
@@ -112,8 +112,8 @@
         <li class="category-item">
           <div class="category-top">
           	{loop $value $k1 $v1}
-			{if $k1<2}
-            <a href="{$strUrl}&pd={$arrIndusP[$key]['indus_id']}&i=$v1['indus_id']"  {if $v1['is_recommend']==1}class="hot"{/if} tabindex="-1">$v1['indus_name']</a>、
+			{if $k1<1}
+            <a href="{$strUrl}&pd={$arrIndusP[$key]['indus_id']}&i=$v1['indus_id']"  {if $v1['is_recommend']==1}class="hot"{/if} tabindex="-1">$arrIndusP[$key]['indus_name']</a>
 			{/if}
 			{/loop}
             <i class="fa fa-angle-right"></i>
