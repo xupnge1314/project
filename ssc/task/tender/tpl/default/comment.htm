@@ -19,7 +19,7 @@
 					<time class="comment-time">留言不得超过100字</time>
 				</div>
 				<div class="form-group">
-					<textarea name="addcontent" class="form-control" id="addcontent" rows="5"></textarea>
+					<textarea name="addcontent" class="form-control" id="addcontent" rows="5" style="width:950px;" ></textarea>
 				</div>
 				{if $gUid}
 				<button class="btn btn-default" type="button" id="addcomment" onclick="addComment('{$id}','{$id}','task',0)">
@@ -39,7 +39,6 @@
 				</a>
 			</div>
 			<div class="media-body">
-
 				<div class="media-heading">
 					<strong class="comment-name">{$v['username']}</strong>
 					<time class="comment-time">
