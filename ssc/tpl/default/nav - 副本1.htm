@@ -1,0 +1,70 @@
+<<<<<<< HEAD
+<nav class="site-nav">
+=======
+<!-- <nav class="site-nav">
+>>>>>>> 04e6887b808f0704a8ab35ab2643f6e5f1c9d505
+<div class="container">
+  <div role="navigation" class="navbar navbar-primary">
+    <div class="navbar-header">
+      <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+        <span class="sr-only">切换导航</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <span class="navbar-actived">网站导航</span>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav nav-primary">
+      		{loop $nav_arr $k $v}
+			 <li {if $v['nav_style']==$do ||$v['nav_style']==$strNavActive}class="active"{/if} ><a href="{$v['nav_url']}" {if $v['newwindow']}target="_blank"{/if}><span>{$v['nav_title']}</span></a></li>
+              <li class="line"></li>
+			{/loop}
+      </ul>
+<<<<<<< HEAD
+      <!--<ul class="nav navbar-nav navbar-right">
+        <li><a href="#">诚信保障</a></li>
+        <li><a href="#">VIP特权</a></li>
+        <li><a href="#">增值工具</a></li>
+      </ul>-->
+    </div><!--/.nav-collapse -->
+  </div>
+</div>
+</nav>
+=======
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">诚信保障</a></li>
+        <li><a href="#">VIP特权</a></li>
+        <li><a href="#">增值工具</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+</nav> -->
+
+
+
+<div id="menubar2" style="z-index:-9999;">
+  <div class="navframe">
+    <div class="nav">
+      <ul>
+        {loop $nav_arr $k $v}
+       <li {if $v['nav_style']==$do ||$v['nav_style']==$strNavActive}class="active"{/if} ><a href="{$v['nav_url']}" {if $v['newwindow']}target="_blank"{/if}><span>{$v['nav_title']}</span></a></li>
+              
+      {/loop}
+      </ul>
+    </div>
+  </div>
+  <div class="indextop" style="z-index:-9999;">
+    <div id="full-screen-slider">
+      <ul id="slides">
+      <!--{ad_show(HOME_TOP_SLIDE,1)}-->
+        <li style="background:url('static/new/images/banner.png') no-repeat center top"></li>
+        <li style="background:url('static/new/images/banner.png') no-repeat center top"></li>
+        <li style="background:url('static/new/images/banner.png') no-repeat center top"></li>
+        <li style="background:url('static/new/images/banner.png') no-repeat center top"></li>
+      </ul>
+    </div>
+  </div>
+</div>
+>>>>>>> 04e6887b808f0704a8ab35ab2643f6e5f1c9d505

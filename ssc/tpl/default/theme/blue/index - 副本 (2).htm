@@ -1,25 +1,21 @@
 <!--{template header}-->
 
 <!-- 幻灯片 -->
-
-<div class="home-top">
-		<div class="banner">
-				<div class="fotorama" data-autoplay="true" data-width="100%" data-ratio="950/300" data-fit="cover" data-stopautoplayontouch="false"  data-loop="true" data-arrows="false" data-click="false" data-swipe="true">
-					<!--{ad_show(HOME_TOP_SLIDE,1)}-->
-				</div>
-				<!-- fotorama end -->
-		</div>
+<div  class="container">
+	<div class="home-top" style="z-index:9999;">
+		
 		<!-- banner end -->
 
-		<div class="site-noitce">
-			<div class="site-noitce-top">
+		<div class="site-noitce" style="z-index:9999;">
+			<div class="site-noitce-top" style="z-index:9999;">
 			{if $gUid}
 				<div class="after">
+					<!--
 					<ul class="nav nav-pills">
 						<li class="active mr_10">
 							<a href="#employer" data-toggle="tab">
 								<i class="fa fa-flag"></i>
-								我是需求方
+								我是需方
 							</a>
 						</li>
 						<li>
@@ -29,17 +25,19 @@
 							</a>
 						</li>
 					</ul>
-
+					-->
 					<div class="tab-content">
-						<div class="tab-pane active" id="employer">
-							<a href="index.php?do=pubtask"  class="btn btn-info btn-sm btn-block">
-							发布需求</a>
-						</div>
-
-						<div class="tab-pane" id="witkey">
-							<a href="index.php?do=pubgoods"  class="btn btn-primary btn-sm btn-block">发布服务</a>
-						</div>
+						{if $user_type==1}
+							<div class="tab-pane active" id="employer">
+								<a href="index.php?do=pubtask"  class="btn btn-info btn-sm btn-block">发布需求</a>
+							</div>
+						{elseif $user_type==2}
+							<div class="tab-pane active" id="witkey">
+								<a href="index.php?do=pubgoods"  class="btn btn-info btn-sm btn-block">发布服务</a>
+							</div>
+						{/if}
 					</div>
+					
 				</div>
 			{else}
 
@@ -52,14 +50,16 @@
 						<a href="index.php?do=login" class="btn btn-primary btn-block">用户登录</a>
 					</div>
 				</div>
+				<!--
 				<div class="site-other-login">
 					第三方帐号登录：
 					  {loop $api_open $k $v}
-						{if $weibo_list[$k.'_app_id'] && !in_array($k,array('douban','renren'))}
-					<a href="control/oauth_request.php?type={$k}" title="{$api_name[$k]['name']}"><img src="static/img/ico/{$k}_t.gif" alt="{$api_name[$k]['name']}"></a>
+						{if $weibo_list[$k.'_app_id']}
+					<a href="index.php?do=oauthlogin&type={$k}" title="{$api_name[$k]['name']}"><img src="static/img/ico/{$k}_t.gif" alt="{$api_name[$k]['name']}"></a>
 						{/if}
 					{/loop}
 				</div>
+				-->
 			</div>
 
 			<!-- site-noitce-top end -->
@@ -67,9 +67,8 @@
 			</div>
 			<div class="site-noitce-bottom">
 				<ul class="site-noitce-nav">
-					<li class="active"><a href="#announcement" data-toggle="tab">公告</a></li>
-					<li><a href="#notification" data-toggle="tab">中标通知</a></li>
-					
+					<li class="active"><a href="#announcement" data-toggle="tab">网站公告</a></li>
+					<li><a href="#notification" data-toggle="tab">活动公告</a></li>
 				</ul>
 				<div class="tab-content">
 					<div id="announcement" class="tab-pane fade in active">
@@ -81,15 +80,8 @@
 					</div>
 					<div id="notification" class="tab-pane fade">
 						<ul class="site-noitce-list">
-							{loop $arrDynamics $v}
-							<li><i>&middot;</i>{$v[username]}成功中标 <a href="$v['event']['url']" target="_blank">$v['event']['content']</a></li>
-							{/loop}
-						</ul>
-					</div>
-					<div id="withdrawal" class="tab-pane fade">
-						<ul class="site-noitce-list">
-							{loop $arrWithdraws $v}
-							<li><i>&middot;</i>{$v['username']}成功提现<span class="money">{$v['withdraw_cash']}<sub>元</sub></span></li>
+							{loop $arrEvent $k $v}
+							<li><i>&middot;</i><a href="index.php?do=article&id=$v['art_id']" target="_blank">{$v['art_title']}</a></li>
 							{/loop}
 						</ul>
 					</div>
@@ -103,8 +95,6 @@
 
 	</div>
 	<!-- home-top end -->
-<div  class="container">
-	
 
 	<div class="home-stats">
 		<div class="home-stats-inner">
@@ -133,45 +123,7 @@
 	<!-- home-stats end -->
 
 
-<!-- 2015-07-30 添加 -->
-<div id="myicos">
-	<div class="item">
-		<div class="myleft"><img src="static/new/images/danbao.png"></div>
-		<div class="myright">
-			<div class="mytitle">担保交易</div>
-			<div class="mytitle">满意付款</div>
-		</div>
-	</div>
-	
-	<div class="item">
-		<div class="myleft"><img src="static/new/images/shiming.png"></div>
-		<div class="myright">
-			<div class="mytitle">服务商100%</div>
-			<div class="mytitle">实名认证</div>
-		</div>
-	</div>
-	
-	<div class="item">
-		<div class="myleft"><img src="static/new/images/fuwu.png"></div>
-		<div class="myright">
-			<div class="mytitle">服务价格</div>
-			<div class="mytitle">您说了算</div>
-		</div>
-	</div>
-	
-	<div class="item">
-		<div class="myleft"><img src="static/new/images/shouhou.png"></div>
-		<div class="myright">
-			<div class="mytitle">售后有保障</div>
-			<div class="mytitle">服务全跟踪</div>
-		</div>
-	</div>
-</div>
-
-
-
-
-	<table class="topservice" style="border: 0px; height:100px;margin: 0px auto; vertical-align: middle; text-align: center;display:none;">
+	<table class="topservice" style="border: 0px; height:100px;margin: 0px auto; vertical-align: middle; text-align: center;">
 		<tr>
 			<td style="width:300px">
 				<div style="overflow:hidden">
@@ -218,7 +170,7 @@
 		      <a href="#" class="category-title"><i class="fa fa-list-ul"></i> 全部服务分类 <i class="fa fa-angle-down"></i></a>
 		      <ul class="category-down">
 		       {loop $arrNewIndusCs $key $value}
-		        <li class="category-item sub{$key}">
+		        <li class="category-item">
 		          <div class="category-top">
 		          	{loop $value $k1 $v1}
 		            {if $k1<1}
@@ -304,7 +256,7 @@
 		      <a href="#" class="category-title"><i class="fa fa-list-ul"></i> 全部测试需求分类 <i class="fa fa-angle-down"></i></a>
 		      <ul class="category-down">
 		      	{loop $arrNewIndusCt $key $value}
-		        <li class="category-item sub{$key}">
+		        <li class="category-item">
 		          <div class="category-top">
 		          	{loop $value $k1 $v1}
 		            {if $k1<1}
@@ -442,4 +394,4 @@
     });
 
 </script>
-<!--{template footer} -->
+<!--{template footer}-->

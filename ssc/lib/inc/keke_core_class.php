@@ -93,6 +93,24 @@ class keke_core_class extends keke_base_class {
 		unset ( $json, $_K, $basic_config, $username, $uid, $nav_list, $_lang, $strWebLogo, $task_open, $shop_open, $indus_arr, $arrTopIndus, $indus_goods_arr, $indus_task_arr );
 		die ();
 	}
+	/*static function show_msg($title = "", $url = "", $time = 3, $content = "", $type = 'info') {
+		global $_K, $basic_config, $username, $uid, $nav_list, $_lang, $strWebLogo, $task_open, $shop_open, $indus_arr, $arrTopIndus, $indus_goods_arr, $indus_task_arr;
+		$type =='ok' and $type = 'success';
+		if (isset ( $_SERVER ['HTTP_X_REQUESTED_WITH'] ) && strtolower ( $_SERVER ['HTTP_X_REQUESTED_WITH'] ) == 'xmlhttprequest') {
+			!in_array($type, array('success','error','fail')) and $type = 'error';
+			$json = array ('status' => $type,'data' => $title,'url' => $url);
+			strtoupper ( CHARSET ) == 'GBK' and	$json = kekezu::gbktoutf ( $json );
+			echo json_encode ( $json );
+		} else {
+			!in_array($type, array('success','warning','danger','info')) and $type = 'info';
+			intval($time) or $time=3;
+			$url or $url = 'index.php';
+			$strPageTitle = '页面跳转提示';
+			require keke_tpl_class::template ( 'msg' );
+		}
+		unset ( $json, $_K, $basic_config, $username, $uid, $nav_list, $_lang, $strWebLogo, $task_open, $shop_open, $indus_arr, $arrTopIndus, $indus_goods_arr, $indus_task_arr );
+		die ();
+	}*/
 	static function admin_check_role($roleid) {
 		global $_K, $admin_info;
 		$grouplist_arr = keke_admin_class::get_user_group ();
