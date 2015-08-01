@@ -1,8 +1,8 @@
 <!--{template header}-->
 
 <!-- 幻灯片 -->
-<div  class="container">
-	<div class="home-top">
+
+<div class="home-top">
 		<div class="banner">
 				<div class="fotorama" data-autoplay="true" data-width="100%" data-ratio="950/300" data-fit="cover" data-stopautoplayontouch="false"  data-loop="true" data-arrows="false" data-click="false" data-swipe="true">
 					<!--{ad_show(HOME_TOP_SLIDE,1)}-->
@@ -69,7 +69,7 @@
 				<ul class="site-noitce-nav">
 					<li class="active"><a href="#announcement" data-toggle="tab">公告</a></li>
 					<li><a href="#notification" data-toggle="tab">中标通知</a></li>
-					<li><a href="#withdrawal" data-toggle="tab">提现</a></li>
+					
 				</ul>
 				<div class="tab-content">
 					<div id="announcement" class="tab-pane fade in active">
@@ -103,6 +103,8 @@
 
 	</div>
 	<!-- home-top end -->
+<div  class="container">
+	
 
 	<div class="home-stats">
 		<div class="home-stats-inner">
@@ -131,7 +133,45 @@
 	<!-- home-stats end -->
 
 
-	<table class="topservice" style="border: 0px; height:100px;margin: 0px auto; vertical-align: middle; text-align: center;">
+<!-- 2015-07-30 添加 -->
+<div id="myicos">
+	<div class="item">
+		<div class="myleft"><img src="static/new/images/danbao.png"></div>
+		<div class="myright">
+			<div class="mytitle">担保交易</div>
+			<div class="mytitle">满意付款</div>
+		</div>
+	</div>
+	
+	<div class="item">
+		<div class="myleft"><img src="static/new/images/shiming.png"></div>
+		<div class="myright">
+			<div class="mytitle">服务商100%</div>
+			<div class="mytitle">实名认证</div>
+		</div>
+	</div>
+	
+	<div class="item">
+		<div class="myleft"><img src="static/new/images/fuwu.png"></div>
+		<div class="myright">
+			<div class="mytitle">服务价格</div>
+			<div class="mytitle">您说了算</div>
+		</div>
+	</div>
+	
+	<div class="item">
+		<div class="myleft"><img src="static/new/images/shouhou.png"></div>
+		<div class="myright">
+			<div class="mytitle">售后有保障</div>
+			<div class="mytitle">服务全跟踪</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+	<table class="topservice" style="border: 0px; height:100px;margin: 0px auto; vertical-align: middle; text-align: center;display:none;">
 		<tr>
 			<td style="width:300px">
 				<div style="overflow:hidden">
@@ -178,7 +218,7 @@
 		      <a href="#" class="category-title"><i class="fa fa-list-ul"></i> 全部服务分类 <i class="fa fa-angle-down"></i></a>
 		      <ul class="category-down">
 		       {loop $arrNewIndusCs $key $value}
-		        <li class="category-item">
+		        <li class="category-item sub{$key}">
 		          <div class="category-top">
 		          	{loop $value $k1 $v1}
 		            {if $k1<1}
@@ -264,7 +304,7 @@
 		      <a href="#" class="category-title"><i class="fa fa-list-ul"></i> 全部测试需求分类 <i class="fa fa-angle-down"></i></a>
 		      <ul class="category-down">
 		      	{loop $arrNewIndusCt $key $value}
-		        <li class="category-item">
+		        <li class="category-item sub{$key}">
 		          <div class="category-top">
 		          	{loop $value $k1 $v1}
 		            {if $k1<1}
@@ -402,4 +442,4 @@
     });
 
 </script>
-<!--{template footer}-->
+<!--{template footer} -->

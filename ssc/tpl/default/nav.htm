@@ -12,10 +12,10 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav nav-primary">
-      		{loop $nav_arr $k $v}
-			 <li {if $v['nav_style']==$do ||$v['nav_style']==$strNavActive}class="active"{/if} ><a href="{$v['nav_url']}" {if $v['newwindow']}target="_blank"{/if}><span>{$v['nav_title']}</span></a></li>
+          {loop $nav_arr $k $v}
+       <li {if $v['nav_style']==$do ||$v['nav_style']==$strNavActive}class="active"{/if} ><a href="{$v['nav_url']}" {if $v['newwindow']}target="_blank"{/if}><span>{$v['nav_title']}</span></a></li>
               <li class="line"></li>
-			{/loop}
+      {/loop}
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">诚信保障</a></li>
