@@ -19,14 +19,21 @@
 					     	</span>
 						</span>
 					</div>
-					{if $arrTaskInfo['task_status']=='0'}
+					<!-- //2015-08-02 修改   task_status  由0->8  and  task/'.$arrModelInfo['model_code'].'/tpl/default/pay    and   index.php?do=putask&id={$arrTaskInfo['model_id']}&step=step4&taskId={$arrTaskInfo['task_id']} -->
+					{if  $arrProcess_can['work_comment']&&$arrTaskInfo['task_status']=='8'}
 					<div class="btn-group">
-						<a class="btn btn-primary btn-lg" href="index.php?do=pubtask&id={$arrTaskInfo['model_id']}&step=step4&taskId={$arrTaskInfo['task_id']}">付款</a>
+						<a class="btn btn-primary btn-lg" href="index.php?do=taskhandle&op=workOver1&taskId={$arrTaskInfo['task_id']}">付 款</a>
+					</div>
+					{/if}
+					{if  $arrProcess_can['work_mark']&&$arrTaskInfo['task_status']=='8'}
+					<div class="btn-group">
+						<a class="btn btn-primary btn-lg" href="index.php?do=task&view=gz&id={$arrTaskInfo['task_id']}">评 价</a>
 					</div>
 					{/if}
 					<div class="btn-group">
 						<!--{eval $task_bid2=getTaskBid($arrTaskInfo['task_id'],$uid);}-->
 						{if $arrProcess_can['work_hand']&&!$task_bid2} <a href="index.php?do=taskhandle&op=quote&taskId={$arrTaskInfo['task_id']}" class="btn btn-primary btn-lg a-check-login">我要报价</a> {/if} <!-- {if $arrProcess_can['delay']&&$gUid} <a href="index.php?do=taskhandle&op=delay&taskId={$arrTaskInfo['task_id']}" class="btn btn-primary btn-lg">我要延期</a> {/if} -->
+						{if $arrProcess_can['task_mark']&&$task_bid2} <a href="index.php?do=taskhandle&op=wk&taskId={$arrTaskInfo['task_id']}" class="btn btn-primary btn-lg a-check-login">评 价</a> {/if}
 					</div>
 					<!-- <div class="btn-group visible-xs">
 						{if $arrTaskInfo['favorite']} <a id="favorite_mobile_{$arrTaskInfo['task_id']}" href="javascript:cancelMobileFavorite('task',{$arrTaskInfo['task_id']});" title="取消收藏" class="action-collect on btn btn-default btn-lg"> <i class="fa fa-star"></i>

@@ -55,6 +55,7 @@ $arrTopIndus = db_factory::query("SELECT count(task_id) as count ,indus_id FROM 
 kekezu::redirect_second_domain ();
 $arrDisplaypro = CommonClass::getDistrictByPid('0','id,upid,name');
 if($gUid){
+	//2015-08-02 修改   task_status  由0->8
     $intWaitPay = db_factory::query("select count(*) as count from ".TABLEPRE."witkey_task where uid=".intval($gUid)." and task_status=0");
     $intChoose = db_factory::query("select count(*) as count from ".TABLEPRE."witkey_task where uid=".intval($gUid)." and task_status=3");
     $intShopPay = db_factory::query("select count(*) as count from ".TABLEPRE."witkey_order a left join ".TABLEPRE."witkey_order_detail b on a.order_id=b.order_id

@@ -136,6 +136,31 @@ switch ($step) {
 			}
 		}
 		break;
+	//2015-08-02   添加
+	case 'gz_step6':
+		$objId = $taskId;
+		$toUid = $taskId;
+		$arrMark = keke_user_mark_class::get_mark_info ( array ('model_code' => 'service', 'obj_id' => $objId,'by_uid'=>$gUid,'uid'=>$toUid) );
+		$markInfo = $arrMark ['mark_info'] ['0'];
+		$aidList = keke_user_mark_class::get_mark_aid ( 2 );
+		$aidInfo=keke_user_mark_class::get_user_aid($markInfo['by_uid'],$markInfo['mark_type'],$markInfo['mark_status'],2,$markInfo['model_code'],$objId);
+		$strJumpUrl = "index.php?do=task&id=$taskId";
+		if($markInfo['mark_status'] == '1'){
+			header('location:'.$strJumpUrl);
+		}
+	break;
+	case 'wk_step6':
+		$objId = $taskId;
+		$toUid = $taskId;
+		$arrMark = keke_user_mark_class::get_mark_info ( array ('model_code' => 'service', 'obj_id' => $objId,'by_uid'=>$gUid,'uid'=>$toUid) );
+		$markInfo = $arrMark ['mark_info'] ['0'];
+		$aidList = keke_user_mark_class::get_mark_aid ( 2 );
+		$aidInfo=keke_user_mark_class::get_user_aid($markInfo['by_uid'],$markInfo['mark_type'],$markInfo['mark_status'],2,$markInfo['model_code'],$objId);
+		$strJumpUrl = "index.php?do=$taskId";
+		if($markInfo['mark_status'] == '1'){
+			header('location:'.$strJumpUrl);
+		}
+	break;
 }
 require keke_tpl_class::template ( 'pubtask' );
 die();

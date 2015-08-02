@@ -22,7 +22,7 @@ if($intModelId){
     $arrTaskSta = $arrTaskStatus;
 }else{
     $arrTaskStatus = array(
-    	//'0'=>'未付款',
+    	'0'=>'未付款',
         '1'=>'待审核',
         //'2'=>'投稿中',
         //'p2'=>'投标中',

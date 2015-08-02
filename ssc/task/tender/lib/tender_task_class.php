@@ -7,6 +7,8 @@ class tender_task_class extends keke_task_class {
 	public $_cove_obj;
 	public $_cash_cove_obj;
 	public $_task_bid_obj;
+	//2015-08-02  添加
+	public $_task_obj;
 	public $_file_obj;
 	public $_cash_arr;
 	protected $_inited = false;
@@ -28,6 +30,8 @@ class tender_task_class extends keke_task_class {
 			$this->wiki_priv_init ();
 		}
 		$this->_inited = true;
+		//2015-08-02  添加
+		$this->_task_obj = new Keke_witkey_task_class ();
 		$this->_task_bid_obj = new Keke_witkey_task_bid_class ();
 		$this->_file_obj = new Keke_witkey_file_class ();
 		$this->_cash_cove_obj = new Keke_witkey_task_cash_cove_class ();
@@ -203,7 +207,7 @@ class tender_task_class extends keke_task_class {
 						'timedesc' 	=> '距离需求结束时间剩余',
 						'timeing'  	=> $arrTaskInfo['end_time']
 				),
-				'4'=>array(
+				/*'4'=>array(
 						'status'	=> 4,
 						'desc'  	=> '测试认证中',
 						'time'  	=> $arrTaskInfo['sp_end_time'],
@@ -215,6 +219,20 @@ class tender_task_class extends keke_task_class {
 						'desc'  	=> '交付中',
 						'time'  	=> $arrTaskInfo['sp_end_time'],
 						'timedesc' 	=> '等待需方确认完工',
+						'timeing'  	=> $arrTaskInfo['sp_end_time']
+				),*/
+				'4'=>array(
+						'status'	=> 4,
+						'desc'  	=> '上传报价单',
+						'time'  	=> $arrTaskInfo['sp_end_time'],
+						'timedesc' 	=> '等待测试机构上传报价单',
+						'timeing'  	=> $arrTaskInfo['sp_end_time']
+				),
+				'5'=>array(
+						'status'	=> 5,
+						'desc'  	=> '付款中',
+						'time'  	=> $arrTaskInfo['sp_end_time'],
+						'timedesc' 	=> '等待需方确认付款',
 						'timeing'  	=> $arrTaskInfo['sp_end_time']
 				),
 				'6'=>array(
@@ -432,6 +450,17 @@ class tender_task_class extends keke_task_class {
 		$this->_task_bid_obj->setWhere ( " task_id = $this->_task_id and bid_status = 4" );
 		$bid_info = $this->_task_bid_obj->query_keke_witkey_task_bid ();
 		$bid_info = $bid_info ['0'];
+		if ($bid_info) {
+			return $bid_info;
+		} else {
+			return false;
+		}
+	}
+	//2015-08-02 添加
+	function get_task_info() {
+		$this->_task_obj->setWhere ( " task_id = $this->_task_id " );
+		$bid_info = $this->_task_obj->query_keke_witkey_task ();
+		//$bid_info = $bid_info ['0'];
 		if ($bid_info) {
 			return $bid_info;
 		} else {

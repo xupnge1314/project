@@ -69,4 +69,54 @@ switch ($view) {
 		}
 		$pages = $arrMark ['pages'];
 		break;
+	case "gz":
+		$objId = $taskId;
+		$gUid = $uid;
+		$toUid = $gUid;
+		$arrMark = keke_user_mark_class::get_mark_info (  array ('model_code' => 'mark', 'obj_id' => $objId,'by_uid'=>$gUid,'uid'=>$toUid) );
+		$markInfo = $arrMark ['mark_info'] ['0'];
+		$aidInfo=keke_user_mark_class::get_user_aid($markInfo['by_uid'],$markInfo['mark_type'],$markInfo['mark_status'],2,$markInfo['model_code'],$objId);
+		$arrMarkInfo = $arrMark ['mark_info'];
+		require keke_tpl_class::template ( 'task/'.$arrModelInfo['model_code'].'/tpl/default/gz_step6' );
+	    die();
+		break;
+	case "wk":
+		//$arrBidInfo = $objTask->get_task_info ();
+		$arrMarkCount = keke_shop_class::get_mark_count ( $model_code, $sid ); 
+		$p ['url'] = $strUrl . "&view=mark&intPagesize=" . $p ['page_size'] . "&intPage=" . $p ['page'];
+		$p ['anchor'] = '#pageT';
+		$w ['model_code'] = $arrModelInfo ['model_code']; 
+		$w ['origin_id'] = $intId; 
+		$w ['mark_status'] = $st; 
+		$w ['mark_type'] = $ut; 
+		$arrMark = keke_user_mark_class::get_mark_info ( $w, $p, ' mark_id desc ', 'mark_status>0' );
+		$arrMarkInfo = $arrMark ['mark_info'];
+		require keke_tpl_class::template ( 'task/'.$arrModelInfo['model_code'].'/tpl/default/wk_step6' );
+	    die();
+		break;
+	//2015-08-02   添加
+	case 'gz_step6':
+		$objId = $taskId;
+		$toUid = $taskId;
+		$arrMark = keke_user_mark_class::get_mark_info ( array ('model_code' => 'service', 'obj_id' => $objId,'by_uid'=>$gUid,'uid'=>$toUid) );
+		$markInfo = $arrMark ['mark_info'] ['0'];
+		$aidList = keke_user_mark_class::get_mark_aid ( 2 );
+		$aidInfo=keke_user_mark_class::get_user_aid($markInfo['by_uid'],$markInfo['mark_type'],$markInfo['mark_status'],2,$markInfo['model_code'],$objId);
+		$strJumpUrl = "index.php?do=task&id=$taskId";
+		if($markInfo['mark_status'] == '1'){
+			header('location:'.$strJumpUrl);
+		}
+	break;
+	case 'wk_step6':
+		$objId = $taskId;
+		$toUid = $taskId;
+		$arrMark = keke_user_mark_class::get_mark_info ( array ('model_code' => 'service', 'obj_id' => $objId,'by_uid'=>$gUid,'uid'=>$toUid) );
+		$markInfo = $arrMark ['mark_info'] ['0'];
+		$aidList = keke_user_mark_class::get_mark_aid ( 2 );
+		$aidInfo=keke_user_mark_class::get_user_aid($markInfo['by_uid'],$markInfo['mark_type'],$markInfo['mark_status'],2,$markInfo['model_code'],$objId);
+		$strJumpUrl = "index.php?do=$taskId";
+		if($markInfo['mark_status'] == '1'){
+			header('location:'.$strJumpUrl);
+		}
+	break;
 }

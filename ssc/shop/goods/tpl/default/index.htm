@@ -75,7 +75,7 @@
 					<div class="row">
 						{if $gUid != $arrServiceInfo['uid']}
 						<div class="col-sm-12 mb_10">
-							<a href="index.php?do=gy&id={$arrServiceInfo['uid']}" class="btn btn-primary btn-sm btn-block">雇佣TA</a>
+							<a href="index.php?do=gy&id={$arrServiceInfo['uid']}" class="btn btn-primary btn-sm btn-block">让 TA 报价</a>
 						</div>
 						{/if}
 						<div class="col-sm-6">
@@ -84,7 +84,7 @@
 							{/if}
 						</div>
 						{if $gUid != $arrServiceInfo['uid']}
-						<div class="col-sm-6">
+						<!-- <div class="col-sm-6">
 							{if $intFollow}
 							<a href="javascript:cancelCollect({$arrServiceInfo[uid]});void(0);" class="btn btn-success btn-sm" id="follow{$arrServiceInfo[uid]}">取消收藏</a>
 							{else}
@@ -93,9 +93,9 @@
 								收藏店铺
 							</a>
 							{/if}
-							<!--
-                  <a href="index.php?do=seller&id={$arrServiceInfo['uid']}" class="btn btn-default btn-sm btn-block">收藏店铺</a>-->
-						</div>
+							
+                  <a href="index.php?do=seller&id={$arrServiceInfo['uid']}" class="btn btn-default btn-sm btn-block">收藏店铺</a>
+						</div> -->
 						{/if}
 					</div>
 				</div>
@@ -133,7 +133,7 @@
 				</li>
 			</ul>
 		</div>
-		{if TOOL === TRUE} {if $uid==$arrServiceInfo['uid']&&$arrPayitemLists&&$arrServiceInfo['service_status']==2}
+		<!-- {if TOOL === TRUE} {if $uid==$arrServiceInfo['uid']&&$arrPayitemLists&&$arrServiceInfo['service_status']==2}
 		<div class="box-header">
 			<h2 class="min-title">提升效果，你可能还需要</h2>
 		</div>
@@ -153,7 +153,7 @@
 			</dl>
 			{/loop}
 		</div>
-		{/if} {/if}
+		{/if} {/if} -->
 		<!--  site-security end -->
 		<div class="box-header">
 			<h2 class="min-title">推荐服务商</h2>

@@ -143,6 +143,21 @@
 
 						<a href="javascript:WorkOver('{$v[task_id]}');void(0);" class="btn btn-success btn-sm"> <i class="fa fa-check-circle"></i> 支付款项
 						</a> {/if}
+<!-- //2015-08-02   添加 -->
+{if $arrProcess_can['work_comment']&&$v['bid_status'] == '4'}
+{if $arrBidFiles}
+<h2 class="detail-title-min">
+	报价单下载 <span class="label label-default"> <!--{eval echo count($arrBidFiles);}-->
+	</span>
+</h2>
+<ul class="detail-affix">
+	{loop $arrBidFiles $vv}
+	<li class="detail-affix-item"><a href="$_K['siteurl']/{$vv['save_name']}" target="_blank"> <i class="fa fa-download"></i> {$vv['file_name']}
+	</a></li> {/loop}
+</ul>
+{/if} 
+{/if} 
+
 					</div>
 
 					<div class="manuscript-comment">

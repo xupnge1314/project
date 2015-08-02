@@ -112,7 +112,10 @@ class keke_loaddata_class {
 							break;
 						case "image" :
 							if($ad_info ['ad_file']){
-							$ad_str .= "<a href='" . $ad_info ['ad_url'] . "' target='_blank' title='".$ad_info['ad_name']."'><img src='tpl/default/img/grey.gif' width='".$ad_info ['width']."' class='lazy' data-original='" . $ad_info ['ad_file']
+
+							//修改 2015-08-01
+							$ad_str .= "<a href='" . $ad_info ['ad_url'] . "' target='_blank' title='".$ad_info['ad_name']."'><img src='" . $ad_info ['ad_file']
+									 . "' width='".$ad_info ['width']."' class='lazy' data-original='" . $ad_info ['ad_file']
 									 . "'  height='".$ad_info ['height']."' alt='".$ad_info['ad_name']."' title='".$ad_info['ad_name']."'></a>";
 							}else{
 								$ad_str .= "<a href='" . $ad_info ['ad_url'] . "' target='_blank' title='".$ad_info['ad_name']."'><img src='" . $ad_info ['ad_file']

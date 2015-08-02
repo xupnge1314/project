@@ -156,6 +156,16 @@ switch ($op) {
 		require keke_tpl_class::template ( 'task/'.$arrModelInfo['model_code'].'/tpl/default/pay' );
 	    die();
 		break;
+	case "gz":
+		$arrBidInfo = $objTask->get_task_info ();
+		require keke_tpl_class::template ( 'task/'.$arrModelInfo['model_code'].'/tpl/default/gz_step6' );
+	    die();
+		break;
+	case "wk":
+		//$arrBidInfo = $objTask->get_task_info ();
+		require keke_tpl_class::template ( 'task/'.$arrModelInfo['model_code'].'/tpl/default/wk_step6' );
+	    die();
+		break;
 	case "turnaround" : 
 		if(0 === $gUid){
 			kekezu::show_msg ( '未登陆用户，无权操作', 'index.php?do=login', 3, NULL, 'warning' );

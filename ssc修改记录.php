@@ -102,6 +102,27 @@ if(!is_null($this->_bid_id)){
 $arrTaskBidInfo = db_factory::get_one("select bid_id from ".TABLEPRE."witkey_task_bid as a where bid_status=4 and task_id=".intval($id));
 $arrBidFiles = $objTask->get_bid_file ($arrTaskBidInfo);
 
+9./ssc/lib/inc/keke_loaddata_class.php
+2015-08-01
+
+10./ssc/task/\tender\tpl\default/index.htm
+2015-08-02
+修改   and  添加
+
+11./ssc/task/\tender\tpl\default/work.htm
+2015-08-02
+修改   and  添加
+
+12.ssc/index.php
+2015-08-02
+修改   and  添加
+
+
+
+
+
+
+
 
 
 

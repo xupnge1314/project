@@ -1,0 +1,280 @@
+<!--{template header}-->
+<!--{template breadcrumb}-->
+<link href="static/js/jqplugins/fancybox/jquery.fancybox.min.css" rel="stylesheet">
+<script src="static/js/jqplugins/fancybox/jquery.fancybox.min.js"></script>
+<script src="static/js/uploadify/jquery.uploadify.min.js?r={RANDOM_PARA}" type="text/javascript"></script>
+<link href="static/js/uploadify/uploadify.css" rel="stylesheet">
+<div class="container">
+	<div id="main">
+		<!-- detail start-->
+		<div class="detail">
+			<div class="detail-header">
+				<a href="index.php?do=seller&id={$arrTaskInfo['uid']}" class="detail-header-pic" title="{$arrTaskInfo['username']}">
+					<!--{userpic($arrTaskInfo['uid'],'middle')}-->
+				</a>
+				<div class="detail-ctrl">
+					<div class="btn-group visible-xs">
+						<span class="btn btn-default btn-lg"> 
+						    <span class="bdsharebuttonbox"> <a href="javascript:void(0);" class="bds_more" data-cmd="more"></a>
+					     	</span>
+						</span>
+					</div>
+					<!-- //2015-08-02 修改   task_status  由0->8  and  task/'.$arrModelInfo['model_code'].'/tpl/default/pay    and   index.php?do=putask&id={$arrTaskInfo['model_id']}&step=step4&taskId={$arrTaskInfo['task_id']} -->
+					{if  $arrProcess_can['work_comment']&&$arrTaskInfo['task_status']=='8'}
+					<div class="btn-group">
+						<a class="btn btn-primary btn-lg" href="index.php?do=taskhandle&op=workOver1&taskId={$arrTaskInfo['task_id']}">付 款</a>
+					</div>
+					{/if}
+					{if  $arrProcess_can['work_mark']&&$arrTaskInfo['task_status']=='8'}
+					<div class="btn-group">
+						<a class="btn btn-primary btn-lg" href="index.php?do=taskhandle&op=gz&taskId={$arrTaskInfo['task_id']}">评 价</a>
+					</div>
+					{/if}
+					<div class="btn-group">
+						<!--{eval $task_bid2=getTaskBid($arrTaskInfo['task_id'],$uid);}-->
+						{if $arrProcess_can['work_hand']&&!$task_bid2} <a href="index.php?do=taskhandle&op=quote&taskId={$arrTaskInfo['task_id']}" class="btn btn-primary btn-lg a-check-login">我要报价</a> {/if} <!-- {if $arrProcess_can['delay']&&$gUid} <a href="index.php?do=taskhandle&op=delay&taskId={$arrTaskInfo['task_id']}" class="btn btn-primary btn-lg">我要延期</a> {/if} -->
+						{if $arrProcess_can['task_mark']&&$task_bid2} <a href="index.php?do=taskhandle&op=wk&taskId={$arrTaskInfo['task_id']}" class="btn btn-primary btn-lg a-check-login">评 价</a> {/if}
+					</div>
+					<!-- <div class="btn-group visible-xs">
+						{if $arrTaskInfo['favorite']} <a id="favorite_mobile_{$arrTaskInfo['task_id']}" href="javascript:cancelMobileFavorite('task',{$arrTaskInfo['task_id']});" title="取消收藏" class="action-collect on btn btn-default btn-lg"> <i class="fa fa-star"></i>
+						</a> {else} <a id="favorite_mobile_{$arrTaskInfo['task_id']}" href="javascript:addMobileFavorite('task',{$arrTaskInfo['task_id']});" title="收藏" class="action-collect btn btn-default btn-lg"> <i class="fa fa-star"></i>
+						</a> {/if}
+					</div> -->
+					<div class="btn-group visible-xs">
+						<a href="javascript:report(2,'task','{$arrTaskInfo['uid']}','{$arrTaskInfo['task_id']}','{$arrTaskInfo['task_id']}');void(0);" title="举报" class="action-report btn btn-default btn-lg"> <i class="fa fa-bell"></i>
+						</a>
+					</div>
+				</div>
+				<!-- detail-ctrl end -->
+				<div class="detail-header-body">
+					<h1 class="detail-title">
+						<span class="money">
+							<!--{eval echo  keke_glob_class::showTaskCash($arrTaskInfo['task_id']);}-->
+						</span>
+						 {$arrTaskInfo['task_title']} {loop $arrPayitemShow $k $v} <span class="marked $v['style']">$v['abbr']</span> {/loop}
+					</h1>
+					<div class="detail-obj">
+						<div class="detail-obj-item">
+							<div class="method">
+								
+
+
+								<span> <i class="fa fa-money"></i> {if $arrTaskInfo['task_status'] == '10'} 审核失败 {else} {if floatval($arrTaskInfo['real_cash'])} {if $arrTaskInfo['task_status'] == '0'} 未支付 {elseif $arrTaskInfo['task_status'] == '1'} 待审核 {else} 已支付网站服务费用：<sub>￥</sub>{$arrTaskInfo['real_cash']} {/if} {else} {if $arrTaskInfo['task_status'] == '0'} 未支付 {elseif $arrTaskInfo['task_status'] == '1'} 待审核 {else} 免网站服务费 {/if} {/if} {/if}
+
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="detail-obj-item">
+						
+						{if $gUid&&$gUid !=$arrTaskInfo['uid']}
+						<a href="javascript:sendMessage({$arrTaskInfo['uid']});void(0);" class="btn btn-default btn-xs">联系我</a>
+						<!-- {if $intFollow}
+						<span class="btn-group">
+							<a href="javascript:void(0);" class="btn btn-success btn-xs disabled" role="button">
+								<i class="fa fa-check"></i>
+								已关注
+							</a>
+							<a href="javascript:cancelFollow({$arrTaskInfo[uid]});void(0);" class="btn btn-success btn-xs" id="follow{$arrTaskInfo[uid]}">取消</a>
+						</span>
+						{else}
+						<a href="javascript:addFollow({$arrTaskInfo[uid]});void(0);" class="btn btn-default btn-xs" id="follow{$arrTaskInfo[uid]}">
+							<i class="fa fa-plus"></i>
+							加关注
+						</a>
+						{/if} -->
+						 {/if}
+					</div>
+				</div>
+				<!-- detail-header-body end -->
+			</div>
+			<!-- detail-header end -->
+			<div class="detail-progress">
+				<h2 class="detail-title-min">测试进度</h2>
+				<ul class="step step6">
+					{loop $arrProjectProgress $k $v}
+					<li class="step-item {if $arrTaskInfo['task_status']>=$v['status']} action {/if}"><span class="step-num"> {if $v['status'] < $arrTaskInfo['task_status']} <i class="fa fa-check"></i> {else}{$k}{/if}
+					</span>
+						<div class="step-text step-bottom">
+							<p>
+								<strong class="step-title">{$v['desc']}</strong>
+							</p>
+							{if $v['time']&& $arrTaskInfo['task_status'] >=$v['status']}
+							<p>
+								<!--{eval echo date('Y-m-d',$v['time'])}-->
+							</p>
+							{/if}
+						</div> {if in_array($v['status'], array(2,3,4,5))&&$arrTaskInfo['task_status'] >=$v['status']}
+						<div class="step-text step-top">
+							{if $arrTaskInfo['task_status'] ==$v['status']}
+							<p>{$v['timedesc']}</p>
+							<p>
+								<span class="red d_time" ed="{$v['timeing']}"></span>
+							</p>
+							{/if}
+						</div> {/if}</li> {/loop}
+				</ul>
+			</div>		
+		</div>		
+
+
+
+<link href="static/js/jqplugins/starrating/jquery.rating.css" rel="stylesheet" type="text/css">
+	<div class="order-body">
+
+		{if  $arrOrderInfo['task_status'] == 'arbitral'}
+
+		<p class="lead text-center text-success mt_20"><i class="fa fa-check-circle"></i> 该订单进入仲裁、请等待客服处理</p>
+		{else}
+			<form role="form" action="index.php?do=mark" method="post" class="form-horizontal" name="markForm" id="markForm">
+            <input type="hidden" name="formhash" id="formhash" value="{FORMHASH}">
+			<input type="hidden" name="markId"  value="{$markInfo[mark_id]}">
+			<input type="hidden" name="taskId"  value="{$taskId}">
+			<input type="hidden" name="strJumpUrl"  value="{$strJumpUrl}">
+
+      	{if $markInfo['mark_count']== 1}
+			<div class="form-group">
+				<label for="" class="col-xs-2 control-label">修改好评</label>
+				<div class="col-xs-10 form-inline">
+					<span>修改评价提醒</span></br>
+					<span>1.您只有一次修改评价的机会，请珍惜。</span></br>
+					<span>2.只有在评价期内的差评，中评才有修改机会。</span>
+			    </div>
+		    </div>
+			{/if}
+			{if $markInfo['mark_count']< 2 }
+      <div class="form-group">
+        <label for="" class="col-xs-2 control-label">给对方的评价</label>
+        <div class="col-xs-10 form-inline">
+        {if $markInfo['mark_status'] == 0 || $markInfo['mark_status'] == 2 || $markInfo['mark_status'] == 3}
+          <div class="radio">
+            <label>
+              <input type="radio" name="mark_status" id="mark_status" value="1" {if $markInfo['mark_status']==1||!$markInfo['mark_status']}checked=checked{/if}>
+              好评
+              <img src="static/img/ico/ico_mark_1.gif" alt="好评">
+            </label>
+          </div>
+          {/if}
+          {if $markInfo['mark_status'] == 0 || $markInfo['mark_status'] == 3}
+          <div class="radio">
+            <label>
+              <input type="radio" name="mark_status" id="mark_status" value="2" {if $markInfo['mark_status']==2}checked=checked{/if}>
+              中评
+              <img src="static/img/ico/ico_mark_2.gif" alt="中评">
+            </label>
+          </div>
+          {/if}
+          {if $markInfo['mark_status'] == 0 }
+          <div class="radio">
+            <label>
+              <input type="radio" name="mark_status" id="mark_status" value="3" {if $markInfo['mark_status']==3}checked=checked{/if}>
+              差评
+              <img src="static/img/ico/ico_mark_3.gif" alt="差评">
+            </label>
+          </div>
+          {/if}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="" class="col-xs-2 control-label">评价内容</label>
+        <div class="col-xs-10">
+          <textarea id="tar_content" name="tar_content" class="form-control">{if $markInfo['mark_content']}{$markInfo['mark_content']}{/if}</textarea>
+            <p class="help-block">最多可以输入:100字符</p>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="" class="col-xs-2 control-label">评价质量</label>
+        <div class="col-xs-10">
+          {loop $aidInfo $k $v}
+			<input type="hidden" name="star[$k]" id="star_{$k}" value="{$v['star']}">
+          <div class="form-control-static clearfix">
+            <div class="pull-left mr_5">{$v['aid_name']}</div>
+           <!--{eval echo keke_user_mark_class::gen_star($v[avg],$k,0);}-->
+          </div>
+		  	{/loop}
+        </div>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-default" onclick="return checkStar();">提交</button>
+      </div>
+      </form>
+
+      {/if}
+</div>
+
+
+
+
+
+    <!-- deliver-content end -->
+<script type="text/javascript" src="static/js/jqplugins/starrating/jquery.MetaData.js"></script>
+<script type="text/javascript" src="static/js/jqplugins/starrating/jquery.rating.js"></script>
+<script type="text/javascript">
+$(function(){
+    $('#markForm').scojs_valid({
+	    rules: {
+	    	tar_content: ['not_empty',{'min_length': 5},{'max_length': 100}]
+	    },
+	    messages: {
+	    	tar_content: {
+				not_empty: "请输入评价内容",
+				min_length: "最少输入5字符",
+				max_length: "最多可以输入:100字符"
+			}
+	    },
+	    wrapper:'.form-group'
+	    ,onSuccess: function(response, validator, form) {
+	    	  tipsOp(response.data);
+				if(response.url){
+					setTimeout(function(){window.location.href=response.url;},1000);
+				}
+	    }
+	});
+	$("div[class*='star_']").click(function(event){
+		var classStr = this.className;
+		var showId   = classStr.match(new RegExp("(star_[0-9]+)","g"));
+		var point    = $(this).find("a:first").attr("tt");
+			point	 = parseFloat(point/2).toFixed(1);
+		$("#"+showId).val(point);
+		$("#span_"+showId).html("<font color=\"red\">"+point+"{$_lang['fen']}</font>");
+		event.stopPropagation();
+	})
+	$("div[class='rating-cancel']").click(function(event){
+		//alert($(this).closest('.form-control-static').prev('input').val());
+		$(this).closest('.star-rating-control').siblings('span[id*=span_star_*]').html("<font color=\"red\">0.0{$_lang['fen']}</font>");
+		$(this).closest('.form-control-static').prev('input').val(0);
+
+	    })
+	})
+	function checkStar(){
+		 var falg = 0;
+         $("input[id*='star_']").each(function(){
+             if($(this).val()>0){
+			 	falg += 1;
+			 }
+		 })
+			 if (falg > 0){
+	 			return true;
+			 } else{
+				tipsOp('<div class="alert alert-danger"><i class="fa fa-ban"></i> 请先进行星级评定</div>');return false;
+			 	return false;
+			 }
+		 }
+</script>
+
+
+
+
+
+
+
+
+
+	</div>
+	
+</div>
+
+<!--{template footer}-->
+

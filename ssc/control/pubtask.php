@@ -34,7 +34,8 @@ $arrModelInfo = $arrModelLists [$id];
 if(empty($arrModelInfo)){
 	kekezu::show_msg('不存在该需求模型,请重新选择','index.php?do=pubtask',3,null,'warning');
 }
-$arrStep = array('step1','step2','step3','step4');
+//2015-08-02   增加
+$arrStep = array('step1','step2','step3','step4','gz_step6','wk_step6');
 if(!in_array($step, $arrStep)){
 	$step = 'step1';
 }
