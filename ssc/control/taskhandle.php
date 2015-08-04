@@ -1,4 +1,4 @@
-<?php
+ <?php
 $taskId = intval($taskId);
 if(!$taskId){
 	jumpUrl($taskId);
@@ -157,7 +157,34 @@ switch ($op) {
 	    die();
 		break;
 	case "gz":
-		$arrBidInfo = $objTask->get_task_info ();
+		$arrBidInfo = $objTask->get_bid_info ();
+		$objId = $taskId;
+		$gUid = $uid;
+		$toUid = $gUid;
+		$arrMark = keke_user_mark_class::get_mark_info (  array ('model_code' => 'mark', 'obj_id' => $objId,'by_uid'=>$gUid,'uid'=>$toUid) );
+		$markInfo = $arrMark ['mark_info'] ['0'];
+		$aidInfo=keke_user_mark_class::get_user_aid($markInfo['by_uid'],$markInfo['mark_type'],$markInfo['mark_status'],2,$markInfo['model_code'],$objId);
+		$arrMarkInfo = $arrMark ['mark_info'];
+		require keke_tpl_class::template ( 'task/'.$arrModelInfo['model_code'].'/tpl/default/gz_step6' );
+	    die();
+		break;
+	case "wk":
+		$arrBidInfo = $objTask->get_bid_info ();
+		//$arrBidInfo = $objTask->get_task_info ();
+		$arrMarkCount = keke_shop_class::get_mark_count ( $model_code, $sid ); 
+		$p ['url'] = $strUrl . "&view=mark&intPagesize=" . $p ['page_size'] . "&intPage=" . $p ['page'];
+		$p ['anchor'] = '#pageT';
+		$w ['model_code'] = $arrModelInfo ['model_code']; 
+		$w ['origin_id'] = $intId; 
+		$w ['mark_status'] = $st; 
+		$w ['mark_type'] = $ut; 
+		$arrMark = keke_user_mark_class::get_mark_info ( $w, $p, ' mark_id desc ', 'mark_status>0' );
+		$arrMarkInfo = $arrMark ['mark_info'];
+		require keke_tpl_class::template ( 'task/'.$arrModelInfo['model_code'].'/tpl/default/wk_step6' );
+	    die();
+		break;
+	/*case "gz":
+		//$arrBidInfo = $objTask->get_task_info ();
 		require keke_tpl_class::template ( 'task/'.$arrModelInfo['model_code'].'/tpl/default/gz_step6' );
 	    die();
 		break;
@@ -165,7 +192,7 @@ switch ($op) {
 		//$arrBidInfo = $objTask->get_task_info ();
 		require keke_tpl_class::template ( 'task/'.$arrModelInfo['model_code'].'/tpl/default/wk_step6' );
 	    die();
-		break;
+		break;*/
 	case "turnaround" : 
 		if(0 === $gUid){
 			kekezu::show_msg ( '未登陆用户，无权操作', 'index.php?do=login', 3, NULL, 'warning' );
