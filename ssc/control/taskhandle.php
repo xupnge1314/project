@@ -158,13 +158,30 @@ switch ($op) {
 		break;
 	case "gz":
 		$arrBidInfo = $objTask->get_bid_info ();
-		$objId = $taskId;
-		$gUid = $uid;
-		$toUid = $gUid;
+		/*$objId = $taskId;echo $objId.'<br>';
+		$gUid = $uid;echo $gUid.'<br>';
+		$toUid = $gUid;echo $toUid.'<br>';
 		$arrMark = keke_user_mark_class::get_mark_info (  array ('model_code' => 'mark', 'obj_id' => $objId,'by_uid'=>$gUid,'uid'=>$toUid) );
 		$markInfo = $arrMark ['mark_info'] ['0'];
 		$aidInfo=keke_user_mark_class::get_user_aid($markInfo['by_uid'],$markInfo['mark_type'],$markInfo['mark_status'],2,$markInfo['model_code'],$objId);
 		$arrMarkInfo = $arrMark ['mark_info'];
+		var_dump($arrBidInfo );*/
+		/*keke_user_mark_class::create_mark_log ( $model_info ['model_code'], 2, $order_info ['order_uid'], $order_info ['seller_uid'], $order_id, $order_info ['order_amount'] - $profit, $order_info ['obj_id'], $order_info ['order_username'], $order_info ['seller_username'] );
+		keke_user_mark_class::create_mark_log ( $model_info ['model_code'], 1, $order_info ['seller_uid'], $order_info ['order_uid'], $order_id, $order_info ['order_amount'], $order_info ['obj_id'], $order_info ['seller_username'], $order_info ['order_username'] );
+		$modelCode = $arrTaskInfo['model_id'];
+		$objId     = $arrTaskInfo['task_id'];
+		if($arrTaskInfo['uid'] == $gUid){
+			$toUid = $arrBidInfo['uid'];
+		}else{
+			$toUid = $arrTaskInfo['uid'];
+		}
+		$arrMark = keke_user_mark_class::get_mark_info ( array ('model_code' => $modelCode, 'obj_id' => $objId,'by_uid'=>$gUid,'uid'=>$toUid) );
+		$markInfo = $arrMark ['mark_info'] ['0'];
+		$markInfo or   kekezu::show_msg('操作提示',$strUrl,"3",'互评系统繁忙，请稍后再试',"error");
+		$aidList = keke_user_mark_class::get_mark_aid ( $intUserType );
+		$aidInfo=keke_user_mark_class::get_user_aid($markInfo['by_uid'],$markInfo['mark_type'],$markInfo['mark_status'],2,$markInfo['model_code'],$objId);
+		*/
+		
 		require keke_tpl_class::template ( 'task/'.$arrModelInfo['model_code'].'/tpl/default/gz_step6' );
 	    die();
 		break;
