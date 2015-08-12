@@ -27,7 +27,7 @@
 					{/if}
 					{if  $arrProcess_can['work_mark']&&$arrTaskInfo['task_status']=='8'}
 					<div class="btn-group">
-						<a class="btn btn-primary btn-lg" href="index.php?do=task&view=gz&id={$arrTaskInfo['task_id']}">评 价</a>
+						<a class="btn btn-primary btn-lg" href="index.php?do=taskhandle&op=gz&taskId={$arrTaskInfo['task_id']}">评 价</a>
 					</div>
 					{/if}
 					<div class="btn-group">
@@ -53,12 +53,10 @@
 						</span>
 						 {$arrTaskInfo['task_title']} {loop $arrPayitemShow $k $v} <span class="marked $v['style']">$v['abbr']</span> {/loop}
 					</h1>
-					<div class="detail-obj">
+					<div class="detail-obj">  
 						<div class="detail-obj-item">
 							<div class="method">
 								
-
-
 								<span> <i class="fa fa-money"></i> {if $arrTaskInfo['task_status'] == '10'} 审核失败 {else} {if floatval($arrTaskInfo['real_cash'])} {if $arrTaskInfo['task_status'] == '0'} 未支付 {elseif $arrTaskInfo['task_status'] == '1'} 待审核 {else} 已支付网站服务费用：<sub>￥</sub>{$arrTaskInfo['real_cash']} {/if} {else} {if $arrTaskInfo['task_status'] == '0'} 未支付 {elseif $arrTaskInfo['task_status'] == '1'} 待审核 {else} 免网站服务费 {/if} {/if} {/if}
 
 								</span>
@@ -213,7 +211,7 @@
 		<!-- for-advertise end -->
 		<div class="tab tab-darken" id="detail">
 			<a href="{$strUrl}&view=work#detail" {if $view== 'work'}    class="selected"{/if}> 报价 <span class="badge">{$arrTaskInfo['work_num']}</span>
-			</a> <a href="{$strUrl}&view=comment#detail" {if $view== 'comment'} class="selected"{/if}> 如有疑问，请留言<span class="badge">{$arrTaskInfo['leave_num']}</span>
+			</a> <a href="{$strUrl}&view=comment#detail" {if $view== 'comment'} class="selected"{/if}> 向需方提问<span class="badge">{$arrTaskInfo['leave_num']}</span>
 			</a> <a href="{$strUrl}&view=mark#detail" {if $view== 'mark'}    class="selected"{/if}> 评价 <span class="badge">{$arrTaskInfo['mark_num']}</span>
 			</a>
 		</div>

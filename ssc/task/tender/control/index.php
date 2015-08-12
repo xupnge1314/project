@@ -73,8 +73,11 @@ switch ($view){
 		$arrReplyLists = $objComment->get_reply_info($id);
 	    break;
 	case "mark":
-		$p['page']      = $intPage;
-		$p['page_size'] = $intPagesize;
+	//$page and $intPage = intval($page);
+    intval ( $intPage ) and $p ['page'] = intval ( $intPage ) or $p ['page']='1';
+    intval ( $intPagesize ) and $p ['page_size'] = intval ( $intPagesize ) or $p['page_size']=10;
+	//$p['page']      = $intPage;
+	//$p['page_size'] = $intPagesize;
 	$p['url'] = $strUrl."&view=".$view."&intPage=".$p['page']."&intPagesize=".$p['page_size'].="&s=".$s;
 	$p ['anchor'] = '#detail';
 	$w['model_code'] = $arrModelInfo ['model_code'];

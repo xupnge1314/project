@@ -100,6 +100,11 @@ $arrDynamicPlays = kekezu::get_feed ( "feedtype='work_accept'", "feed_time desc"
 $arrRecommShops = db_factory::query ( sprintf ( "select a.username,a.uid,b.indus_id,b.indus_pid,a.shop_name,if(b.seller_total_num>0,b.seller_good_num/b.seller_total_num,0) as good_rate from %switkey_shop a "
 		." left join %switkey_space b on a.uid=b.uid  where b.recommend=1 and b.status=1 and IFNULL(a.is_close,0)=0 and shop_status=1 order by good_rate desc limit 0,5", TABLEPRE,TABLEPRE ), 1, $intIndexCacheTime );
 /**
+ *入住服务商
+*/
+$arrRecommShops1 = db_factory::query ( sprintf ( "select a.username,a.uid,b.indus_id,b.indus_pid,a.shop_name,if(b.seller_total_num>0,b.seller_good_num/b.seller_total_num,0) as good_rate from %switkey_shop a "
+		." left join %switkey_space b on a.uid=b.uid  where b.recommend=1 and b.status=1 and IFNULL(a.is_close,0)=0 and shop_status=1 order by good_rate desc ", TABLEPRE,TABLEPRE ), 1, $intIndexCacheTime );
+/**
  * 资讯列表
 */
 $arrArticleTop = db_factory::get_one("select * from ".TABLEPRE."witkey_article where cat_type='article' and  LENGTH(art_pic)>20 order by pub_time desc limit 1",1,$intIndexCacheTime);

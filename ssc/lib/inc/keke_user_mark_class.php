@@ -170,7 +170,7 @@ class keke_user_mark_class {
 		global $kekezu;
 		$where = " select * from ".TABLEPRE."witkey_mark where 1 = 1";
 		$ext and $where.=" and $ext ";
-		$arr       = keke_table_class::format_condit_data($where,$order,$w,$p);
+		$arr       = keke_table_class::format_condit_data($where,$order,$w,$p);var_dump($arr);
 		$mark_info = db_factory::query ($arr['where'] );
 		$mark_arr ['mark_info'] = $mark_info;
 		$mark_arr ['pages'] = $arr['pages'];

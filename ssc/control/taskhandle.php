@@ -158,58 +158,38 @@ switch ($op) {
 		break;
 	case "gz":
 		$arrBidInfo = $objTask->get_bid_info ();
-		/*$objId = $taskId;echo $objId.'<br>';
-		$gUid = $uid;echo $gUid.'<br>';
-		$toUid = $gUid;echo $toUid.'<br>';
-		$arrMark = keke_user_mark_class::get_mark_info (  array ('model_code' => 'mark', 'obj_id' => $objId,'by_uid'=>$gUid,'uid'=>$toUid) );
-		$markInfo = $arrMark ['mark_info'] ['0'];
-		$aidInfo=keke_user_mark_class::get_user_aid($markInfo['by_uid'],$markInfo['mark_type'],$markInfo['mark_status'],2,$markInfo['model_code'],$objId);
-		$arrMarkInfo = $arrMark ['mark_info'];
-		var_dump($arrBidInfo );*/
-		/*keke_user_mark_class::create_mark_log ( $model_info ['model_code'], 2, $order_info ['order_uid'], $order_info ['seller_uid'], $order_id, $order_info ['order_amount'] - $profit, $order_info ['obj_id'], $order_info ['order_username'], $order_info ['seller_username'] );
-		keke_user_mark_class::create_mark_log ( $model_info ['model_code'], 1, $order_info ['seller_uid'], $order_info ['order_uid'], $order_id, $order_info ['order_amount'], $order_info ['obj_id'], $order_info ['seller_username'], $order_info ['order_username'] );
-		$modelCode = $arrTaskInfo['model_id'];
-		$objId     = $arrTaskInfo['task_id'];
-		if($arrTaskInfo['uid'] == $gUid){
-			$toUid = $arrBidInfo['uid'];
-		}else{
-			$toUid = $arrTaskInfo['uid'];
-		}
+		$arrTaskInfo = $objTask->get_task_info();
+		$taskId = $arrTaskInfo['task_id'];
+		$Info = keke_user_mark_class::create_mark_log ( 'tender', 2, $arrTaskInfo ['uid'], $arrBidInfo ['uid'], $arrBidInfo ['bid_id'], $arrTaskInfo ['task_cash'], $arrTaskInfo ['task_id'], $arrTaskInfo ['username'], $arrBidInfo ['username'] );
+		$modelCode = 'tender';
+		$objId = $arrBidInfo ['bid_id'];
+		$toUid = $arrBidInfo['uid'];
 		$arrMark = keke_user_mark_class::get_mark_info ( array ('model_code' => $modelCode, 'obj_id' => $objId,'by_uid'=>$gUid,'uid'=>$toUid) );
 		$markInfo = $arrMark ['mark_info'] ['0'];
-		$markInfo or   kekezu::show_msg('操作提示',$strUrl,"3",'互评系统繁忙，请稍后再试',"error");
+		$intUserType = $markInfo['mark_type'];
 		$aidList = keke_user_mark_class::get_mark_aid ( $intUserType );
 		$aidInfo=keke_user_mark_class::get_user_aid($markInfo['by_uid'],$markInfo['mark_type'],$markInfo['mark_status'],2,$markInfo['model_code'],$objId);
-		*/
-		
+		$strJumpUrl = "index.php?do=task&id=$taskId&view=mark#detail";
 		require keke_tpl_class::template ( 'task/'.$arrModelInfo['model_code'].'/tpl/default/gz_step6' );
 	    die();
 		break;
 	case "wk":
 		$arrBidInfo = $objTask->get_bid_info ();
-		//$arrBidInfo = $objTask->get_task_info ();
-		$arrMarkCount = keke_shop_class::get_mark_count ( $model_code, $sid ); 
-		$p ['url'] = $strUrl . "&view=mark&intPagesize=" . $p ['page_size'] . "&intPage=" . $p ['page'];
-		$p ['anchor'] = '#pageT';
-		$w ['model_code'] = $arrModelInfo ['model_code']; 
-		$w ['origin_id'] = $intId; 
-		$w ['mark_status'] = $st; 
-		$w ['mark_type'] = $ut; 
-		$arrMark = keke_user_mark_class::get_mark_info ( $w, $p, ' mark_id desc ', 'mark_status>0' );
-		$arrMarkInfo = $arrMark ['mark_info'];
+		$arrBidInfo = $objTask->get_task_info ();
+		$taskId = $arrTaskInfo['task_id'];
+		keke_user_mark_class::create_mark_log ( 'tender', 1, $arrBidInfo ['uid'], $arrTaskInfo ['uid'], $arrBidInfo ['bid_id'], $arrBidInfo ['quote'], $arrTaskInfo ['task_id'], $arrBidInfo ['username'], $arrTaskInfo ['username'] );
+		$modelCode = 'tender';
+		$objId = $arrBidInfo ['bid_id'];
+		$toUid = $arrTaskInfo ['uid'];
+		$arrMark = keke_user_mark_class::get_mark_info ( array ('model_code' => $modelCode, 'obj_id' => $objId,'by_uid'=>$gUid,'uid'=>$toUid) );
+		$markInfo = $arrMark ['mark_info'] ['0'];
+		$intUserType = $markInfo['mark_type'];
+		$aidList = keke_user_mark_class::get_mark_aid ( $intUserType );
+		$aidInfo=keke_user_mark_class::get_user_aid($markInfo['by_uid'],$markInfo['mark_type'],$markInfo['mark_status'],2,$markInfo['model_code'],$objId);
+		$strJumpUrl = "index.php?do=task&id=$taskId&view=mark#detail";
 		require keke_tpl_class::template ( 'task/'.$arrModelInfo['model_code'].'/tpl/default/wk_step6' );
 	    die();
 		break;
-	/*case "gz":
-		//$arrBidInfo = $objTask->get_task_info ();
-		require keke_tpl_class::template ( 'task/'.$arrModelInfo['model_code'].'/tpl/default/gz_step6' );
-	    die();
-		break;
-	case "wk":
-		//$arrBidInfo = $objTask->get_task_info ();
-		require keke_tpl_class::template ( 'task/'.$arrModelInfo['model_code'].'/tpl/default/wk_step6' );
-	    die();
-		break;*/
 	case "turnaround" : 
 		if(0 === $gUid){
 			kekezu::show_msg ( '未登陆用户，无权操作', 'index.php?do=login', 3, NULL, 'warning' );

@@ -379,13 +379,33 @@
 
 
 	<div class="newest-company">
-		<h5>推荐服务商</h5>
-		<ul>
+		<h5>已入驻服务商</h5>
+		<!-- <ul class="">
+			{loop $arrRecommShops1 $k $v}
 			<li>
+				<a href="index.php?do=seller&id=$v['uid']" class="avatar" title="$v['shop_name']" alt="$v['shop_name']">
+					{userpic($v['uid'],'small')}
+				</a>
+		
+				<div class="avatar-detail">
+					<p class="record-list-title">
+						<a href="index.php?do=seller&id=$v['uid']" title="$v['shop_name']">
+							$v['shop_name']
+						</a>
+					</p>
+				</div>
 			</li>
-			
-		</ul>
+			{/loop}
+		</ul> -->
 	</div>
+
+<style>
+.newest-company img{
+	width: 50px;
+  	height: 50px;
+}
+
+</style>
 
 	<div class="for-advertise">
 <!--{ad_show(HOME_CENTAL_ONE)}-->

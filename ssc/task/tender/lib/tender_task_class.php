@@ -460,7 +460,7 @@ class tender_task_class extends keke_task_class {
 	function get_task_info() {
 		$this->_task_obj->setWhere ( " task_id = $this->_task_id " );
 		$bid_info = $this->_task_obj->query_keke_witkey_task ();
-		//$bid_info = $bid_info ['0'];
+		$bid_info = $bid_info ['0'];
 		if ($bid_info) {
 			return $bid_info;
 		} else {

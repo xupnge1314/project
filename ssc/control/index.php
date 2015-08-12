@@ -56,6 +56,10 @@ if ($_K ['theme']) {
 	$arrDynamicPlays = kekezu::get_feed ( "feedtype='work_accept'", "feed_time desc", 10 ); 
 	$arrRecommShops = db_factory::query ( sprintf ( "select a.username,a.uid,b.indus_id,b.indus_pid,a.shop_name,if(b.seller_total_num>0,b.seller_good_num/b.seller_total_num,0) as good_rate from %switkey_shop a "
 			." left join %switkey_space b on a.uid=b.uid  where b.recommend=1 and b.status=1 and IFNULL(a.is_close,0)=0 and shop_status=1 order by good_rate desc limit 0,6", TABLEPRE,TABLEPRE ), 1, $intIndexCacheTime );
+	
+	$arrRecommShops1 = db_factory::query ( sprintf ( "select a.username,a.uid,b.indus_id,b.indus_pid,a.shop_name,if(b.seller_total_num>0,b.seller_good_num/b.seller_total_num,0) as good_rate from %switkey_shop a "
+			." left join %switkey_space b on a.uid=b.uid  where b.recommend=1 and b.status=1 and IFNULL(a.is_close,0)=0 and shop_status=1 order by good_rate desc ", TABLEPRE,TABLEPRE ), 1, $intIndexCacheTime );
+
 	$arrArticleTop = db_factory::get_one("select * from ".TABLEPRE."witkey_article where cat_type='article' and  LENGTH(art_pic)>20 order by pub_time desc limit 1",1,$intIndexCacheTime);
 	$arrArticleLists = db_factory::query("select * from ".TABLEPRE."witkey_article where cat_type='article' and art_id !='".$arrArticleTop['art_id']."' order by pub_time desc limit 6",1,$intIndexCacheTime);
 	$arrPubToday = db_factory::query("select count(*) as count from ".TABLEPRE."witkey_task where date(from_unixtime(start_time)) = curdate() and task_status>=2",1,$intIndexCacheTime);
