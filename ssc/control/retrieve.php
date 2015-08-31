@@ -47,7 +47,25 @@ if (kekezu::submitcheck ( $formhash )) {
 		$_SESSION['retrieve']['userinfo']  =  $arrUserInfo;
 		kekezu::show_msg ( '', "index.php?do=retrieve", NULL, NULL, 'ok' );
 	}
+	/*if($ajax == 'sendcode'){
+		$validCode = kekezu::randomkeys(6,true);
+		$sendtime = time();
+		$arrNotifyArr = array ('网站名称' => $kekezu->_sys_config ['website_name'],'验证码' => $validCode);
+		keke_shop_class::notify_user ( $_SESSION['retrieve']['userinfo'] ['uid'], $_SESSION['retrieve']['userinfo'] ['username'], 'get_password', '找回密码', $arrNotifyArr, 2 );
+		$encrypteuid = md5(md5($_SESSION['retrieve']['userinfo'] ['uid']));
+		$authsid = md5(md5($_SESSION['retrieve']['userinfo'] ['uid']).$http_agent.$sendtime);
+		keke_user_class::createGetPwdLog('email', $_SESSION['retrieve']['userinfo'] ['uid'], $validCode, $_SESSION['retrieve']['userinfo']['email'], $encrypteuid, $authsid);
+		$echodatas = array(
+			'encrypteuid' => $encrypteuid,	
+			'authsid' 	  => $authsid,
+			'http_agent'  => $http_agent,
+			'sendtime' 	  => $sendtime,
+		);
+		$_SESSION['retrieve']['validinfo']  =  $echodatas;
+		kekezu::echojson('发送成功',1,null);
+	}*/
 }else{
+	
 	if($ajax == 'sendcode'){
 		$validCode = kekezu::randomkeys(6,true);
 		$sendtime = time();

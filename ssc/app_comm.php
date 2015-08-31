@@ -19,3 +19,4 @@ $_POST  = kekezu::k_input($_POST);
 $_R and extract ( $_R, EXTR_SKIP );
 isset ( $inajax ) and $_K ['inajax'] = $inajax;
 unset ( $uid, $username );
+
