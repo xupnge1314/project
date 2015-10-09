@@ -1,0 +1,32 @@
+---
+name: 登陆的默认密码控制
+code: kevinlogin
+type: extension
+copyright: Kevin
+site: http://www.kevinsoft.cn
+author: 'kevin<3301647@qq.com>'
+abstract: >
+  登陆的默认密码控制，如果是默认密码，提示修改.
+desc: >
+  登陆的默认密码控制，如果是默认密码，提示修改.
+install: |
+  1. 通过禅道的插件管理来进行安装。
+    1.1 使用管理员身份登录禅道，访问插件管理。
+    1.2 打开获得插件页面，搜索找到本插件。
+    1.3 选择自动安装，按照页面提示即可。
+  2. 手工安装，将代码解压缩，然后将目录拷贝到禅道对应的目录，比如module拷贝到zentao的module。
+releases:
+  1.3:
+    charge: free
+    license: ZPL (http://zpl.pub/v1)
+    changelog: >
+      修正浪云点服务器上不能用的bug。
+    date: 2015-6-23
+    zentao:
+      compatible: 6.2,6.3,6.4,7.0,7.1,7.2
+      incompatible:
+    depends:
+      kevincom:
+        min: 1.4
+        max:
+    conflicts: null

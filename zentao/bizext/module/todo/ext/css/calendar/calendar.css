@@ -1,0 +1,6 @@
+#calendar {margin: 0 auto;}
+#before a{border:none;}
+
+.input-group .datepicker-wrapper{width: 110px!important;}
+.input-group .datepicker-wrapper .form-control {max-width: 110px; line-height: 25px}
+.datetimepicker.dropdown-menu {top: 152px!important}

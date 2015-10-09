@@ -1,0 +1,7 @@
+.select-7 {width:70px}
+.selectActive{border:2px solid #090;}
+
+#featurebar ul.nav input#date{border:none;background:#F8FAFE; -webkit-box-shadow:none;box-shadow:none; width:100px;}
+#featurebar ul.nav .chosen-container{height:25px;}
+#featurebar ul.nav .chosen-container a.chosen-single{background:#F8FAFE; border:none; -webkit-box-shadow:none;box-shadow:none}
+#featurebar ul.nav .chosen-container .chosen-drop {min-width: 300px;!important}

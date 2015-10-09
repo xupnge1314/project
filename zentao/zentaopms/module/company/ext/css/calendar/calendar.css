@@ -1,0 +1,7 @@
+.outer.hide-side .side .panel{display:none;}
+.outer.hide-side .side .side-handle{height:32px;}
+
+#featurebar ul.nav input#date{border:none;background:#F8FAFE; -webkit-box-shadow:none;box-shadow:none; width:100px}
+#featurebar ul.nav .chosen-container{height:25px;}
+#featurebar ul.nav .chosen-container a.chosen-single{background:#F8FAFE; border:none; -webkit-box-shadow:none;box-shadow:none}
+#featurebar ul.nav .chosen-container .chosen-drop {min-width: 300px;!important}

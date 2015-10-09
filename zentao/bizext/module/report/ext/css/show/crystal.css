@@ -1,0 +1,12 @@
+.reportData{width:100%;}
+.reportData.table>thead>tr>th{text-align:center; background-color:#fff;}
+
+.main .panel{border-bottom:0px;}
+.panel-body.scroll-table {padding: 0;}
+.scroll-table {overflow-x: auto}
+.scroll-table > .table {min-width:100%}
+.main .panel-footer{display:none;}
+
+.tablesorter thead tr .header > .tablesorter-header-inner:after{font-family: ZenIcon;font-weight: normal;content: " \e6bd";font-size: 14px;}
+.tablesorter thead tr .headerSortDown > .tablesorter-header-inner:after{font-family: ZenIcon;font-weight: normal;content: " \e6b8";font-size: 14px;color: #03C;}
+.tablesorter thead tr .headerSortUp > .tablesorter-header-inner:after{font-family: ZenIcon;font-weight: normal;content: " \e6b9";font-size: 14px;color: #03C;}
